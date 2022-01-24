@@ -41,6 +41,4 @@ public class Student {
     private String boardTen;
     @Column(name = "image_path")
     private String imagePath;
-
-    
 }
