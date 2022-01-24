@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="webjars/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Animation Form</title>
     <link rel="stylesheet" href="../css/student.css">
 </head>
@@ -13,31 +15,31 @@
     <div id="form" class="login-box">
         <h2>Application Form</h2>
         <form>
-          <div class="page1">
-          <div class="user-box">
-            <input id="name" type="text" name="" required="">
-            <label>Student Name</label>
-          </div>
-          <div class="user-box">
-            <input id="fathername" type="text" name="" required="">
-            <label>Father Name</label>
-          </div>
-          <div class="user-box">
-            <input id="email" type="text" name="" required="">
-            <label>E-mail</label>
-          </div>
-         
-          <div class="user-box">
-            <input id="phone" type="text" name="" required="">
-            <label>Phone Number</label>
-          </div>
-          <div class="user-box">
-            <input id="address" type="text" name="" required="">
-            <label> Address</label>
-          </div>
-          <div class="btn-btn">
-          <button id="next1" class="btn" onclick="change(this.id)">NEXT</button>
-          </div>
+          <div class="page1" id='p1'>
+            <div class="user-box">
+              <input id="name" type="text" name="Name" required oninput="validate(this.id,this.name)">
+              <label><i class="bi bi-file-earmark-person-fill"></i>  Student Name</label>
+            </div>
+            <div class="user-box">
+              <input id="fathername" type="text" name="Father" required oninput="validate(this.id,this.name)">
+              <label>Father Name</label>
+            </div>
+            <div class="user-box">
+              <input id="email" type="text" name="Email" required oninput="validate(this.id,this.name)">
+              <label>E-mail</label>
+            </div>
+          
+            <div class="user-box">
+              <input id="phone" type="text" name="Phone" required oninput="validate(this.id,this.name)">
+              <label>Phone Number</label>
+            </div>
+            <div class="user-box">
+              <input id="address" type="text" name="Address" required oninput="validate(this.id,this.name)">
+              <label><i class="material-icons">home</i> Address</label>
+            </div>
+            <div class="btn-btn">
+            <button id="next1" class="btn" onclick="change(this.id)" disabled>NEXT</button>
+            </div>
           </div>
           <div class="page2">
             <div class="user-rd">
@@ -45,7 +47,7 @@
                 <input id="rd1" name="grp1" type="radio" value="Male">Male</input>
                 <input id="rd2" name="grp1" type="radio" value="Female">Female</input>
                 <input id="rd3" name="grp1" type="radio" value="Others">Others</input>
-            </div>
+            </div><br>
             <div class="user-box">
               <input id="date" type="date" name="" required="">
             </div>
@@ -55,7 +57,7 @@
             </div>
             <div class="user-box">
               <input type="password" name="" required="">
-              <label>Password</label>
+              <label><i class='fab fa-expeditedssl'></i> Password</label>
             </div>
             <div class="user-box">
               <input type="password" name="" required="">
@@ -63,7 +65,7 @@
             </div>
             <div class="btn-btn">
             <button id="back1" class="btn" onclick="backward(this.id)">BACK</button>
-            <button id="next2" class="btn" onclick="change(this.id)">NEXT</button>
+            <button id="next2" class="btn" onclick="change(this.id)" >NEXT</button>
             </div>
             </div>
             <div class="page3">
@@ -90,7 +92,7 @@
               </div>
               <div class="btn-btn">
               <button id="back2" class="btn" onclick="backward(this.id)">BACK</button>
-              <button id="next3" class="btn" onclick="change(this.id)">NEXT</button>
+              <button id="next3" class="btn" onclick="change(this.id)" >NEXT</button>
               </div>
               </div>
               <div class="page4">
@@ -111,12 +113,9 @@
                   <input type="file" name="">
                   <label>10th Marsksheet</label>
                 </div>
-                <div class="d-box">
-                <input type="checkbox" id="check" value="true">I hereby declare that the above information is true and best of my knowledge and belief.</input>
-                </div>
                 <div class="btn-btn">
                 <button id="back3" class="btn" onclick="backward(this.id)">BACK</button>
-                <button id="submit" class="btn" onclick="preview()">SUBMIT</button>
+                <button id="submit" class="btn" onclick="preview()" >SUBMIT</button>
                 </div>
                 </div>
         </form>
@@ -184,11 +183,12 @@
       
 </body>
 <script type="text/javascript">
+  var count=0;
     function preview(){
     document.getElementById("form").style.display="none";
       document.getElementById("dis-block").style.display="block";
       var img = document.getElementById("img");
-      document.getElementById("dis-img").src = img;
+      document.getElementById("dis-img").src = URL.createObjectURL(img.files[0]);
       var name = document.getElementById("name").value;
       document.getElementById("dis1").innerHTML=name;
       var fathername = document.getElementById("fathername").value;
@@ -230,6 +230,72 @@
   function interchange(){
     document.getElementById('dis-block').style.display='none';
     document.getElementById("form").style.display="block";
+  }
+  function validate(id,name){
+    if (count>=5){
+      document.getElementById("next1").disabled = false;
+    }
+    var c = name;
+    if (c === 'Email'){
+      var user = document.getElementById(id).value;
+      var user2 = document.getElementById(id);
+      var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if (re.test(user)) {
+        user2.style.borderBottom = "green solid 2px";
+        count+=1;
+      }
+      else {
+          user2.style.borderBottom = "red solid 2px";
+      }
+    }
+    if (c === 'Name'){
+      var user = document.getElementById(id).value;
+      var user2 = document.getElementById(id);
+      var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if (user.length>0) {
+        user2.style.borderBottom = "green solid 2px";
+        count+=1;
+      }
+      else {
+          user2.style.borderBottom = "red solid 2px";
+      }
+    }
+    if (c === 'Phone'){
+      var user = document.getElementById(id).value;
+      var user2 = document.getElementById(id);
+      var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if (user.length>0) {
+        user2.style.borderBottom = "green solid 2px";
+        count+=1;
+      }
+      else {
+          user2.style.borderBottom = "red solid 2px";
+      }
+    }
+    if (c === 'Address'){
+      var user = document.getElementById(id).value;
+      var user2 = document.getElementById(id);
+      var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if (user.length>0) {
+        user2.style.borderBottom = "green solid 2px";
+        count+=1;
+      }
+      else {
+          user2.style.borderBottom = "red solid 2px";
+      }
+    }
+    if (c === 'Father'){
+      var user = document.getElementById(id).value;
+      var user2 = document.getElementById(id);
+      var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if (user.length>0) {
+        user2.style.borderBottom = "green solid 2px";
+        count+=1;
+      }
+      else {
+          user2.style.borderBottom = "red solid 2px";
+      }
+    }
   }
   
   

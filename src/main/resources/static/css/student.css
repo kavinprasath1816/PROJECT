@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');  
+@import url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css');  
+@import url('https://unicons.iconscout.com/release/v2.1.9/css/unicons.css');  
 html {
     height: 100%;
   }
@@ -5,7 +8,7 @@ html {
     margin:0;
     padding:0;
     font-family: sans-serif;
-    background: linear-gradient(#141e30, #243b55);
+    background: #060b23;
   }
   
   .login-box {
@@ -17,9 +20,9 @@ html {
     height: 600px;
     
     transform: translate(-50%, -50%);
-    background: rgba(0,0,0,.5);
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
     box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
     border-radius: 10px;
   }
   #form{display: block;}
@@ -40,11 +43,10 @@ html {
     width: 650px;
     padding: 40px;
     height: 660px;
-
     box-sizing: border-box;
     border-radius: 10px;
     transform: translate(-50%, -50%);
-    background: rgba(0,0,0,.5);
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
@@ -73,11 +75,16 @@ html {
   .login-box .user-box {
     position: relative;
   }
-  .user-rd label{ color: #03e9f4;}
+  .user-rd label{ 
+    color: #03e9f4;
+    position: absolute;
+    top: -7px;
+  }
   .user-rd{
-    margin-top: 15px;
+    margin-top: 9px;
     font-size: 14px;
     color: #fff;
+    word-spacing: 40px;
   }
   .d-box{
     color: #fff;
@@ -154,6 +161,7 @@ html {
       }
     #next1{
       margin-left: 110px;
+      
     }
     #back1,#back3,#back2{
       margin-left: 20px;
@@ -170,4 +178,29 @@ html {
     height:16px;
   
    }
+   input[type="date"] {
+    position: relative;
+    padding: 10px;
+  }
+  
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    color: transparent;
+    background: none;
+    z-index: 1;
+  }
+  
+  input[type="date"]:before {
+    color: transparent;
+    background: none;
+    display: block;
+    font-family: 'FontAwesome';
+    content: '\f073';
+    /* This is the calendar icon in FontAwesome */
+    width: 15px;
+    height: 20px;
+    position: absolute;
+    top: 12px;
+    right: 6px;
+    color: #999;
+  }
  
