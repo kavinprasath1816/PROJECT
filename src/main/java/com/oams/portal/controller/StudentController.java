@@ -6,10 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class StudentController {
 
-    @RequestMapping("/student")
+    @RequestMapping(value="/student")
     public String studentRegister()
     {
         return "Student Register";
     }
+
     
 }
