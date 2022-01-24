@@ -1,0 +1,173 @@
+html {
+    height: 100%;
+  }
+  body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background: linear-gradient(#141e30, #243b55);
+  }
+  
+  .login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    height: 600px;
+    
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  #form{display: block;}
+  #dis-block{display: none;}
+  .displaying i{
+    padding-left: 35rem;
+    font-size: 25px;
+    color: #fff;
+  }
+  .displaying i:hover{
+    color: red;
+  }
+  .displaying{
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 650px;
+    padding: 40px;
+    height: 660px;
+
+    box-sizing: border-box;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  .preview{
+    margin-left: 160px;
+    width: 400px;
+    height: 550px;
+  }
+
+  .pre-box{
+    font-size: 16px;
+    padding-top: 18px;
+    color: #03e9f4;
+  }
+  #dis1,#dis2,#dis3,#dis4,#dis5,#dis6,#dis7,
+  #dis8,#dis9,#dis10,#dis11,#dis12,#dis13,#dis14{color:#fff}
+  
+  .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .login-box .user-box {
+    position: relative;
+  }
+  .user-rd label{ color: #03e9f4;}
+  .user-rd{
+    margin-top: 15px;
+    font-size: 14px;
+    color: #fff;
+  }
+  .d-box{
+    color: #fff;
+  }
+  
+  .login-box .user-box input {
+    width: 100%;
+    padding: 15px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .login-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 15px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .login-box .user-box input:focus ~ label,
+  .login-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 14px;
+  }
+  .btn-btn{
+    height: 4.5rem;
+    width:19rem;
+  
+  }
+  .btn{
+      cursor: pointer;
+      border-width: 2px solid #03e9f4;;
+      border-radius: 5px;
+      background: #03e9f4;
+      height: 2.5rem;
+      width:5.5rem;
+ }
+  .login-box button:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,0 0 25px #03e9f4,0 0 50px #03e9f4,0 0 100px #03e9f4;
+  }
+  .page1{
+    position: absolute;
+    width: 20rem;
+    height: 30rem;
+
+    }
+    .page2{
+    position: absolute;
+    width: 20rem;
+    height: 30rem;
+    }
+    .page3{
+    position: absolute;
+    width: 20rem;
+    height: 30rem;
+    }
+    .page4{
+      position: absolute;
+      width: 20rem;
+      height: 30rem;
+      }
+    #next1{
+      margin-left: 110px;
+    }
+    #back1,#back3,#back2{
+      margin-left: 20px;
+    }
+    #next2,#next3,#submit{
+      margin-left: 90px;
+    }
+    #submit{padding-left: 8px;}
+   #back3,#submit{
+     margin-top: 15px;
+   }
+   .photo{
+    width:104px;
+    height:16px;
+  
+   }
+ 

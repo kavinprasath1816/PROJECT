@@ -5,128 +5,282 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="webjars/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <title>Animation Form</title>
-    <link rel="stylesheet" type="text/css" href="..\css\registration.css">
-    
-    
+    <link rel="stylesheet" href="../css/student.css">
 </head>
 <body>
-<div>
-    <form class="form" action="student/register">
-        <div class="page1">
-            <div class="form__input">
-                <div class="display">
-                    <label>Personal Details</label>
+    <div id="form" class="login-box">
+        <h2>Application Form</h2>
+        <form>
+          <div class="page1">
+          <div class="user-box">
+            <input id="name" type="text" name="" required="">
+            <label>Student Name</label>
+          </div>
+          <div class="user-box">
+            <input id="fathername" type="text" name="" required="">
+            <label>Father Name</label>
+          </div>
+          <div class="user-box">
+            <input id="email" type="text" name="" required="">
+            <label>E-mail</label>
+          </div>
+         
+          <div class="user-box">
+            <input id="phone" type="text" name="" required="">
+            <label>Phone Number</label>
+          </div>
+          <div class="user-box">
+            <input id="address" type="text" name="" required="">
+            <label> Address</label>
+          </div>
+          <div class="btn-btn">
+          <button id="next1" class="btn" onclick="change(this.id)">NEXT</button>
+          </div>
+          </div>
+          <div class="page2">
+            <div class="user-rd">
+              <label>Gender</label><br>
+                <input id="rd1" name="grp1" type="radio" value="Male">Male</input>
+                <input id="rd2" name="grp1" type="radio" value="Female">Female</input>
+                <input id="rd3" name="grp1" type="radio" value="Others">Others</input>
+            </div>
+            <div class="user-box">
+              <input id="date" type="date" name="" required="">
+            </div>
+            <div class="user-box">
+              <input id="img" type="file" name="">
+              <label>Photo</label>
+            </div>
+            <div class="user-box">
+              <input type="password" name="" required="">
+              <label>Password</label>
+            </div>
+            <div class="user-box">
+              <input type="password" name="" required="">
+              <label>Confirm  Password</label>
+            </div>
+            <div class="btn-btn">
+            <button id="back1" class="btn" onclick="backward(this.id)">BACK</button>
+            <button id="next2" class="btn" onclick="change(this.id)">NEXT</button>
+            </div>
+            </div>
+            <div class="page3">
+              <div class="user-box">
+                <input id="board12" type="text" name="" required="">
+                <label>12th Board Of Education</label>
+              </div>
+              
+              <div class="user-box">
+                <input id="school12" type="text" name="" required="">
+                <label>12th School</label>
+              </div>
+              <div class="user-box">
+                <input id="group12" type="text" name="" required="">
+                <label>12th Group</label>
+              </div>
+              <div class="user-box">
+                <input id="mark12" type="text" name="" required="">
+                <label>12th Mark</label>
+              </div>
+              <div class="user-box">
+                <input type="file" name="">
+                <label>12th Marsksheet</label>
+              </div>
+              <div class="btn-btn">
+              <button id="back2" class="btn" onclick="backward(this.id)">BACK</button>
+              <button id="next3" class="btn" onclick="change(this.id)">NEXT</button>
+              </div>
+              </div>
+              <div class="page4">
+                <div class="user-box">
+                  <input id="board10" type="text" name="" required="">
+                  <label>10th Board Of Education</label>
                 </div>
-                <input type="text" name="name" placeholder=" " autocomplete="off">
-                <label for="Student Name">Student Name</label><br>
-            </div><br>
-            <div class="form__input">
-                <input type="text" name="fathername" placeholder=" " autocomplete="off">
-                <label for="Father Name">Father Name</label><br>
-            </div><br>
-            <div class="form__input">
-                <input type="email" name="email" placeholder=" " autocomplete="off">
-                <label for="E-mail">E-mail</label><br>
-            </div><br>
-            <div class="form__input">
-                <input type="tel" name="phone" placeholder=" " autocomplete="off">
-                <label for="phone">Phone Number</label><br>
-            </div><br>
-            <div class="form__button">
-                <button id='next1' type="button" onclick="change(this.id)">Next</button>
-            </div>
-        </div>
-        <div class="page2">
-            <div class="form__input">
-                <div class="display">
-                    <label>Academics Details XII</label>
+                
+                <div class="user-box">
+                  <input id="school10" type="text" name="" required="">
+                  <label>10th School</label>
                 </div>
-                <input type="text" name="school12" placeholder=" " autocomplete="off">
-                <label for="School">School</label><br>
-            </div><br>
-            <div class="form__input">
-                <input type="text" name="board12" placeholder=" " autocomplete="off">
-                <label for="board">Board of Education</label><br>
-            </div><br>
-            <div class="form__input">
-                <input type="text" name="group" placeholder=" " autocomplete="off">
-                <label for="group">Group</label><br>
-            </div><br>
-            <div class="form__input">
-                <input type="file">
-                <label for="mark">MarkSheet</label><br>
-            </div><br>
-            <div class="form__button">
-                <button id='back1' type="button" onclick="backward(this.id)">Back</button>
-                <button id='next2' type="button" onclick="change(this.id)">Next</button>
-            </div>
+                <div class="user-box">
+                  <input id="mark10" type="text" name="" required="">
+                  <label>10th Mark</label>
+                </div>
+                <div class="user-box">
+                  <input type="file" name="">
+                  <label>10th Marsksheet</label>
+                </div>
+                <div class="d-box">
+                <input type="checkbox" id="check" value="true">I hereby declare that the above information is true and best of my knowledge and belief.</input>
+                </div>
+                <div class="btn-btn">
+                <button id="back3" class="btn" onclick="backward(this.id)">BACK</button>
+                <button id="submit" class="btn" onclick="preview()">SUBMIT</button>
+                </div>
+                </div>
+        </form>
+      </div>
+      <div id="dis-block" class="displaying">
+        <i onclick="interchange()" class="fas fa-times"></i>
+        <div class="photo">
+        <img id="dis-img" src="" class="rounded" width="104" height="136">
         </div>
-        <div class="page3">
-            <div class="display">
-                <label>Acadamics Details X</label>
+        <div class="preview">
+          <div class="pre-box">
+          <label for="name">Student Name:</label>
+          <label id="dis1"></label><br>
+          </div>
+          <div class="pre-box">
+          <label for="name">Father Name:</label>
+          <label id="dis2"></label><br>
+          </div>
+          <div class="pre-box">
+          <label for="name">Email:</label>
+          <label id="dis3"></label><br>
+          </div>
+          <div class="pre-box">
+          <label for="name">Phone:</label>
+          <label id="dis4"></label><br>
+          </div>
+          <div class="pre-box">
+          <label for="name">Address:</label>
+          <label id="dis5"></label><br>
+          </div>
+          <div class="pre-box">
+          <label for="name">Gender:</label>
+          <label id="dis6"></label><br>
+          </div>
+          <div class="pre-box">
+          <label for="name">12th Board of Education:</label>
+          <label id="dis7"></label><br>
+          </div>
+          <div class="pre-box">
+          <label for="name">12th School:</label>
+          <label id="dis8"></label><br>
+          </div>
+          <div class="pre-box">
+          <label for="name">12th Group:</label>
+          <label id="dis9"></label><br>
+          </div>
+          <div class="pre-box">
+            <label for="name">12th Mark:</label>
+            <label id="dis10"></label><br>
+          </div>
+          <div class="pre-box">
+            <label for="name">10th Board of Education:</label>
+            <label id="dis11"></label><br>
+          </div>
+          <div class="pre-box">
+            <label for="name">10th School:</label>
+            <label id="dis12"></label><br>
             </div>
-            <div class="form__input">
-                <input type="text" name="school10" placeholder=" " autocomplete="off">
-                <label for="School">School</label><br>
-            </div><br>
-            <div class="form__input">
-                <input type="text" name="board10" placeholder=" " autocomplete="off">
-                <label for="board">Board of Education</label><br>
-            </div><br>
-            <div class="form__input">
-                <input type="file" name="markSheet10">
-                <label for="mark">MarkSheet</label><br>
-            </div><br>
-            <div class="form__input">
-                <input type="file" name="photo">
-                <label for="photo">Photo</label><br>
-            </div><br>
-            <div class="form__button">
-                <button id='back2' type="button" onclick="backward(this.id)">Back</button>
-                <button id='submit' type="button">Submit</button>
+            <div class="pre-box">
+              <label for="name">10th Mark:</label>
+              <label id="dis13"></label><br>
             </div>
-        </div>
-    </form>
-</div>
-<script type="text/javascript">
-    $(document).ready(function(){
-            $(".page2").fadeOut(1);
-            $(".page3").fadeOut(1);
-        });
 
-    function change(id){
-        if (id=="next1")
-        {
-            $(".page1").fadeOut(2000,function(){
-              $(".page2").fadeIn(2000);
-            });
-
-        }
-        else
-        {
-            $(".page2").fadeOut(2000,function(){
-              $(".page3").fadeIn(2000);
-            });
-
-        }
-    }
-    function backward(id){
-        if (id=="back1")
-        {
-          $(".page2").fadeOut(2000,function(){
-              $(".page1").fadeIn(2000);
-            });
-        }
-        else
-        {
-          $(".page3").fadeOut(2000,function(){
-              $(".page2").fadeIn(2000);
-            });
-        }
-    }
-
-
-</script>
+      </div>
+      
 </body>
+<script type="text/javascript">
+    function preview(){
+    document.getElementById("form").style.display="none";
+      document.getElementById("dis-block").style.display="block";
+      var img = document.getElementById("img");
+      document.getElementById("dis-img").src = img;
+      var name = document.getElementById("name").value;
+      document.getElementById("dis1").innerHTML=name;
+      var fathername = document.getElementById("fathername").value;
+      document.getElementById("dis2").innerHTML=fathername;
+      var email = document.getElementById("email").value;
+      document.getElementById("dis3").innerHTML=email;
+      var phone = document.getElementById("phone").value;
+      document.getElementById("dis4").innerHTML=phone;
+      var address = document.getElementById("address").value;
+      document.getElementById("dis5").innerHTML=address;
+      
+      var rd1 = document.getElementById('rd1')
+      var rd2 = document.getElementById('rd2')
+      var rd3 = document.getElementById('rd3')
+          if(rd1.checked == true)
+              document.getElementById("dis6").innerHTML=rd1.value;
+          else if(rd2.checked == true)
+              document.getElementById("dis6").innerHTML=rd2.value;
+          else if(rd3.checked == true)
+              document.getElementById("dis6").innerHTML=rd3.value;
+      
+      var board12 = document.getElementById("board12").value;
+      document.getElementById("dis7").innerHTML=board12;
+      var school12 = document.getElementById("school12").value;
+      document.getElementById("dis8").innerHTML=school12;
+      var group12= document.getElementById("group12").value;
+      document.getElementById("dis9").innerHTML=group12;
+      var mark12= document.getElementById("mark12").value;
+      document.getElementById("dis10").innerHTML=mark12;
+  
+      var board10 = document.getElementById("board10").value;
+      document.getElementById("dis11").innerHTML=board10;
+      var school10 = document.getElementById("school10").value;
+      document.getElementById("dis12").innerHTML=school10;
+      var mark10= document.getElementById("mark10").value;
+      document.getElementById("dis13").innerHTML=mark10;
+      
+  }
+  function interchange(){
+    document.getElementById('dis-block').style.display='none';
+    document.getElementById("form").style.display="block";
+  }
+  
+  
+  $(document).ready(function(){
+      $(".page2").fadeOut(1);
+      $(".page3").fadeOut(1);
+      $(".page4").fadeOut(1);
+  });
+  
+  function change(id){
+  if (id=="next1")
+  {
+      $(".page1").fadeOut(1000,function(){
+        $(".page2").fadeIn(1000);
+      });
+  
+  }
+  if (id=="next2")
+  {
+      $(".page2").fadeOut(1000,function(){
+        $(".page3").fadeIn(1000);
+      });
+  
+  }
+  if (id=="next3")
+  {
+      $(".page3").fadeOut(1000,function(){
+        $(".page4").fadeIn(1000);
+      });
+  
+  }
+  }
+  function backward(id){
+  if (id=="back1")
+  {
+    $(".page2").fadeOut(1000,function(){
+        $(".page1").fadeIn(1000);
+      });
+  }
+  if (id=="back2")
+  {
+    $(".page3").fadeOut(1000,function(){
+        $(".page2").fadeIn(1000);
+      });
+  }
+  if (id=="back3")
+  {
+    $(".page4").fadeOut(1000,function(){
+        $(".page3").fadeIn(1000);
+      });
+  }
+  }
+</script>
 </html>
