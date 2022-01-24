@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');  
+ @import url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css');  
+ @import url('https://unicons.iconscout.com/release/v2.1.9/css/unicons.css');  
+:root {
+    --s-loader-wrapper-bg-color: rgb(21, 22, 43);
+    --s-loader-width: 20px;
+    --s-loader-height: var(--s-loader-width);
+    --s-loader-border-color-trans: rgba(29, 161, 242, 0.2);
+    --s-loader-border-color-full: rgb(29, 161, 242);
+  }
+  
+body{
+    background: darkblue;
+    font-family: "Convergence", sans-serif;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    display: grid;
+    font-size: 1rem;
+    background-color: #060b23;
+}
+.form{
+    position: relative;
+    width: 20rem;
+    height: 0.2rem;
+    top: 8rem;
+}
+.form__input > input{
+    position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 2px solid #2a324b;
+      border-radius: 0.5rem;
+      font-family: inherit;
+      font-size: inherit;
+      border-color: white;
+      outline: none;
+      padding: 1rem;
+      color: white;
+      background: none;
+      background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');  
+}
+.form__input > input:hover{
+    border-color: springgreen;
+}
+.form__input > input:focus{
+    border-color: darkmagenta;
+}
+.form__input > label{
+    position: relative;
+    left: 1rem;
+    top: -2.39rem;
+    padding: 0 0.7rem;
+    color: white;
+    cursor: text;
+    background: none;
+    transition: top 200ms ease-in,left 200ms ease-in,font-size 200ms ease-in;
+
+}
+input:focus ~  label,
+input:not(:placeholder-shown) ~ label{
+    position: relative;
+    top: -4rem;
+    font-size: 0.8rem;
+    left: 0.8rem;
+    background: #060b23;
+}
+.form__button > button{
+    position: absolute;
+    left: 5.6rem;
+    height: 3rem;
+    width: 7rem;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    cursor: pointer;
+    font-size: inherit;
+
+}
+.display1{
+  text-align: center;
+  position: absolute;
+  font-size: 20px;
+  left: 4.7rem;
+  top: -5.4rem;
+  padding: 0 0.7rem;
+  color: white;
+  cursor: text;
+  background: none;
+}
+.display2{
+  text-align: center;
+  position: absolute;
+  font-size: 20px;
+  left: 10rem;
+  top: -2.4rem;
+  padding: 0 0.7rem;
+  color: white;
+  cursor: text;
+  background: none;
+  visibility: visible;
+}
+.center{
+  align-items: center;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;  
+  -o-backface-visibility: hidden;  
+  backface-visibility: hidden;
+}
+
+.staff{
+  position: absolute;
+  width: 20rem;
+  height: 0.2rem;
+  top: 2rem;
+  transition: all 1s;
+  visibility: hidden;
+}
+.dash{
+    border-left: 0;
+    border-bottom: 0;
+    border-top: 0;
+    border-right: 5px solid white;
+    position: absolute;
+    left: 8.85rem;
+    height: 1.3rem;
+
+}
+.display1:hover{
+    cursor: pointer;
+    color: deepskyblue;
+}
+.display2:hover {
+  cursor: pointer;
+  color: deepskyblue;
+}
+.container-md,.container-back{
+  position: absolute;
+  left: 35rem;
+  top: 4rem;
+  height: 30rem ;
+  width: 28rem;
+  margin-top: 7rem;
+  justify-content: center;
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');  
+  display: grid;
+  transform-style:preserve-3d;
+  -webkit-transform-style: preserve-3d;  
+  transform-style: preserve-3d;  
+  backface-visibility:visible;
+  box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);  
+  transition: all 2s ease-in-out;
+}
+.card-3d-wrapper{
+  transition: all 2s ease-in-out;
+  backface-visibility: hidden;
+  visibility: visible;
+}
+.card-3-wrapper{
+  transition: all 2s ease-in-out;
+  backface-visibility: hidden;
+}
+
+.header{
+  position: relative;
+  display: inline-block;
+  left: 40rem;
+  top: 2rem;
+  font-family: inherit;
+  word-spacing: 7rem;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 3px;
+}
+.checkbox:checked + label,  
+ .checkbox:not(:checked) + label{  
+  position: absolute;
+  left: 48rem;
+  top: 6rem;
+  display: block;  
+  text-align: center;  
+  width: 60px;  
+  height: 16px;  
+  border-radius: 8px;  
+  padding: 0;  
+  margin: 10px auto;  
+  cursor: pointer;  
+  background-color: #ffeba7;  
+ }  
+ .checkbox:checked + label:before,  
+ .checkbox:not(:checked) + label:before{  
+  position: absolute;  
+  display: block;  
+  width: 36px;  
+  height: 36px;  
+  border-radius: 50%;  
+  color: #ffeba7;  
+  background-color: #102770;  
+  font-family: 'unicons';  
+  content: '\eb4f';  
+  z-index: 20;  
+  top: -10px;  
+  left: -10px;  
+  line-height: 36px;  
+  text-align: center;  
+  font-size: 24px;  
+  transition: all 0.5s ease;  
+ }  
+ .checkbox:checked + label:before {  
+  transform: translateX(44px) rotate(-270deg);  
+ } 
+.box{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.container-back{
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+.checkbox:checked ~ .container-back > .card-3d-wrapper{
+  transform: rotateY(180deg);
+}
+.checkbox:checked ~ .container-back{
+  backface-visibility: visible;
+}
+.checkbox:checked ~ .container-md > .card-3-wrapper{
+  transform: rotateY(180deg);
+}
+.checkbox:not(:checked) ~ .header > .hy{
+  color: #428BCA;
+}
+.checkbox:checked ~ .header > .hy2{
+  color: #428BCA;
+}
+
+
+
+

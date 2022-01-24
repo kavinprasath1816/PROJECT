@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script type="text/javascript" src="webjars/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+    <div class="box">
+        <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" hidden/>
+        <label for="reg-log"></label>  
+        <div class="header">
+            <label class="hy">Student</label>
+            <label class="hy2">Staff</label>
+        </div>
+        <div class="container-md">
+            <div class="card-3-wrapper">
+                <form class="form" autocomplete="off" action="/student/login" method="post">
+                    <div class="center">
+                        <div class="display1">
+                            <a>Student Login</a>
+                        </div>
+                        <div class="form__input">
+                            <input  type="text" name="name" placeholder=" " autocomplete="off" required>
+                            <label for="name">Name</label><br>
+                        </div><br>
+                        <div class="form__input">
+                            <input type="password" name="password" placeholder=" " autocomplete="off" required>
+                            <label for="password">Password</label><br>
+                        </div><br>
+                        <div class="form__button">
+                            <button type="submit" class="btn btn-outline-info">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="container-back">
+            <div class="card-3d-wrapper">
+                <form class="form" autocomplete="off" action="/staff/login">
+                    <div class="center">
+                        <div class="display1">
+                            <a>Staff Login</a>
+                        </div>
+                        <div class="form__input">
+                            <input  type="text" name="name" placeholder=" " autocomplete="off" required>
+                            <label for="name">Name</label><br>
+                        </div><br>
+                        <div class="form__input">
+                            <input type="password" name="password" placeholder=" " autocomplete="off" requires>
+                            <label for="password">Password</label><br>
+                        </div><br>
+                        <div class="form__button">
+                            <button type="submit" class="btn btn-outline-info">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

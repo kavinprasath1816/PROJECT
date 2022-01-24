@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="webjars/jquery/3.6.0/jquery.min.js"></script>
+    <title>Animation Form</title>
+    <link rel="stylesheet" type="text/css" href="..\css\registration.css">
+    
+    
+</head>
+<body>
+<div>
+    <form class="form" action="student/register">
+        <div class="page1">
+            <div class="form__input">
+                <div class="display">
+                    <label>Personal Details</label>
+                </div>
+                <input type="text" name="name" placeholder=" " autocomplete="off">
+                <label for="Student Name">Student Name</label><br>
+            </div><br>
+            <div class="form__input">
+                <input type="text" name="fathername" placeholder=" " autocomplete="off">
+                <label for="Father Name">Father Name</label><br>
+            </div><br>
+            <div class="form__input">
+                <input type="email" name="email" placeholder=" " autocomplete="off">
+                <label for="E-mail">E-mail</label><br>
+            </div><br>
+            <div class="form__input">
+                <input type="tel" name="phone" placeholder=" " autocomplete="off">
+                <label for="phone">Phone Number</label><br>
+            </div><br>
+            <div class="form__button">
+                <button id='next1' type="button" onclick="change(this.id)">Next</button>
+            </div>
+        </div>
+        <div class="page2">
+            <div class="form__input">
+                <div class="display">
+                    <label>Academics Details XII</label>
+                </div>
+                <input type="text" name="school12" placeholder=" " autocomplete="off">
+                <label for="School">School</label><br>
+            </div><br>
+            <div class="form__input">
+                <input type="text" name="board12" placeholder=" " autocomplete="off">
+                <label for="board">Board of Education</label><br>
+            </div><br>
+            <div class="form__input">
+                <input type="text" name="group" placeholder=" " autocomplete="off">
+                <label for="group">Group</label><br>
+            </div><br>
+            <div class="form__input">
+                <input type="file">
+                <label for="mark">MarkSheet</label><br>
+            </div><br>
+            <div class="form__button">
+                <button id='back1' type="button" onclick="backward(this.id)">Back</button>
+                <button id='next2' type="button" onclick="change(this.id)">Next</button>
+            </div>
+        </div>
+        <div class="page3">
+            <div class="display">
+                <label>Acadamics Details X</label>
+            </div>
+            <div class="form__input">
+                <input type="text" name="school10" placeholder=" " autocomplete="off">
+                <label for="School">School</label><br>
+            </div><br>
+            <div class="form__input">
+                <input type="text" name="board10" placeholder=" " autocomplete="off">
+                <label for="board">Board of Education</label><br>
+            </div><br>
+            <div class="form__input">
+                <input type="file" name="markSheet10">
+                <label for="mark">MarkSheet</label><br>
+            </div><br>
+            <div class="form__input">
+                <input type="file" name="photo">
+                <label for="photo">Photo</label><br>
+            </div><br>
+            <div class="form__button">
+                <button id='back2' type="button" onclick="backward(this.id)">Back</button>
+                <button id='submit' type="button">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+            $(".page2").fadeOut(1);
+            $(".page3").fadeOut(1);
+        });
+
+    function change(id){
+        if (id=="next1")
+        {
+            $(".page1").fadeOut(2000,function(){
+              $(".page2").fadeIn(2000);
+            });
+
+        }
+        else
+        {
+            $(".page2").fadeOut(2000,function(){
+              $(".page3").fadeIn(2000);
+            });
+
+        }
+    }
+    function backward(id){
+        if (id=="back1")
+        {
+          $(".page2").fadeOut(2000,function(){
+              $(".page1").fadeIn(2000);
+            });
+        }
+        else
+        {
+          $(".page3").fadeOut(2000,function(){
+              $(".page2").fadeIn(2000);
+            });
+        }
+    }
+
+
+</script>
+</body>
+</html>
