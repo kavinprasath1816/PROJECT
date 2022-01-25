@@ -14,49 +14,49 @@
 <body>
     <div id="form" class="login-box">
         <h2>Application Form</h2>
-        <form>
+        <form action="/student/register" method="post" enctype="multipart/form-data">
           <div class="page1" id='p1'>
             <div class="user-box">
-              <input id="name" type="text" name="Name" required oninput="validate(this.id,this.name)">
+              <input id="name" type="text" name="name" required oninput="validate(this.id,this.name)">
               <label><i class="bi bi-file-earmark-person-fill"></i>  Student Name</label>
             </div>
             <div class="user-box">
-              <input id="fathername" type="text" name="Father" required oninput="validate(this.id,this.name)">
+              <input id="fathername" type="text" name="fatherName" required oninput="validate(this.id,this.name)">
               <label>Father Name</label>
             </div>
             <div class="user-box">
-              <input id="email" type="text" name="Email" required oninput="validate(this.id,this.name)">
+              <input id="email" type="text" name="email" required oninput="validate(this.id,this.name)">
               <label>E-mail</label>
             </div>
           
             <div class="user-box">
-              <input id="phone" type="text" name="Phone" required oninput="validate(this.id,this.name)">
+              <input id="phone" type="text" name="phoneNumber" required oninput="validate(this.id,this.name)">
               <label>Phone Number</label>
             </div>
             <div class="user-box">
-              <input id="address" type="text" name="Address" required oninput="validate(this.id,this.name)">
+              <input id="address" type="text" name="address" required oninput="validate(this.id,this.name)">
               <label><i class="material-icons">home</i> Address</label>
             </div>
             <div class="btn-btn">
-            <button id="next1" class="btn" onclick="change(this.id)" disabled>NEXT</button>
+            <button id="next1" class="btn" onclick="change(this.id)">NEXT</button>
             </div>
           </div>
           <div class="page2">
             <div class="user-rd">
               <label>Gender</label><br>
-                <input id="rd1" name="grp1" type="radio" value="Male">Male</input>
-                <input id="rd2" name="grp1" type="radio" value="Female">Female</input>
-                <input id="rd3" name="grp1" type="radio" value="Others">Others</input>
+                <input id="rd1" name="gender" type="radio" value="Male">Male</input>
+                <input id="rd2" name="gender" type="radio" value="Female">Female</input>
+                <input id="rd3" name="gender" type="radio" value="Others">Others</input>
             </div><br>
             <div class="user-box">
-              <input id="date" type="date" name="" required="">
+              <input id="date" type="date" name="dob" required="">
             </div>
             <div class="user-box">
-              <input id="img" type="file" name="">
+              <input id="img" type="file" name="image">
               <label>Photo</label>
             </div>
             <div class="user-box">
-              <input type="password" name="" required="">
+              <input type="password" name="password" required="">
               <label><i class='fab fa-expeditedssl'></i> Password</label>
             </div>
             <div class="user-box">
@@ -70,24 +70,24 @@
             </div>
             <div class="page3">
               <div class="user-box">
-                <input id="board12" type="text" name="" required="">
+                <input id="board12" type="text" name="boardTwelve" required="">
                 <label>12th Board Of Education</label>
               </div>
               
               <div class="user-box">
-                <input id="school12" type="text" name="" required="">
+                <input id="school12" type="text" name="schoolTwelve" required="">
                 <label>12th School</label>
               </div>
               <div class="user-box">
-                <input id="group12" type="text" name="" required="">
+                <input id="group12" type="text" name="group" required="">
                 <label>12th Group</label>
               </div>
               <div class="user-box">
-                <input id="mark12" type="text" name="" required="">
+                <input id="mark12" type="text" name="markTwelve" required="">
                 <label>12th Mark</label>
               </div>
               <div class="user-box">
-                <input type="file" name="">
+                <input type="file" name="markSheet">
                 <label>12th Marsksheet</label>
               </div>
               <div class="btn-btn">
@@ -97,25 +97,25 @@
               </div>
               <div class="page4">
                 <div class="user-box">
-                  <input id="board10" type="text" name="" required="">
+                  <input id="board10" type="text" name="boardTen" required="">
                   <label>10th Board Of Education</label>
                 </div>
                 
                 <div class="user-box">
-                  <input id="school10" type="text" name="" required="">
+                  <input id="school10" type="text" name="schoolTen" required="">
                   <label>10th School</label>
                 </div>
                 <div class="user-box">
-                  <input id="mark10" type="text" name="" required="">
+                  <input id="mark10" type="text" name="markTen" required="">
                   <label>10th Mark</label>
                 </div>
                 <div class="user-box">
-                  <input type="file" name="">
+                  <input type="file" name="markSheetTen">
                   <label>10th Marsksheet</label>
                 </div>
                 <div class="btn-btn">
                 <button id="back3" class="btn" onclick="backward(this.id)">BACK</button>
-                <button id="submit" class="btn" onclick="preview()" >SUBMIT</button>
+                <button id="submit" class="btn" type="submit" formaction="/student/register">SUBMIT</button>
                 </div>
                 </div>
         </form>
