@@ -25,17 +25,11 @@ html {
     box-sizing: border-box;
     box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
     border-radius: 10px;
+
   }
   #form{visibility: visible;}
   #dis-block{visibility: hidden;}
-  .displaying i{
-    padding-left: 35rem;
-    font-size: 25px;
-    color: #fff;
-  }
-  .displaying i:hover{
-    color: red;
-  }
+ 
   .displaying{
     z-index: 2;
     position: absolute;
@@ -43,13 +37,13 @@ html {
     left: 50%;
     width: 650px;
     padding: 40px;
-    height: 660px;
+    height: 700px;
     box-sizing: border-box;
     border-radius: 10px;
     transform: translate(-50%, -50%);
     background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
     box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
     border-radius: 10px;
   }
   .preview{
@@ -69,6 +63,11 @@ html {
   .login-box h2 {
     margin: 0 0 30px;
     padding: 0;
+    color: #fff;
+    text-align: center;
+ 
+  }
+  .displaying h2 {
     color: #fff;
     text-align: center;
  
@@ -144,6 +143,7 @@ html {
     width: 22rem;
     height: 30rem;
     transition: 0.5s;
+    
     }
   #page2{
     left:450px;
@@ -210,7 +210,7 @@ html {
     right: 6px;
     color: #999;
   }
-  
+ 
   i.fa-check{
     font-size: 16px;
     position: absolute;
@@ -256,5 +256,11 @@ html {
 .user-box.error span{
   color: red;
   visibility: visible;
- 
+}
+.displaying i.fa-arrow-left{
+ font-size: 25px;
+  color: #03e9f4;
+}
+.displaying i.fa-arrow-left:hover{
+  color: #fff;
 }
