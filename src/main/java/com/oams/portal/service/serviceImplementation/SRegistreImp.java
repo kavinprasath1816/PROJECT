@@ -35,7 +35,6 @@ public class SRegistreImp implements SRegisterService{
             s.setImageFileName(fileStorageService.saveImg(student.getImage()));
             s.setTenFileName(fileStorageService.saveFile(student.getMarkSheetTen()));
             s.setTwelveFileName(fileStorageService.saveFile(student.getMarkSheet()));
-            System.out.println(s);
             repo.save(s);
             return "done";
         }
