@@ -32,9 +32,9 @@ public class SRegistreImp implements SRegisterService{
             Set<String> role = new HashSet<String>();
             role.add("student");
             s.setRole(role);
-            s.setTwelvePath(getFileLocation(student.getMarkSheet()));
-            s.setTenPath(getFileLocation(student.getMarkSheetTen()));
-            s.setImagePath(getFileLocation(student.getImage()));
+            s.setImageFileName(fileStorageService.saveImg(student.getImage()));
+            s.setTenFileName(fileStorageService.saveFile(student.getMarkSheetTen()));
+            s.setTwelveFileName(fileStorageService.saveFile(student.getMarkSheet()));
             System.out.println(s);
             repo.save(s);
             return "done";

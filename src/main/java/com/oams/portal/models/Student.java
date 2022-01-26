@@ -84,12 +84,12 @@ public class Student {
     private String boardTen;
     @Column(name = "mark_ten")
     private String markTen;
-    @Column(name = "image_path")
-    private String imagePath;
-    @Column(name = "twelve_path")
-    private String twelvePath;
-    @Column(name = "ten_path")
-    private String tenPath;
+    @Column(name = "image_file_name")
+    private String imageFileName;
+    @Column(name = "twelve_file_name")
+    private String twelveFileName;
+    @Column(name = "ten_file_name")
+    private String tenFileName;
     @CreationTimestamp
     @Column(name = "created_at")
     private Timestamp createdAt;
