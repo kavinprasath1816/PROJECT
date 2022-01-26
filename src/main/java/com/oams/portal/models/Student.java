@@ -2,11 +2,18 @@ package com.oams.portal.models;
 
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.Map;
+import java.util.Set;
 
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 
@@ -45,6 +52,9 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "ROLES",joinColumns = @JoinColumn(name = "id"))
+    private Set<String> role; 
     @Column(name = "name")
     private String name;
     @Column(name = "father_name")

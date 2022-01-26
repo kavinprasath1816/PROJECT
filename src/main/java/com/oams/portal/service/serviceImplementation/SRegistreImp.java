@@ -1,5 +1,8 @@
 package com.oams.portal.service.serviceImplementation;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import com.oams.portal.dao.StudentRepo;
 import com.oams.portal.exceptions.BasicExceptions;
 import com.oams.portal.models.Student;
@@ -26,6 +29,9 @@ public class SRegistreImp implements SRegisterService{
     public String addStudent(StudentInput student) {
         try{
             Student s = new Student(student);
+            Set<String> role = new HashSet<String>();
+            role.add("student");
+            s.setRole(role);
             s.setTwelvePath(getFileLocation(student.getMarkSheet()));
             s.setTenPath(getFileLocation(student.getMarkSheetTen()));
             s.setImagePath(getFileLocation(student.getImage()));
