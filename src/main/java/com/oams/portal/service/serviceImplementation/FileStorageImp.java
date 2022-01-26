@@ -11,7 +11,6 @@ import java.nio.file.Paths;
 import javax.imageio.ImageIO;
 import java.util.Objects;
 import java.nio.file.*;
-import java.awt.image.BufferedImage;
 import com.oams.portal.config.FileStorageProperties;
 import com.oams.portal.service.FileStorageService;
 
@@ -71,11 +70,11 @@ public class FileStorageImp implements FileStorageService{
     @Override
     public String saveImg(MultipartFile file) throws IOException {
         File f = new File(file.getOriginalFilename());
-        var newFile = f.createNewFile();
+        f.createNewFile();
         FileOutputStream fout = new FileOutputStream(f);
         fout.write(file.getBytes());
         fout.close();
-        BufferedImage image = ImageIO.read(f);
+        ImageIO.read(f);
 
         String fileName = StringUtils.cleanPath(Objects.requireNonNull(file.getOriginalFilename()));
         try {
