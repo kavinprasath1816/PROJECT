@@ -9,6 +9,7 @@ html {
     padding:0;
     font-family: sans-serif;
     background: #060b23;
+   
   }
   
   .login-box {
@@ -25,8 +26,8 @@ html {
     box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
     border-radius: 10px;
   }
-  #form{display: block;}
-  #dis-block{display: none;}
+  #form{visibility: visible;}
+  #dis-block{visibility: hidden;}
   .displaying i{
     padding-left: 35rem;
     font-size: 25px;
@@ -70,6 +71,7 @@ html {
     padding: 0;
     color: #fff;
     text-align: center;
+ 
   }
   
   .login-box .user-box {
@@ -119,12 +121,9 @@ html {
     color: #03e9f4;
     font-size: 14px;
   }
-  .btn-btn{
-    height: 4.5rem;
-    width:19rem;
-  
-  }
-  .btn{
+
+
+  button{
       cursor: pointer;
       border-width: 2px solid #03e9f4;;
       border-radius: 5px;
@@ -138,39 +137,47 @@ html {
     border-radius: 5px;
     box-shadow: 0 0 5px #03e9f4,0 0 25px #03e9f4,0 0 50px #03e9f4,0 0 100px #03e9f4;
   }
-  .page1{
+  
+  #page1{
+    left:30px;
     position: absolute;
-    width: 20rem;
+    width: 22rem;
     height: 30rem;
-
+    transition: 0.5s;
     }
-    .page2{
+  #page2{
+    left:450px;
     position: absolute;
-    width: 20rem;
+    width: 22rem;
     height: 30rem;
+    transition: 0.5s;
     }
-    .page3{
-    position: absolute;
-    width: 20rem;
-    height: 30rem;
-    }
-    .page4{
+    #page3{
+      left:450px;
       position: absolute;
-      width: 20rem;
+      width: 22rem;
       height: 30rem;
+      transition: 0.5s;
+    }
+    #page4{
+      left:450px;
+      position: absolute;
+      width: 22rem;
+      height: 30rem;
+      transition: 0.5s;
       }
     #next1{
-      margin-left: 110px;
+      margin-left: 120px;
       
     }
     #back1,#back3,#back2{
       margin-left: 20px;
     }
-    #next2,#next3,#submit{
+    #next2,#next3,#pre{
       margin-left: 90px;
     }
-    #submit{padding-left: 8px;}
-   #back3,#submit{
+    #pre{padding-left: 8px;}
+   #back3,#pre{
      margin-top: 15px;
    }
    .photo{
@@ -203,4 +210,51 @@ html {
     right: 6px;
     color: #999;
   }
+  
+  i.fa-check{
+    font-size: 16px;
+    position: absolute;
+    left: 325px;
+    padding-top: 15px;
+    visibility: hidden;
+}
+  i.fa-times{
+    font-size: 18px;
+    position: absolute;
+    left: 325px;
+    padding-top: 15px;
+    visibility: hidden;
+  }
+  .user-box span{
+    color: #fff;
+    top: 55px;
+    font-size: 14px;
+    position: absolute;
+    visibility: hidden;
+}
+.user-rd span{
+  color:red;
+  top: 50px;
+  font-size: 14px;
+}
+.user-box.success i.fa-check{
+  color: rgb(46, 173, 46);
+   visibility: visible; 
+}
+.user-box.error i.fa-times{
+  color: red;
+  visibility: visible;
+}
+.user-box.success input{
+    border-color: rgb(125, 245, 125);
+    visibility: visible;
+}
+.user-box.error input{
+  border-color: red;
+  visibility: visible;
+}
+.user-box.error span{
+  color: red;
+  visibility: visible;
  
+}
