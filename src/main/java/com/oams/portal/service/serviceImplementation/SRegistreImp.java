@@ -40,7 +40,7 @@ public class SRegistreImp implements SRegisterService{
             return "done";
         }
         catch(Exception e){
-            throw new BuilderException("error in add Student");
+            throw new BuilderException("Error in add student - "+e.getMessage());
         }
     }
 
@@ -55,7 +55,7 @@ public class SRegistreImp implements SRegisterService{
             return fileDownloadUri;
         }
         catch(Exception e){
-            throw new BasicExceptions("Error in get file location");
+            throw new BasicExceptions("Error in get file location" + e.getMessage());
         }
     }
 
