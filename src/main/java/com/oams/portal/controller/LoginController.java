@@ -15,7 +15,7 @@ public class LoginController {
     @Autowired
     loginService lService;
 
-    @RequestMapping("student/login")
+    @RequestMapping(value = {"student/login"})
     public String login(){
         return "login form";
     }
@@ -26,7 +26,7 @@ public class LoginController {
         return lService.studentLogin(lModel);
     }
 
-    @RequestMapping("/staff/login")
+    @RequestMapping("staff/login")
     @ResponseBody
     public String staffLogin(LoginModel model){
         return lService.staffLogin(model);
