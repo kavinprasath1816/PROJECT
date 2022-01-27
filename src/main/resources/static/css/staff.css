@@ -1,0 +1,125 @@
+html {
+    height: 100%;
+  }
+  body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background: #060b23;  
+  }
+  .login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 45px;
+    height: 600px;
+    
+    transform: translate(-50%, -50%);
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
+    box-sizing: border-box;
+    box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
+    border-radius: 10px;
+  }
+  .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+  .login-box .user-box {
+    position: relative;
+  }
+  .login-box .user-box input {
+    width: 100%;
+    padding: 15px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .login-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 15px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  .login-box .user-box input:focus ~ label,
+  .login-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 14px;
+  }
+  button{
+      font-size: 15px;
+      cursor: pointer;
+      border-width: 2px solid #03e9f4;;
+      border-radius: 5px;
+      background: #03e9f4;
+      height: 2.5rem;
+      width:5.5rem;
+      margin-left: 120px;
+ }
+  .login-box button:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,0 0 25px #03e9f4,0 0 50px #03e9f4,0 0 100px #03e9f4;
+  }
+  i.fa-check{
+    font-size: 16px;
+    position: absolute;
+    left: 325px;
+    padding-top: 15px;
+    visibility: hidden;
+}
+  i.fa-times{
+    font-size: 18px;
+    position: absolute;
+    left: 325px;
+    padding-top: 15px;  
+    visibility: hidden;
+  }
+  .user-box span{
+    color: #fff;
+    top: 55px;
+    font-size: 14px;
+    position: absolute; 
+    visibility: hidden; 
+}
+#page1{
+    left:30px;
+    position: absolute;
+    width: 22rem;
+    height: 30rem;
+    transition: 0.5s;
+}
+
+.user-box.success i.fa-check{
+  color: rgb(46, 173, 46);
+   visibility: visible; 
+}
+.user-box.error i.fa-times{
+  color: red;
+  visibility: visible;
+}
+.user-box.success input{
+    border-color: rgb(125, 245, 125);
+    visibility: visible;
+}
+.user-box.error input{
+  border-color: red;
+  visibility: visible;
+}
+.user-box.error span{
+  color: red;
+  visibility: visible;
+}
