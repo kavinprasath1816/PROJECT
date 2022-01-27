@@ -10,50 +10,50 @@
     <link rel="stylesheet" href="../css/staff.css">
 </head>
 <body>
-    <div class="login-box">
-        <h2>Staff Register</h2>
-        <form>
-            <div id="page1">
-                <div class="user-box">
-                    <input id=name  type="text" name="staffName" required ="" autocomplete="off" oninput="staffvalidate(this.id,this.name)">
-                    <label>Staff Name</label>
-                    <i class="fa fa-check"></i>
-                    <i class="fas fa-times"></i><br>
-                    <span></span>
-                </div>
-                <div class="user-box">
-                    <input id=email type="text" name="staffEmail" required="" autocomplete="off" oninput="staffvalidate(this.id,this.name)">
-                    <label>E-mail</label>
-                    <i class="fa fa-check"></i>
-                    <i class="fas fa-times"></i><br>
-                    <span></span>
-                </div>
-                <div class="user-box">
-                    <input id="img" type="file"  accept="image/*" name="staffimage">
-                    <label>Photo</label>
-                    <i class="fa fa-check"></i>
-                    <i class="fas fa-times"></i><br>
-                    <span></span>
-                  </div>
-                <div class="user-box">
-                    <input id="password" type="password" name="staffPassword" required="" autocomplete="off" oninput="staffvalidate(this.id,this.name)">
-                    <label>Password</label>
-                    <i class="fa fa-check"></i>
-                    <i class="fas fa-times"></i><br>
-                    <span></span>
-                </div>
-                <div class="user-box">
-                    <input id="ConfirmPassword" type="password" name="staffconfirmpassword" required="" autocomplete="off" oninput="staffvalidate(this.id,this.name)">
-                    <label>Confirm  Password</label>
-                    <i class="fa fa-check"></i>
-                    <i class="fas fa-times"></i><br>
-                    <span></span>
-                </div>
-                <button id="check" type="button" >SUBMIT</button>
+<div class="login-box">
+    <h2>Staff Register</h2>
+    <form action="staff/register" method="post" enctype="multipart/form-data">
+        <div id="page1">
+            <div class="user-box">
+                <input id=name  type="text" name="staffName" required ="" autocomplete="off" oninput="staffvalidate(this.id,this.name)">
+                <label>Staff Name</label>
+                <i class="fa fa-check"></i>
+                <i class="fas fa-times"></i><br>
+                <span></span>
             </div>
-        </form>
-    </div>
-    <script type="text/javascript">
+            <div class="user-box">
+                <input id=email type="text" name="staffEmail" required="" autocomplete="off" oninput="staffvalidate(this.id,this.name)">
+                <label>E-mail</label>
+                <i class="fa fa-check"></i>
+                <i class="fas fa-times"></i><br>
+                <span></span>
+            </div>
+            <div class="user-box">
+                <input class="img" type="file"  accept="image/*" name="staffImage">
+                <label>Photo</label>
+                <i class="fa fa-check"></i>
+                <i class="fas fa-times"></i><br>
+                <span></span>
+            </div>
+            <div class="user-box">
+                <input id="password" type="password" name="password" required="" autocomplete="off" oninput="staffvalidate(this.id,this.name)">
+                <label>Password</label>
+                <i class="fa fa-check"></i>
+                <i class="fas fa-times"></i><br>
+                <span></span>
+            </div>
+            <div class="user-box">
+                <input id="ConfirmPassword" type="password" name="staffconfirmpassword" required="" autocomplete="off" oninput="staffvalidate(this.id,this.name)">
+                <label>Confirm  Password</label>
+                <i class="fa fa-check"></i>
+                <i class="fas fa-times"></i><br>
+                <span></span>
+            </div>
+            <button id="check" type="button">SUBMIT</button>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
         var check = document.getElementById("check");
         function showErrMsg(index,msg){
             const userbox = document.getElementsByClassName('user-box')[index]
@@ -65,30 +65,41 @@
             const userbox = document.getElementsByClassName('user-box')[index]
             userbox.classList.remove('error')
             userbox.classList.add('success')
-        } 
+        }
         var Formvalues={photo:""}
-        var Errvalues={photo:"Upload Your Photo"}
+        var Errvalues={photo:"Upload Your Photo",limitphoto:"'File Size Exceeds 100kb'"}
+
 
         check.onclick= function(){
-            console.log(Errvalues)
-            Formvalues.photo = document.getElementById('img').value
-            if(Errvalues.staffname =="" && Errvalues.staffemail =="" && Errvalues.photo =="" && Errvalues.staffpassword =="" && Errvalues.staffconfirmpasswoed==""){
+            Formvalues.photo = document.getElementsByClassName("img")[0].value
+            if(Errvalues.staffName =="" && Errvalues.staffEmail =="" && Errvalues.photo =="" && Errvalues.password =="" && Errvalues.staffconfirmpassword==""){
                 document.getElementById("check").type="submit";
-                document.getElementById("check").value="submit";
             }
-            else if(Formvalues['photo']=="")
+            if(Formvalues['photo']=="")
                 showErrMsg(2,Errvalues['photo'])
             else{
-                Errvalues["photo"] = ""
-                showSuccessMsg(2)
+                Errvalues['photo']=""
             }
-            
-            
         }
-        function staffvalidate(id,name){ 
-            
+        let img = document.querySelector('.img');
+        img.addEventListener('change',() =>{
+            let files = img.files;
+            if(files.length > 0){
+                if(files[0].size > 100 * 1024){
+                    showErrMsg(2,Errvalues['limitphoto'])
+                }
+            else{
+                Errvalues['limitphoto']=""
+                showSuccessMsg(2)
+
+            }
+
+            }
+        })
+        function staffvalidate(id,name){
+
             var s = document.getElementById(id).value.trim()
-            if(name=="staffname"){
+            if(name=="staffName"){
                 const regexp = /^[a-zA-z\s]{3,25}$/
                 if(s ==""){
                     Errvalues[name] = "**Enter Your Name**"
@@ -96,7 +107,7 @@
                 }
                 else if(s.length > 25){
                     Errvalues[name] = "**Name Exceeds 25 Characters**"
-                    showErrMsg(0,Errvalues[name])                                                
+                    showErrMsg(0,Errvalues[name])
                 }
                 else if(regexp.test(s)){
                     Errvalues[name] = ""
@@ -107,7 +118,7 @@
                     showErrMsg(0,Errvalues[name])
                 }
             }
-            if(name=="staffemail"){
+            if(name=="staffEmail"){
                 const regxemail =/(^[a-zA-Z0-9\.-]+)@gmail.([a-z]{2,3})(.[a-z]{2,2})?$/
                 if(s ==""){
                     Errvalues[name] = "**Enter Your E-mail**"
@@ -122,12 +133,12 @@
                     showErrMsg(1,Errvalues[name])
                 }
             }
-            if(name=="staffpassword"){
+            if(name=="password"){
                 const regxpass = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,50}$/
                 if(s==""){
                     Errvalues[name]="**Enter Your Password**"
                     showErrMsg(3,Errvalues[name])
-                }                                                                               
+                }
                 else if(regxpass.test(s)){
                     Errvalues[name]=""
                     Formvalues[name]=document.getElementById('password').value
@@ -148,7 +159,7 @@
                     Errvalues[name]="**Enter Your Confirm Password**"
                     showErrMsg(4,Errvalues[name])
                 }
-                else if(Formvalues['staffpassword']==s){
+                else if(Formvalues['password']==s){
                     Errvalues[name]=""
                     showSuccessMsg(4)
                 }
@@ -157,8 +168,8 @@
                     showErrMsg(4,Errvalues[name])
                 }
             }
-            
-            
+
+
         }
     </script>
 </body>
