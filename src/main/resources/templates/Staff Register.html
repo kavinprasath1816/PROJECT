@@ -12,7 +12,7 @@
 <body>
 <div class="login-box">
     <h2>Staff Register</h2>
-    <form action="staff/register" method="post" enctype="multipart/form-data">
+    <form onsubmit="return checking()" action="staff/register" method="post" enctype="multipart/form-data" >
         <div id="page1">
             <div class="user-box">
                 <input id=name  type="text" name="staffName" required ="" autocomplete="off" oninput="staffvalidate(this.id,this.name)">
@@ -49,7 +49,7 @@
                 <i class="fas fa-times"></i><br>
                 <span></span>
             </div>
-            <button id="check" type="button">SUBMIT</button>
+            <button id="check" type="submit">SUBMIT</button>
         </div>
     </form>
 </div>
@@ -67,31 +67,34 @@
             userbox.classList.add('success')
         }
         var Formvalues={photo:""}
-        var Errvalues={photo:"Upload Your Photo",limitphoto:"'File Size Exceeds 100kb'"}
+        var Errvalues={photo:"Upload Your Photo"}
 
-
-        check.onclick= function(){
-            Formvalues.photo = document.getElementsByClassName("img")[0].value
+        function checking(){
             if(Errvalues.staffName =="" && Errvalues.staffEmail =="" && Errvalues.photo =="" && Errvalues.password =="" && Errvalues.staffconfirmpassword==""){
-                document.getElementById("check").type="submit";
+                return true;
             }
+            else{
+                return false;
+            }
+
+        }
+        check.onclick= function(){
+            console.log(Errvalues)
             if(Formvalues['photo']=="")
                 showErrMsg(2,Errvalues['photo'])
-            else{
-                Errvalues['photo']=""
-            }
         }
         let img = document.querySelector('.img');
         img.addEventListener('change',() =>{
             let files = img.files;
             if(files.length > 0){
                 if(files[0].size > 100 * 1024){
-                    showErrMsg(2,Errvalues['limitphoto'])
+                    Errvalues.photo="File Size Exceeds 100kb"
+                    showErrMsg(2,Errvalues.photo)
                 }
             else{
-                Errvalues['limitphoto']=""
+                Errvalues['photo']=""
+                Formvalues.photo="success"
                 showSuccessMsg(2)
-
             }
 
             }
