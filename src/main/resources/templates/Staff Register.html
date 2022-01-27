@@ -3,166 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animation Form</title>
-    <style>
-        :root {
-        --s-loader-wrapper-bg-color: rgb(21, 22, 43);
-        --s-loader-width: 20px;
-        --s-loader-height: var(--s-loader-width);
-        --s-loader-border-color-trans: rgba(29, 161, 242, 0.2);
-        --s-loader-border-color-full: rgb(29, 161, 242);
-        }
-        body{
-            background: darkblue;
-            font-family: "Convergence", sans-serif;
-            height: 90vh;
-            display: inline-block;
-            font-size: 1.2rem;
-            background-color: #060b23;
-
-        }
-        .display{
-        text-align: center;
-        position: relative;
-        font-size: 25px;
-            left: 1rem;
-            top: -2.4rem;
-            padding: 0 0.7rem;
-            color: white;
-            cursor: text;
-            background: none;
-
-        }
-        .form{
-            display: inline-block;
-            position: absolute;
-            width: 20rem;
-            height: 0.2rem;
-            top: 160px;
-            border: 2px solid white;
-        }
-
-        .form__input > input{
-            position: relative;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 2px solid #2a324b;
-            border-left: transparent;
-            border-right: transparent;
-            border-top: transparent;
-            font-family: inherit;
-            font-size: inherit;
-            border-color: white;
-            outline: none;
-            padding: 1rem;
-            color: white;
-            background: none;
-
-        }
-        .form__input > input:hover{
-            border-color: springgreen;
-        }
-        .form__input > input:focus{
-            border-color: red;
-        }
-        .form__input > label{
-            position: relative;
-            top: -2.4rem;
-            padding: 0 0.7rem;
-            color: white;
-            cursor: text;
-            background: none;
-            transition: top 200ms ease-in,left 200ms ease-in,font-size 200ms ease-in;
-
-        }
-        input:focus ~  label,
-        input:not(:placeholder-shown) ~ label{
-            position: relative;
-            top: -4rem;
-            left:-0.3rem;
-            font-size: 1.2rem;
-            background: #060b23;
-        }
-        .form__button > button{
-            height: 3rem;
-            width: 8rem;
-            border-radius: 0.5rem;
-            font-family: inherit;
-            cursor: pointer;
-            font-size: inherit;
-        }
-        .spinning-loader {
-        width: 20px;
-        height: 20px;
-        top: 5.9rem;
-        left: 6rem;
-        position: absolute;
-        border-radius: 50%;
-        border: 5px solid var(--s-loader-border-color-trans);
-        border-left-color: var(--s-loader-border-color-full);
-        background: transparent;
-        animation: rotate-s-loader 1s linear infinite;
-        margin: 6rem auto;
-        visibility: hidden;
-        }
-
-        @keyframes rotate-s-loader {
-        from {
-            transform: rotate(0);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-        }
-
-
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <title>Staff Register</title>
+    <link rel="stylesheet" href="../css/staff.css">
 </head>
 <body>
-<div>
-    <form>
-        <div class="form">
-            <div class="form__input">
-                <div class="display">
-                    <label>Staff Registration</label>
+    <div class="login-box">
+        <h2>Staff Register</h2>
+        <form>
+            <div id="page1">
+                <div class="user-box">
+                    <input id=name  type="text" name="staffname" required ="" autocomplete="off" oninput="staffvalidate(this.id,this.name)">
+                    <label>Staff Name</label>
+                    <i class="fa fa-check"></i>
+                    <i class="fas fa-times"></i><br>
+                    <span></span>
                 </div>
-                <input type="text" name="name" placeholder=" " autocomplete="off">
-                <label for="Student Name">Staff Name</label><br>
+                <div class="user-box">
+                    <input id=email type="text" name="staffemail" required="" autocomplete="off" oninput="staffvalidate(this.id,this.name)">
+                    <label>E-mail</label>
+                    <i class="fa fa-check"></i>
+                    <i class="fas fa-times"></i><br>
+                    <span></span>
+                </div>
+                <div class="user-box">
+                    <input id="img" type="file"  accept="image/*" name="staffimage">
+                    <label>Photo</label>
+                    <i class="fa fa-check"></i>
+                    <i class="fas fa-times"></i><br>
+                    <span></span>
+                  </div>
+                <div class="user-box">
+                    <input id="password" type="password" name="staffpassword" required="" autocomplete="off" oninput="staffvalidate(this.id,this.name)">
+                    <label>Password</label>
+                    <i class="fa fa-check"></i>
+                    <i class="fas fa-times"></i><br>
+                    <span></span>
+                </div>
+                <div class="user-box">
+                    <input id="ConfirmPassword" type="password" name="staffconfirmpassword" required="" autocomplete="off" oninput="staffvalidate(this.id,this.name)">
+                    <label>Confirm  Password</label>
+                    <i class="fa fa-check"></i>
+                    <i class="fas fa-times"></i><br>
+                    <span></span>
+                </div>
+                <button id="check" type="button" >SUBMIT</button>
             </div>
-            <div class="form__input">
-                <input type="email" name="email" placeholder=" " autocomplete="off">
-                <label for="E-mail">E-mail</label><br>
-            </div>
-            <div class="form__input">
-                <input type="tel" name="phone" placeholder=" " autocomplete="off">
-                <label for="phone">Phone Number</label><br>
-            </div>
-            <div class="form__input">
-                <input type="password" name="phone" placeholder=" " autocomplete="off">
-                <label for="password">password</label><br>
-            </div>
-            <div class="form__input">
-                <input type="password" name="Confirm password" placeholder=" " autocomplete="off">
-                <label for="Confirm password">Confirm password</label><br>
-            </div>
-            <div class="form__button">
-                <button id='submit1' onclick="change()" type="button">Submit</button>
-                <label id = 'loader' class="spinning-loader">
-            </div>
-        </div>
-    </form>
-</div>
-<script type="text/javascript">
-    function change() {
-    var a = document.getElementById("submit1");
-    var b = document.getElementById("loader");
-    a.innerHTML = 'Signup in..';
-    b.style.visibility = 'visible';
-    a.style.background = 'springgreen';
-}
+        </form>
+    </div>
+    <script type="text/javascript">
+        var check = document.getElementById("check");
+        function showErrMsg(index,msg){
+            const userbox = document.getElementsByClassName('user-box')[index]
+            userbox.classList.remove('success')
+            userbox.classList.add('error')
+            userbox.getElementsByTagName('span')[0].textContent = msg
+        }
+        function showSuccessMsg(index){
+            const userbox = document.getElementsByClassName('user-box')[index]
+            userbox.classList.remove('error')
+            userbox.classList.add('success')
+        } 
+        var Formvalues={photo:""}
+        var Errvalues={photo:"Upload Your Photo"}
+
+        check.onclick= function(){
+            console.log(Errvalues)
+            Formvalues.photo = document.getElementById('img').value
+            if(Errvalues.staffname =="" && Errvalues.staffemail =="" && Errvalues.photo =="" && Errvalues.staffpassword =="" && Errvalues.staffconfirmpasswoed==""){
+                document.getElementById("check").type="submit";
+                document.getElementById("check").value="submit";
+            }
+            else if(Formvalues['photo']=="")
+                showErrMsg(2,Errvalues['photo'])
+            else{
+                Errvalues["photo"] = ""
+                showSuccessMsg(2)
+            }
+            
+            
+        }
+        function staffvalidate(id,name){ 
+            
+            var s = document.getElementById(id).value.trim()
+            if(name=="staffname"){
+                const regexp = /^[a-zA-z\s]{3,25}$/
+                if(s ==""){
+                    Errvalues[name] = "**Enter Your Name**"
+                    showErrMsg(0,Errvalues[name])
+                }
+                else if(s.length > 25){
+                    Errvalues[name] = "**Name Exceeds 25 Characters**"
+                    showErrMsg(0,Errvalues[name])                                                
+                }
+                else if(regexp.test(s)){
+                    Errvalues[name] = ""
+                    showSuccessMsg(0)
+                }
+                else{
+                    Errvalues[name] = "**Invalid Staff Name**"
+                    showErrMsg(0,Errvalues[name])
+                }
+            }
+            if(name=="staffemail"){
+                const regxemail =/(^[a-zA-Z0-9\.-]+)@gmail.([a-z]{2,3})(.[a-z]{2,2})?$/
+                if(s ==""){
+                    Errvalues[name] = "**Enter Your E-mail**"
+                    showErrMsg(1,Errvalues[name])
+                }
+                else if(regxemail.test(s)){
+                    Errvalues[name] = ""
+                    showSuccessMsg(1)
+                }
+                else{
+                    Errvalues[name] = "**Invalid E-mail**"
+                    showErrMsg(1,Errvalues[name])
+                }
+            }
+            if(name=="staffpassword"){
+                const regxpass = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,50}$/
+                if(s==""){
+                    Errvalues[name]="**Enter Your Password**"
+                    showErrMsg(3,Errvalues[name])
+                }                                                                               
+                else if(regxpass.test(s)){
+                    Errvalues[name]=""
+                    Formvalues[name]=document.getElementById('password').value
+                    showSuccessMsg(3)
+                    console.log(Formvalues)
+                }
+                else if(s.length < 8){
+                    Errvalues[name]="**Must be 8 characters**"
+                    showErrMsg(3,Errvalues[name])
+                }
+                else{
+                Errvalues[name]="**Must be 8 characters including 1 uppercase letter, 1 special character, alphanumeric characters**"
+                    showErrMsg(3,Errvalues[name])
+                }
+            }
+            if(name == "staffconfirmpassword"){
+                if(s == ""){
+                    Errvalues[name]="**Enter Your Confirm Password**"
+                    showErrMsg(4,Errvalues[name])
+                }
+                else if(Formvalues['staffpassword']==s){
+                    Errvalues[name]=""
+                    showSuccessMsg(4)
+                }
+                else{
+                    Errvalues[name]="**Password Mismatched**"
+                    showErrMsg(4,Errvalues[name])
+                }
+            }
+            
+            
+        }
     </script>
 </body>
 </html>
