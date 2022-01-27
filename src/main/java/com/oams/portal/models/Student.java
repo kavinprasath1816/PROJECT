@@ -37,7 +37,6 @@ public class Student {
         this.address = student.getAddress();
         this.dob = student.getDob();
         this.gender = student.getGender();
-        this.password = student.getPassword();
         this.schoolTwelve = student.getSchoolTwelve();
         this.boardTwelve = student.getBoardTwelve();
         this.group = student.getGroup();

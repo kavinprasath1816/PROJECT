@@ -6,7 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 public interface SRegisterService {
 
-    public String addStudent(StudentInput student);
+    public void addStudent(StudentInput student);
 
     public String getFileLocation(MultipartFile file);
 

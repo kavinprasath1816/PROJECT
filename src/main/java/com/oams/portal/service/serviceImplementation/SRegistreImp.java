@@ -12,6 +12,7 @@ import com.oams.portal.service.SRegisterService;
 
 import org.apache.ibatis.builder.BuilderException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -26,7 +27,7 @@ public class SRegistreImp implements SRegisterService{
     FileStorageService fileStorageService;
 
     @Override
-    public String addStudent(StudentInput student) {
+    public void addStudent(StudentInput student) {
         try{
             Student s = new Student(student);
             Set<String> role = new HashSet<String>();
@@ -35,8 +36,8 @@ public class SRegistreImp implements SRegisterService{
             s.setImageFileName(fileStorageService.saveImg(student.getImage()));
             s.setTenFileName(fileStorageService.saveFile(student.getMarkSheetTen()));
             s.setTwelveFileName(fileStorageService.saveFile(student.getMarkSheet()));
+            s.setPassword(BCrypt.hashpw(student.getPassword(), BCrypt.gensalt()));
             repo.save(s);
-            return "done";
         }
         catch(Exception e){
             throw new BuilderException("Error in add student - "+e.getMessage());
