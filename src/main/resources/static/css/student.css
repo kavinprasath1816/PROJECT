@@ -19,7 +19,7 @@ html {
     width: 400px;
     padding: 40px;
     height: 600px;
-    
+    overflow: hidden;
     transform: translate(-50%, -50%);
     background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
     box-sizing: border-box;
@@ -27,11 +27,11 @@ html {
     border-radius: 10px;
 
   }
-  #form{visibility: visible;}
-  #dis-block{visibility: hidden;}
- 
-  .displaying{
-    z-index: 2;
+  #form{
+    visibility: visible;
+  }
+  #dis-block{
+    z-index: 50;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -45,7 +45,10 @@ html {
     box-sizing: border-box;
     box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
     border-radius: 10px;
+    visibility: hidden;
+    opacity: 5;
   }
+ 
   .preview{
     margin-left: 160px;
     width: 400px;
@@ -142,29 +145,33 @@ html {
     position: absolute;
     width: 22rem;
     height: 30rem;
-    transition: 0.5s;
+    background: inherit;
+    transition: 0.1s;
     
     }
   #page2{
-    left:450px;
+    left:30px;
     position: absolute;
     width: 22rem;
     height: 30rem;
     transition: 0.5s;
+    visibility: hidden;
     }
     #page3{
-      left:450px;
+      left:30px;
       position: absolute;
       width: 22rem;
       height: 30rem;
       transition: 0.5s;
+      visibility: hidden;
     }
     #page4{
-      left:450px;
+      left:30px;
       position: absolute;
       width: 22rem;
       height: 30rem;
       transition: 0.5s;
+      visibility: hidden;
       }
     #next1{
       margin-left: 120px;

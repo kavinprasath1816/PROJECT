@@ -40,7 +40,7 @@ public class SRegistreImp implements SRegisterService{
             repo.save(s);
         }
         catch(Exception e){
-            throw new BuilderException("Error in add student - "+e.getMessage());
+            throw new BuilderException("Error in add student - ");
         }
     }
 

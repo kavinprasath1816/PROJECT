@@ -12,663 +12,675 @@
 </head>
 <body>
   <div id="form">
-    <div  class="login-box">
-        <h2>Application Form</h2>
-        <form>
-          <div id="page1">
-            <div class="user-box">
-              <input id=name  type="text" name="name" required ="" autocomplete="off" oninput="validate(this.id,this.name)">
-              <label>Student Name</label>
-              <i class="fa fa-check"></i>
-              <i class="fas fa-times"></i><br>
-              <span></span>
-            </div>
-            <div class="user-box">
-              <input id=fathername  type="text" name="fatherName" required=""autocomplete="off" oninput="validate(this.id,this.name)">
-              <label>Father Name</label>
-              <i class="fa fa-check"></i>
-              <i class="fas fa-times"></i><br>
-              <span></span>
-            </div>
-            <div class="user-box">
-              <input id=email type="text" name="email" required="" autocomplete="off" oninput="validate(this.id,this.name)">
-              <label>E-mail</label>
-              <i class="fa fa-check"></i>
-              <i class="fas fa-times"></i><br>
-              <span></span>
-            </div>
-          
-            <div class="user-box">
-              <input id=phone type="text" name="phoneNumber" required="" autocomplete="off" oninput="validate(this.id,this.name)">
-              <label>Phone Number</label>
-              <i class="fa fa-check"></i>
-              <i class="fas fa-times"></i><br>
-              <span></span>
-            </div>
-            <div class="user-box">
-              <input id=address type="text" name="address" required="" autocomplete="off" oninput="validate(this.id,this.name)">
-              <label>Address</label>
-              <i class="fa fa-check"></i>
-              <i class="fas fa-times"></i><br>
-              <span></span>
-            </div>
-            <button id="next1" >NEXT</button>
-            </div>
-            <div id="page2">
-              <div class="user-rd">
-                <label>Gender</label><br>
-                  <input  id="rd1" name="gender" type="radio" value="Male">Male</input>
-                  <input id="rd2" name="gender" type="radio" value="Female">Female</input>
-                  <input id="rd3" name="gender" type="radio" value="Others">Others</input>
-                  <span></span>
-              </div>
-              <span class="radio"></span>
-              <div class="user-box">
-                <input id="date" type="date" name="dob" required="" >
-                <i style="visibility: hidden;"class="fa fa-check"></i>
-              <i style="visibility: hidden;" class="fas fa-times"></i><br>
-                <span></span>
-              </div>
-              <div class="user-box">
-                <input id="img" type="file"  accept="image/*" name="image">
-                <label>Photo</label>
-                <i style="visibility: hidden;"class="fa fa-check"></i>
-                <i style="visibility: hidden;" class="fas fa-times"></i><br>
-                <span></span>
-              </div>
-              <div class="user-box">
-                <input id="password" type="password" name="password" required="" autocomplete="off" oninput="validate(this.id,this.name)">
-                <label>Password</label>
-                <i class="fa fa-check"></i>
-              <i class="fas fa-times"></i><br>
-                <span></span>
-              </div>
-              <div class="user-box">
-                <input id="ConfirmPassword" type="password" name="confirmpassword" required="" autocomplete="off" oninput="validate(this.id,this.name)">
-                <label>Confirm  Password</label>
-                <i class="fa fa-check"></i>
-                <i class="fas fa-times"></i><br>
-                <span></span>
-              </div>
-              <button id="back1">BACK</button>
-              <button id="next2" >NEXT</button>
-            </div>
-            <div id="page3">
-              <div class="user-box">
-                <input id="board12" type="text" name="boardTwelve" required=""autocomplete="off" oninput="validate(this.id,this.name)" >
-                <label>12th Board Of Education</label>
-                <i class="fa fa-check"></i>
-                <i class="fas fa-times"></i><br>
-                <span></span>
-              </div>
-              
-              <div class="user-box">
-                <input id="school12" type="text" name="schoolTwelve" required="" autocomplete="off" oninput="validate(this.id,this.name)">
-                <label>12th School</label>
-                <i class="fa fa-check"></i>
-                <i class="fas fa-times"></i><br>
-                <span></span>
-              </div>
-              <div class="user-box">
-                <input id="group12" type="text" name="group" required="" autocomplete="off" oninput="validate(this.id,this.name)">
-                <label>12th Group</label>
-                <i class="fa fa-check"></i>
-                <i class="fas fa-times"></i><br>
-                <span></span>
-              </div>
-              <div class="user-box">
-                <input id="mark12" type="text" name="MarkTwelve" required="" autocomplete="off" oninput="validate(this.id,this.name)">
-                <label>12th Mark</label>
-                <i class="fa fa-check"></i>
-                <i class="fas fa-times"></i><br>
-                <span></span>
-              </div>
-              <div class="user-box">
-                <input id="twelvemarksheet" type="file" name="marksheet">
-                <label>12th Marsksheet</label>
-                <i class="fa fa-check"></i>
-                <i class="fas fa-times"></i><br>
-                <span></span>
-              </div>
-              <button id="back2">BACK</button>
-              <button id="next3">NEXT</button>
-              </div>
-              <div id="page4">
-                <div class="user-box">
-                  <input id="board10" type="text" name="boardTen" required="" autocomplete="off" oninput="validate(this.id,this.name)">
-                  <label>10th Board Of Education</label>
-                  <i class="fa fa-check"></i>
-                <i class="fas fa-times"></i><br>
-                <span></span>
-                </div>
-                
-                <div class="user-box">
-                  <input id="school10" type="text" name="schoolTen" required="" autocomplete="off" oninput="validate(this.id,this.name)">
-                  <label>10th School</label>
-                  <i class="fa fa-check"></i>
-                <i class="fas fa-times"></i><br>
-                <span></span>
-                </div>
-                <div class="user-box">
-                  <input id="mark10" type="text" name="markTen" required="" autocomplete="off" oninput="validate(this.id,this.name)">
-                  <label>10th Mark</label>
-                  <i class="fa fa-check"></i>
-                <i class="fas fa-times"></i><br>
-                <span></span>
-                </div>
-                <div class="user-box">
-                  <input id="tenthmarksheet" type="file" name="marksheetTen">
-                  <label>10th Marsksheet</label>
-                  <i class="fa fa-check"></i>
-                <i class="fas fa-times"></i><br>
-                <span></span>
-                </div>
-                <button id="back3" >BACK</button>
-                <button type="button" id="pre" value="preview">Preview</button>
-                </div>
-          </form>
+    <div  class="login-box" id="hi">
+      <h2>Application Form</h2>
+      <form action="/student/register" method="post" enctype="multipart/form-data">
+        <div id="page1">
+          <div class="user-box">
+            <input id=name  type="text" name="name" required ="" autocomplete="off" oninput="validate(this.id,this.name)">
+            <label>Student Name</label>
+            <i class="fa fa-check"></i>
+            <i class="fas fa-times"></i><br>
+            <span></span>
           </div>
-          <div id="dis-block" class="displaying">
-            <i id="chnge" onclick="interchange()" class="fas fa-arrow-left"></i>
-            <h2>Preview Form</h2>
-            <div class="photo">
-            <img id="dis-img" src="" class="rounded" width="104" height="136">
-            </div>
-            <div class="preview">
-              <div class="pre-box">
-              <label for="name">Student Name:</label>
-              <label id="dis1"></label><br>
-              </div>
-              <div class="pre-box">
-              <label for="name">Father Name:</label>
-              <label id="dis2"></label><br>
-              </div>
-              <div class="pre-box">
-              <label for="name">Email:</label>
-              <label id="dis3"></label><br>
-              </div>
-              <div class="pre-box">
-              <label for="name">Phone:</label>
-              <label id="dis4"></label><br>
-              </div>
-              <div class="pre-box">
-              <label for="name">Address:</label>
-              <label id="dis5"></label><br>
-              </div>
-              <div class="pre-box">
-              <label for="name">Gender:</label>
-              <label id="dis6"></label><br>
-              </div>
-              <div class="pre-box">
-              <label for="name">12th Board</label>
-              <label id="dis7"></label><br>
-              </div>
-              <div class="pre-box">
-              <label for="name">12th School:</label>
-              <label id="dis8"></label><br>
-              </div>
-              <div class="pre-box">
-              <label for="name">12th Group:</label>
-              <label id="dis9"></label><br>
-              </div>
-              <div class="pre-box">
-                <label for="name">12th Mark:</label>
-                <label id="dis10"></label><br>
-              </div>
-              <div class="pre-box">
-                <label for="name">10th Board:</label>
-                <label id="dis11"></label><br>
-              </div>
-              <div class="pre-box">
-                <label for="name">10th School:</label>
-                <label id="dis12"></label><br>
-                </div>
-                <div class="pre-box">
-                  <label for="name">10th Mark:</label>
-                  <label id="dis13"></label><br>
-                </div>
-                
-            </div>
+          <div class="user-box">
+            <input id=fathername  type="text" name="fatherName" required=""autocomplete="off" oninput="validate(this.id,this.name)">
+            <label>Father Name</label>
+            <i class="fa fa-check"></i>
+            <i class="fas fa-times"></i><br>
+            <span></span>
+          </div>
+          <div class="user-box">
+            <input id=email type="text" name="email" required="" autocomplete="off" oninput="validate(this.id,this.name)">
+            <label>E-mail</label>
+            <i class="fa fa-check"></i>
+            <i class="fas fa-times"></i><br>
+            <span></span>
+          </div>
+        
+          <div class="user-box">
+            <input id=phone type="text" name="phoneNumber" required="" autocomplete="off" oninput="validate(this.id,this.name)">
+            <label>Phone Number</label>
+            <i class="fa fa-check"></i>
+            <i class="fas fa-times"></i><br>
+            <span></span>
+          </div>
+          <div class="user-box">
+            <input id=address type="text" name="address" required="" autocomplete="off" oninput="validate(this.id,this.name)">
+            <label>Address</label>
+            <i class="fa fa-check"></i>
+            <i class="fas fa-times"></i><br>
+            <span></span>
+          </div>
+          <button id="next1" >NEXT</button>
+        </div>
+        <div id="page2">
+          <div class="user-rd">
+            <label>Gender</label><br>
+              <input  id="rd1" name="gender" type="radio" value="Male">Male</input>
+              <input id="rd2" name="gender" type="radio" value="Female">Female</input>
+              <input id="rd3" name="gender" type="radio" value="Others">Others</input>
+              <span></span>
+          </div>
+          <span class="radio"></span>
+          <div class="user-box">
+            <input id="date" type="date" name="dob" required="" >
+            <i style="visibility: hidden;"class="fa fa-check"></i>
+          <i style="visibility: hidden;" class="fas fa-times"></i><br>
+            <span></span>
+          </div>
+          <div class="user-box">
+            <input id="img" type="file"  accept="image/*" name="image">
+            <label>Photo</label>
+            <i style="visibility: hidden;"class="fa fa-check"></i>
+            <i style="visibility: hidden;" class="fas fa-times"></i><br>
+            <span></span>
+          </div>
+          <div class="user-box">
+            <input id="password" type="password" name="password" required="" autocomplete="off" oninput="validate(this.id,this.name)">
+            <label>Password</label>
+            <i class="fa fa-check"></i>
+          <i class="fas fa-times"></i><br>
+            <span></span>
+          </div>
+          <div class="user-box">
+            <input id="ConfirmPassword" type="password" name="confirmpassword" required="" autocomplete="off" oninput="validate(this.id,this.name)">
+            <label>Confirm  Password</label>
+            <i class="fa fa-check"></i>
+            <i class="fas fa-times"></i><br>
+            <span></span>
+          </div>
+          <button id="back1">BACK</button>
+          <button id="next2" >NEXT</button>
+        </div>
+        <div id="page3">
+          <div class="user-box">
+            <input id="board12" type="text" name="boardTwelve" required=""autocomplete="off" oninput="validate(this.id,this.name)" >
+            <label>12th Board Of Education</label>
+            <i class="fa fa-check"></i>
+            <i class="fas fa-times"></i><br>
+            <span></span>
+          </div>
+            
+          <div class="user-box">
+            <input id="school12" type="text" name="schoolTwelve" required="" autocomplete="off" oninput="validate(this.id,this.name)">
+            <label>12th School</label>
+            <i class="fa fa-check"></i>
+            <i class="fas fa-times"></i><br>
+            <span></span>
+          </div>
+          <div class="user-box">
+            <input id="group12" type="text" name="group" required="" autocomplete="off" oninput="validate(this.id,this.name)">
+            <label>12th Group</label>
+            <i class="fa fa-check"></i>
+            <i class="fas fa-times"></i><br>
+            <span></span>
+          </div>
+          <div class="user-box">
+            <input id="mark12" type="text" name="MarkTwelve" required="" autocomplete="off" oninput="validate(this.id,this.name)">
+            <label>12th Mark</label>
+            <i class="fa fa-check"></i>
+            <i class="fas fa-times"></i><br>
+            <span></span>
+          </div>
+          <div class="user-box">
+            <input id="twelvemarksheet" type="file" name="markSheet">
+            <label>12th Marsksheet</label>
+            <i class="fa fa-check"></i>
+            <i class="fas fa-times"></i><br>
+            <span></span>
+          </div>
+          <button id="back2">BACK</button>
+          <button id="next3">NEXT</button>
+        </div>
+        <div id="page4">
+          <div class="user-box">
+            <input id="board10" type="text" name="boardTen" required="" autocomplete="off" oninput="validate(this.id,this.name)">
+            <label>10th Board Of Education</label>
+            <i class="fa fa-check"></i>
+          <i class="fas fa-times"></i><br>
+          <span></span>
+          </div>
+          
+          <div class="user-box">
+            <input id="school10" type="text" name="schoolTen" required="" autocomplete="off" oninput="validate(this.id,this.name)">
+            <label>10th School</label>
+            <i class="fa fa-check"></i>
+          <i class="fas fa-times"></i><br>
+          <span></span>
+          </div>
+          <div class="user-box">
+            <input id="mark10" type="text" name="markTen" required="" autocomplete="off" oninput="validate(this.id,this.name)">
+            <label>10th Mark</label>
+            <i class="fa fa-check"></i>
+          <i class="fas fa-times"></i><br>
+          <span></span>
+          </div>
+          <div class="user-box">
+            <input id="tenthmarksheet" type="file" name="markSheetTen">
+            <label>10th Marsksheet</label>
+            <i class="fa fa-check"></i>
+          <i class="fas fa-times"></i><br>
+          <span></span>
+          </div>
+          <button id="back3" >BACK</button>
+          <button type="button" id="pre" value="preview">Preview</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="dis-block" class="displaying">
+    <i id="chnge" onclick="interchange()" class="fas fa-arrow-left"></i>
+    <h2>Preview Form</h2>
+    <div class="photo">
+      <img id="dis-img" src="" class="rounded" width="104" height="136">
+    </div>
+    <div class="preview">
+      <div class="pre-box">
+        <label for="name">Student Name:</label>
+        <label id="dis1"></label><br>
+      </div>
+      <div class="pre-box">
+        <label for="name">Father Name:</label>
+        <label id="dis2"></label><br>
+      </div>
+      <div class="pre-box">
+        <label for="name">Email:</label>
+        <label id="dis3"></label><br>
+      </div>
+      <div class="pre-box">
+        <label for="name">Phone:</label>
+        <label id="dis4"></label><br>
+      </div>
+      <div class="pre-box">
+        <label for="name">Address:</label>
+        <label id="dis5"></label><br>
+      </div>
+      <div class="pre-box">
+        <label for="name">Gender:</label>
+        <label id="dis6"></label><br>
+      </div>
+      <div class="pre-box">
+        <label for="name">12th Board</label>
+        <label id="dis7"></label><br>
+      </div>
+      <div class="pre-box">
+        <label for="name">12th School:</label>
+        <label id="dis8"></label><br>
+        </div>
+      <div class="pre-box">
+        <label for="name">12th Group:</label>
+        <label id="dis9"></label><br>
+      </div>
+      <div class="pre-box">
+        <label for="name">12th Mark:</label>
+        <label id="dis10"></label><br>
+      </div>
+      <div class="pre-box">
+        <label for="name">10th Board:</label>
+        <label id="dis11"></label><br>
+      </div>
+      <div class="pre-box">
+        <label for="name">10th School:</label>
+        <label id="dis12"></label><br>
+      </div>
+      <div class="pre-box">
+        <label for="name">10th Mark:</label>
+        <label id="dis13"></label><br>
+      </div>
+    </div>
+  </div>
+</body>
        
-      <script type="text/javascript">
-        var page1 = document.getElementById("page1");
-var page2 = document.getElementById("page2");
-var page3 = document.getElementById("page3");
-var page4 = document.getElementById("page4");
+<script type="text/javascript">
+  var page1 = document.getElementById("page1");
+  var page2 = document.getElementById("page2");
+  var page3 = document.getElementById("page3");
+  var page4 = document.getElementById("page4");
 
-var next1 = document.getElementById("next1");
-var next2 = document.getElementById("next2");
-var next3 = document.getElementById("next3");
-var back1 = document.getElementById("back1");
-var back2 = document.getElementById("back2");
-var back3 = document.getElementById("back3");
-var pre = document.getElementById("pre");
+  var next1 = document.getElementById("next1");
+  var next2 = document.getElementById("next2");
+  var next3 = document.getElementById("next3");
+  var back1 = document.getElementById("back1");
+  var back2 = document.getElementById("back2");
+  var back3 = document.getElementById("back3");
+  var pre = document.getElementById("pre");
 
-function preview(){
-  var a = document.getElementById("pre").value;
-  if(a=="preview"){
-    document.getElementById("form").style.visibility="hidden";
-    document.getElementById("dis-block").style.visibility="visible";
+  function preview(){
+    var a = document.getElementById("pre").value;
+    if(a=="preview"){
+      document.getElementById("form").style.visibility="hidden";
+      document.getElementById("page4").style.left = "-450px";
+      document.getElementById("dis-block").style.visibility="visible";
 
-  }
-    var img = document.getElementById("img");
-    document.getElementById("dis-img").src = URL.createObjectURL(img.files[0]);
-    var name = document.getElementById("name").value;
-    document.getElementById("dis1").innerHTML=name;
-    var fathername = document.getElementById("fathername").value;
-    document.getElementById("dis2").innerHTML=fathername;
-    var email = document.getElementById("email").value;
-    document.getElementById("dis3").innerHTML=email;
-    var phone = document.getElementById("phone").value;
-    document.getElementById("dis4").innerHTML=phone;
-    var address = document.getElementById("address").value;
-    document.getElementById("dis5").innerHTML=address;
+    }
+      var img = document.getElementById("img");
+      document.getElementById("dis-img").src = URL.createObjectURL(img.files[0]);
+      var name = document.getElementById("name").value;
+      document.getElementById("dis1").innerHTML=name;
+      var fathername = document.getElementById("fathername").value;
+      document.getElementById("dis2").innerHTML=fathername;
+      var email = document.getElementById("email").value;
+      document.getElementById("dis3").innerHTML=email;
+      var phone = document.getElementById("phone").value;
+      document.getElementById("dis4").innerHTML=phone;
+      var address = document.getElementById("address").value;
+      document.getElementById("dis5").innerHTML=address;
+      
+      var rd1 = document.getElementById('rd1')
+      var rd2 = document.getElementById('rd2')
+      var rd3 = document.getElementById('rd3')
+          if(rd1.checked == true)
+              document.getElementById("dis6").innerHTML=rd1.value;
+          else if(rd2.checked == true)
+              document.getElementById("dis6").innerHTML=rd2.value;
+          else if(rd3.checked == true)
+              document.getElementById("dis6").innerHTML=rd3.value;
+      
+      var board12 = document.getElementById("board12").value;
+      document.getElementById("dis7").innerHTML=board12;
+      var school12 = document.getElementById("school12").value;
+      document.getElementById("dis8").innerHTML=school12;
+      var group12= document.getElementById("group12").value;
+      document.getElementById("dis9").innerHTML=group12;
+      var mark12= document.getElementById("mark12").value;
+      document.getElementById("dis10").innerHTML=mark12;
     
+      var board10 = document.getElementById("board10").value;
+      document.getElementById("dis11").innerHTML=board10;
+      var school10 = document.getElementById("school10").value;
+      document.getElementById("dis12").innerHTML=school10;
+      var mark10= document.getElementById("mark10").value;
+      document.getElementById("dis13").innerHTML=mark10;
+      
+    }
+    
+    function interchange(){
+      document.getElementById("pre").type="submit";
+      document.getElementById("pre").value="submit";
+      document.getElementById("page4").style.left = "30px";
+      document.getElementById('pre').innerHTML="SUBMIT"
+      document.getElementById('dis-block').style.visibility="hidden";
+      document.getElementById("form").style.visibility="visible";
+    }
+
+
+  back1.onclick = function(){
+    page1.style.left = "30px";
+    page1.style.visibility = "visible";
+    page2.style.left = "450px";
+  }
+
+  back2.onclick = function(){
+    page2.style.left = "30px";
+    page2.style.visibility = "visible";
+    page3.style.left = "450px";
+  }
+  back3.onclick = function(){
+    page3.style.left = "30px";
+    page2.style.visibility = "visible";
+    page4.style.left = "450px";
+  }
+
+  function showErrMsg(index,msg){
+    const userbox = document.getElementsByClassName('user-box')[index]
+    userbox.classList.remove('success')
+    userbox.classList.add('error')
+    userbox.getElementsByTagName('span')[0].textContent = msg
+  }
+  function showSuccessMsg(index){
+    const userbox = document.getElementsByClassName('user-box')[index]
+    userbox.classList.remove('error')
+    userbox.classList.add('success')
+  } 
+
+  const userd = document.getElementsByClassName('user-rd')[0]
+
+  var Formvalues ={gender:"",dob:"",photo:"",twelvemarksheet:"",tenthmarksheet:""}
+  var Errvalues={gender:"**Select**",dob:"**Enter Your DOB**",photo:"**Upload Your Photo**",
+  twelvemarksheet:"**Enter Your MarkSheet**",tenthmarksheet:"**Enter Your MarkSheet**"}
+
+
+  next1.onclick = function(){
+    console.log(Errvalues,Formvalues)
+    if(Errvalues.name=="" && Errvalues.fatherName=="" && Errvalues.email=="" && Errvalues.phoneNumber=="" && Errvalues.address==""){
+      page1.style.left = "-450px";
+      page1.style.visibility = "hidden";
+      page2.style.left = "30px";
+      page2.style.visibility = "visible";
+    }
+  }
+
+  next2.onclick = function(){
+    console.log(Errvalues,Formvalues)
+    console.log(Errvalues)
+    console.log(Formvalues)
+    Formvalues.dob = document.getElementById('date').value
+    Formvalues.photo = document.getElementById('img').value
+
     var rd1 = document.getElementById('rd1')
     var rd2 = document.getElementById('rd2')
     var rd3 = document.getElementById('rd3')
-        if(rd1.checked == true)
-            document.getElementById("dis6").innerHTML=rd1.value;
-        else if(rd2.checked == true)
-            document.getElementById("dis6").innerHTML=rd2.value;
-        else if(rd3.checked == true)
-            document.getElementById("dis6").innerHTML=rd3.value;
-    
-    var board12 = document.getElementById("board12").value;
-    document.getElementById("dis7").innerHTML=board12;
-    var school12 = document.getElementById("school12").value;
-    document.getElementById("dis8").innerHTML=school12;
-    var group12= document.getElementById("group12").value;
-    document.getElementById("dis9").innerHTML=group12;
-    var mark12= document.getElementById("mark12").value;
-    document.getElementById("dis10").innerHTML=mark12;
-  
-    var board10 = document.getElementById("board10").value;
-    document.getElementById("dis11").innerHTML=board10;
-    var school10 = document.getElementById("school10").value;
-    document.getElementById("dis12").innerHTML=school10;
-    var mark10= document.getElementById("mark10").value;
-    document.getElementById("dis13").innerHTML=mark10;
-    
-  }
-  
-  function interchange(){
-    document.getElementById("pre").type="submit";
-    document.getElementById("pre").value="submit";
-        document.getElementById('pre').innerHTML="SUBMIT"
-          document.getElementById('dis-block').style.visibility="hidden";
-          document.getElementById("form").style.visibility="visible";
-  }
+    if(rd1.checked == true)
+        Formvalues['gender'] = rd1.value
+    else if(rd2.checked == true)
+        Formvalues['gender'] = rd2.value
+    else if(rd3.checked == true)
+        Formvalues['gender'] = rd2.value  
 
-
-back1.onclick = function(){
-  page1.style.left = "30px";
-  page2.style.left = "450px";
-}
-
-back2.onclick = function(){
-  page2.style.left = "30px";
-  page3.style.left = "450px";
-}
-back3.onclick = function(){
-  page3.style.left = "30px";
-  page4.style.left = "450px";
-}
-
-function showErrMsg(index,msg){
-  const userbox = document.getElementsByClassName('user-box')[index]
-  userbox.classList.remove('success')
-  userbox.classList.add('error')
-  userbox.getElementsByTagName('span')[0].textContent = msg
-}
-function showSuccessMsg(index){
-  const userbox = document.getElementsByClassName('user-box')[index]
-  userbox.classList.remove('error')
-  userbox.classList.add('success')
-} 
-
-const userd = document.getElementsByClassName('user-rd')[0]
-
-var Formvalues ={gender:"",dob:"",photo:"",twelvemarksheet:"",tenthmarksheet:""}
-var Errvalues={gender:"**Select**",dob:"**Enter Your DOB**",photo:"**Upload Your Photo**",
-twelvemarksheet:"**Enter Your MarkSheet**",tenthmarksheet:"**Enter Your MarkSheet**"}
-
-
-next1.onclick = function(){
-  console.log(Errvalues,Formvalues)
-  if(Errvalues.name=="" && Errvalues.fatherName=="" && Errvalues.email=="" && Errvalues.phoneNumber=="" && Errvalues.address==""){
-    page1.style.left = "-450px";
-    page2.style.left = "30px";
-  }
-}
-
-next2.onclick = function(){
-  console.log(Errvalues,Formvalues)
-  console.log(Errvalues)
-  console.log(Formvalues)
-  Formvalues.dob = document.getElementById('date').value
-  Formvalues.photo = document.getElementById('img').value
-
-  var rd1 = document.getElementById('rd1')
-  var rd2 = document.getElementById('rd2')
-  var rd3 = document.getElementById('rd3')
-  if(rd1.checked == true)
-      Formvalues['gender'] = rd1.value
-  else if(rd2.checked == true)
-      Formvalues['gender'] = rd2.value
-  else if(rd3.checked == true)
-      Formvalues['gender'] = rd2.value  
-
-  if(Formvalues['gender']==""){  
-    userd.getElementsByTagName('span')[0].textContent = Errvalues.gender
-  }
-  else{
-    Errvalues['gender']=""
-    userd.getElementsByTagName('span')[0].textContent = ""
-  }
-  if(Formvalues['dob']==""){
-      showErrMsg(5,Errvalues['dob'])
-  }
-  else{
-    Errvalues["dob"] = ""
-    showSuccessMsg(5)
-  }
-  if(Formvalues['photo']==""){
-    console.log(Errvalues['photo'])
-    showErrMsg(6,Errvalues['photo'])
-}
-  else{
-    Errvalues["photo"] = ""
-    console.log(Errvalues['photo'])
-    showSuccessMsg(6)
-}
-  if(Errvalues.gender=="" && Errvalues.dob=="" && Errvalues.photo=="" && Errvalues.password=="" && Errvalues.confirmpassword==""){
-    page2.style.left = "-450px";
-    page3.style.left = "30px";
-  }
-}
-
-next3.onclick = function(){
-  console.log(Errvalues,Formvalues)
-  Formvalues.twelvemarksheet = document.getElementById('twelvemarksheet').value
-
-  if(Formvalues['twelvemarksheet']==""){  
-    showErrMsg(13,Errvalues['twelvemarksheet'])
-  }
-  else{
-    Errvalues['twelvemarksheet']=""
-    showSuccessMsg(13)
-  }
-  if(Errvalues.boardTwelve=="" && Errvalues.schoolTwelve=="" && Errvalues.group=="" && Errvalues.MarkTwelve=="" && Errvalues.twelvemarksheet==""){
-    page3.style.left = "-450px";
-    page4.style.left = "30px";
-  }
-}
-
-pre.onclick = function(){
-  Formvalues.tenthmarksheet = document.getElementById('tenthmarksheet').value
-
-  if(Formvalues['tenthmarksheet']==""){  
-    showErrMsg(17,Errvalues['tenthmarksheet'])
-  }
-  else{
-    Errvalues['tenthmarksheet']=""
-    showSuccessMsg(17)
-  }
-  if(Errvalues.boardTen=="" && Errvalues.schoolTen=="" && Errvalues.markTen=="" && Errvalues.tenthmarksheet==""){
-    preview()
-  }
-}
-
-
-function validate(id,name){ 
-  var s = document.getElementById(id).value.trim()
-  if(name=="name"){
-    const regexp = /^[a-zA-z\s]{3,25}$/
-    if(s ==""){
-      Errvalues[name] = "**Enter Your Name**"
-      showErrMsg(0,Errvalues[name])
-    }
-    else if(s.length > 25){
-      Errvalues[name] = "**Name Exceeds 25 Characters**"
-      showErrMsg(0,Errvalues[name])                                                
-    }
-    else if(regexp.test(s)){
-      Errvalues[name] = ""
-      showSuccessMsg(0)
+    if(Formvalues['gender']==""){  
+      userd.getElementsByTagName('span')[0].textContent = Errvalues.gender
     }
     else{
-      Errvalues[name] = "**Invalid Student Name**"
-      showErrMsg(0,Errvalues[name])
+      Errvalues['gender']=""
+      userd.getElementsByTagName('span')[0].textContent = ""
     }
-  }
-  if(name=="fatherName"){
-    const regexp = /^[a-zA-z\s]{3,25}$/
-    if(s ==""){
-      Errvalues[name] = "**Enter Your Father Name**"
-      showErrMsg(1,Errvalues[name])
-    }
-    else if(s.length > 25){
-      Errvalues[name] = "**Name Exceeds 25 Characters**"
-      showErrMsg(1,Errvalues[name])                                                
-    }
-    else if(regexp.test(s)){
-      Errvalues[name] = ""
-      showSuccessMsg(1)
+    if(Formvalues['dob']==""){
+        showErrMsg(5,Errvalues['dob'])
     }
     else{
-      Errvalues[name] = "**Invalid Father Name**"
-      showErrMsg(1,Errvalues[name])
+      Errvalues["dob"] = ""
+      showSuccessMsg(5)
+    }
+    if(Formvalues['photo']==""){
+      console.log(Errvalues['photo'])
+      showErrMsg(6,Errvalues['photo'])
+  }
+    else{
+      Errvalues["photo"] = ""
+      console.log(Errvalues['photo'])
+      showSuccessMsg(6)
+  }
+    if(Errvalues.gender=="" && Errvalues.dob=="" && Errvalues.photo=="" && Errvalues.password=="" && Errvalues.confirmpassword==""){
+      page2.style.left = "-450px";
+      page2.style.visibility = "hidden";
+      page3.style.left = "30px";
+      page3.style.visibility = "visible";
     }
   }
-  if(name=="email"){
-    const regxemail =/(^[a-zA-Z0-9\.-]+)@gmail.([a-z]{2,3})(.[a-z]{2,2})?$/
-    if(s ==""){
-        Errvalues[name] = "**Enter Your E-mail**"
-        showErrMsg(2,Errvalues[name])
+
+  next3.onclick = function(){
+    console.log(Errvalues,Formvalues)
+    Formvalues.twelvemarksheet = document.getElementById('twelvemarksheet').value
+
+    if(Formvalues['twelvemarksheet']==""){  
+      showErrMsg(13,Errvalues['twelvemarksheet'])
     }
-    else if(regxemail.test(s)){
+    else{
+      Errvalues['twelvemarksheet']=""
+      showSuccessMsg(13)
+    }
+    if(Errvalues.boardTwelve=="" && Errvalues.schoolTwelve=="" && Errvalues.group=="" && Errvalues.MarkTwelve=="" && Errvalues.twelvemarksheet==""){
+      page3.style.left = "-450px";
+      page3.style.visibility = "hidden";
+      page4.style.left = "30px";
+      page4.style.visibility = "visible";
+    }
+  }
+
+  pre.onclick = function(){
+    Formvalues.tenthmarksheet = document.getElementById('tenthmarksheet').value
+
+    if(Formvalues['tenthmarksheet']==""){  
+      showErrMsg(17,Errvalues['tenthmarksheet'])
+    }
+    else{
+      Errvalues['tenthmarksheet']=""
+      showSuccessMsg(17)
+    }
+    if(Errvalues.boardTen=="" && Errvalues.schoolTen=="" && Errvalues.markTen=="" && Errvalues.tenthmarksheet==""){
+      preview()
+    }
+  }
+
+
+  function validate(id,name){ 
+    var s = document.getElementById(id).value.trim()
+    if(name=="name"){
+      const regexp = /^[a-zA-z\s]{3,25}$/
+      if(s ==""){
+        Errvalues[name] = "**Enter Your Name**"
+        showErrMsg(0,Errvalues[name])
+      }
+      else if(s.length > 25){
+        Errvalues[name] = "**Name Exceeds 25 Characters**"
+        showErrMsg(0,Errvalues[name])                                                
+      }
+      else if(regexp.test(s)){
         Errvalues[name] = ""
-        showSuccessMsg(2)
-    }
-    else{
-        Errvalues[name] = "**Invalid E-mail**"
-        showErrMsg(2,Errvalues[name])
-    }
-  }
-  if(name=="phoneNumber"){
-    const regxphone =/^[7-9]\d{9}$/
-      if(s ==""){
-          Errvalues[name] = "**Enter Your Phone Number**"
-          showErrMsg(3,Errvalues[name])
-      }
-      else if(regxphone.test(s)){
-          Errvalues[name] = ""
-          showSuccessMsg(3)
+        showSuccessMsg(0)
       }
       else{
-          Errvalues[name] = "**Invalid Phone Number**"
-          showErrMsg(3,Errvalues[name])
+        Errvalues[name] = "**Invalid Student Name**"
+        showErrMsg(0,Errvalues[name])
       }
-  }
-  if(name=="address"){
-    const regexp2 = /[\d\w\s,-_]{8,50}$/
+    }
+    if(name=="fatherName"){
+      const regexp = /^[a-zA-z\s]{3,25}$/
       if(s ==""){
-          Errvalues[name] = "**Enter Your Address**"
-          showErrMsg(4,Errvalues[name])
+        Errvalues[name] = "**Enter Your Father Name**"
+        showErrMsg(1,Errvalues[name])
       }
-      else if(regexp2.test(s)){
-          Errvalues[name] = ""
-          showSuccessMsg(4)
+      else if(s.length > 25){
+        Errvalues[name] = "**Name Exceeds 25 Characters**"
+        showErrMsg(1,Errvalues[name])                                                
+      }
+      else if(regexp.test(s)){
+        Errvalues[name] = ""
+        showSuccessMsg(1)
       }
       else{
-          Errvalues[name] = "**Invalid Address**"
-          showErrMsg(4,Errvalues[name])
+        Errvalues[name] = "**Invalid Father Name**"
+        showErrMsg(1,Errvalues[name])
       }
-  }
-  if(name=="password"){
-    const regxpass = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,50}$/
-    if(s==""){
-        Errvalues[name]="**Enter Your Password**"
-        showErrMsg(7,Errvalues[name])
-    }                                                                               
-    else if(regxpass.test(s)){
+    }
+    if(name=="email"){
+      const regxemail =/(^[a-zA-Z0-9\.-]+)@gmail.([a-z]{2,3})(.[a-z]{2,2})?$/
+      if(s ==""){
+          Errvalues[name] = "**Enter Your E-mail**"
+          showErrMsg(2,Errvalues[name])
+      }
+      else if(regxemail.test(s)){
+          Errvalues[name] = ""
+          showSuccessMsg(2)
+      }
+      else{
+          Errvalues[name] = "**Invalid E-mail**"
+          showErrMsg(2,Errvalues[name])
+      }
+    }
+    if(name=="phoneNumber"){
+      const regxphone =/^[7-9]\d{9}$/
+        if(s ==""){
+            Errvalues[name] = "**Enter Your Phone Number**"
+            showErrMsg(3,Errvalues[name])
+        }
+        else if(regxphone.test(s)){
+            Errvalues[name] = ""
+            showSuccessMsg(3)
+        }
+        else{
+            Errvalues[name] = "**Invalid Phone Number**"
+            showErrMsg(3,Errvalues[name])
+        }
+    }
+    if(name=="address"){
+      const regexp2 = /[\d\w\s,-_]{8,50}$/
+        if(s ==""){
+            Errvalues[name] = "**Enter Your Address**"
+            showErrMsg(4,Errvalues[name])
+        }
+        else if(regexp2.test(s)){
+            Errvalues[name] = ""
+            showSuccessMsg(4)
+        }
+        else{
+            Errvalues[name] = "**Invalid Address**"
+            showErrMsg(4,Errvalues[name])
+        }
+    }
+    if(name=="password"){
+      const regxpass = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,50}$/
+      if(s==""){
+          Errvalues[name]="**Enter Your Password**"
+          showErrMsg(7,Errvalues[name])
+      }                                                                               
+      else if(regxpass.test(s)){
+          Errvalues[name]=""
+          Formvalues[name]=document.getElementById('password').value
+          showSuccessMsg(7)
+          console.log(Formvalues)
+      }
+      else if(s.length < 8){
+          Errvalues[name]="**Must be 8 characters**"
+          showErrMsg(7,Errvalues[name])
+      }
+      else{
+        Errvalues[name]="**Must be 8 characters including 1 uppercase letter, 1 special character, alphanumeric characters**"
+          showErrMsg(7,Errvalues[name])
+      }
+    }
+    if(name == "confirmpassword"){
+      if(s == ""){
+        Errvalues[name]="**Enter Your Confirm Password**"
+        showErrMsg(8,Errvalues[name])
+      }
+      else if(Formvalues['password']==s){
         Errvalues[name]=""
-        Formvalues[name]=document.getElementById('password').value
-        showSuccessMsg(7)
-        console.log(Formvalues)
-    }
-    else if(s.length < 8){
-        Errvalues[name]="**Must be 8 characters**"
-        showErrMsg(7,Errvalues[name])
-    }
-    else{
-      Errvalues[name]="**Must be 8 characters including 1 uppercase letter, 1 special character, alphanumeric characters**"
-        showErrMsg(7,Errvalues[name])
-    }
-  }
-  if(name == "confirmpassword"){
-    if(s == ""){
-      Errvalues[name]="**Enter Your Confirm Password**"
-      showErrMsg(8,Errvalues[name])
-    }
-    else if(Formvalues['password']==s){
-      Errvalues[name]=""
-      showSuccessMsg(8)
-    }
-    else{
-      Errvalues[name]="**Password Mismatched**"
-      showErrMsg(8,Errvalues[name])
-    }
-  }
-  if(name=="boardTwelve"){
-    const regexp2 = /^[a-zA-z\s]{3,20}$/
-      if(s ==""){
-        Errvalues[name] = "**Enter Your Board**"
-        showErrMsg(9,Errvalues[name])
-      }
-      else if(regexp2.test(s)){
-        Errvalues[name] = ""
-        showSuccessMsg(9)
+        showSuccessMsg(8)
       }
       else{
-        Errvalues[name] = "**Invalid Board**"
-        showErrMsg(9,Errvalues[name])
+        Errvalues[name]="**Password Mismatched**"
+        showErrMsg(8,Errvalues[name])
       }
-  }
-  if(name=="schoolTwelve"){
-    const regexp = /^[a-zA-z\s]{3,50}$/
-      if(s ==""){
-        Errvalues[name] = "**Enter Your School**"
-        showErrMsg(10,Errvalues[name])
-      }
-      else if(s.length > 50){
-        Errvalues[name] = "**Name Exceeds 50 Characters**"
-        showErrMsg(10,Errvalues[name])                                                
-      }
-      else if(regexp.test(s)){
-        Errvalues[name] = ""
-        showSuccessMsg(10)
-      }
-      else{
-        Errvalues[name] = "**Invalid School**"
-        showErrMsg(10,Errvalues[name])
-      }
-  }
-  if(name=="group"){
-      const regexp = /^[a-zA-z\s]{3,30}$/
-      if(s ==""){
-          Errvalues[name] = "**Enter Your Group**"
-          showErrMsg(11,Errvalues[name])
-      }
-      else if(s.length > 30){
-          Errvalues[name] = "**Name Exceeds 30 Characters**"
-          showErrMsg(11,Errvalues[name])                                                
-      }
-      else if(regexp.test(s)){
-          Errvalues[name] = ""
-          showSuccessMsg(11)
-      }
-      else{
-          Errvalues[name] = "**Invalid Group**"
-          showErrMsg(11,Errvalues[name])
-      }
-  }
-  if(name=="MarkTwelve"){
-    const regx = /^[0-9\.]{2,5}$/
-      if(s ==""){
-          Errvalues[name] = "**Enter Your Mark**"
-          showErrMsg(12,Errvalues[name])
-      }
-      else if(s.length > 5){
-          Errvalues[name] = "**Number Exceeds 5 Characters**"
-          showErrMsg(12,Errvalues[name])                                                
-      }
-      else if(regx.test(s)){
-          Errvalues[name] = ""
-          showSuccessMsg(12)
-      }
-      else{
-          Errvalues[name] = "**Invalid Mark**"
-          showErrMsg(12,Errvalues[name])
-      }
-  }
-  if(name=="boardTen"){
-    const regexp2 = /^[a-zA-z\s]{3,20}$/
-      if(s ==""){
+    }
+    if(name=="boardTwelve"){
+      const regexp2 = /^[a-zA-z\s]{3,20}$/
+        if(s ==""){
           Errvalues[name] = "**Enter Your Board**"
-          showErrMsg(14,Errvalues[name])
-      }
-      else if(regexp2.test(s)){
+          showErrMsg(9,Errvalues[name])
+        }
+        else if(regexp2.test(s)){
           Errvalues[name] = ""
-          showSuccessMsg(14)
-      }
-      else{
+          showSuccessMsg(9)
+        }
+        else{
           Errvalues[name] = "**Invalid Board**"
-          showErrMsg(14,Errvalues[name])
-      }
-  }
-  if(name=="schoolTen"){
-    const regexp = /^[a-zA-z\s]{3,50}$/
-      if(s ==""){
+          showErrMsg(9,Errvalues[name])
+        }
+    }
+    if(name=="schoolTwelve"){
+      const regexp = /^[a-zA-z\s]{3,50}$/
+        if(s ==""){
           Errvalues[name] = "**Enter Your School**"
-          showErrMsg(15,Errvalues[name])
-      }
-      else if(s.length > 50){
+          showErrMsg(10,Errvalues[name])
+        }
+        else if(s.length > 50){
           Errvalues[name] = "**Name Exceeds 50 Characters**"
-          showErrMsg(15,Errvalues[name])                                                
-      }
-      else if(regexp.test(s)){
+          showErrMsg(10,Errvalues[name])                                                
+        }
+        else if(regexp.test(s)){
           Errvalues[name] = ""
-          showSuccessMsg(15)
-      }
-      else{
+          showSuccessMsg(10)
+        }
+        else{
           Errvalues[name] = "**Invalid School**"
-          showErrMsg(15,Errvalues[name])
-      }
+          showErrMsg(10,Errvalues[name])
+        }
+    }
+    if(name=="group"){
+        const regexp = /^[a-zA-z\s]{3,30}$/
+        if(s ==""){
+            Errvalues[name] = "**Enter Your Group**"
+            showErrMsg(11,Errvalues[name])
+        }
+        else if(s.length > 30){
+            Errvalues[name] = "**Name Exceeds 30 Characters**"
+            showErrMsg(11,Errvalues[name])                                                
+        }
+        else if(regexp.test(s)){
+            Errvalues[name] = ""
+            showSuccessMsg(11)
+        }
+        else{
+            Errvalues[name] = "**Invalid Group**"
+            showErrMsg(11,Errvalues[name])
+        }
+    }
+    if(name=="MarkTwelve"){
+      const regx = /^[0-9\.]{2,5}$/
+        if(s ==""){
+            Errvalues[name] = "**Enter Your Mark**"
+            showErrMsg(12,Errvalues[name])
+        }
+        else if(s.length > 5){
+            Errvalues[name] = "**Number Exceeds 5 Characters**"
+            showErrMsg(12,Errvalues[name])                                                
+        }
+        else if(regx.test(s)){
+            Errvalues[name] = ""
+            showSuccessMsg(12)
+        }
+        else{
+            Errvalues[name] = "**Invalid Mark**"
+            showErrMsg(12,Errvalues[name])
+        }
+    }
+    if(name=="boardTen"){
+      const regexp2 = /^[a-zA-z\s]{3,20}$/
+        if(s ==""){
+            Errvalues[name] = "**Enter Your Board**"
+            showErrMsg(14,Errvalues[name])
+        }
+        else if(regexp2.test(s)){
+            Errvalues[name] = ""
+            showSuccessMsg(14)
+        }
+        else{
+            Errvalues[name] = "**Invalid Board**"
+            showErrMsg(14,Errvalues[name])
+        }
+    }
+    if(name=="schoolTen"){
+      const regexp = /^[a-zA-z\s]{3,50}$/
+        if(s ==""){
+            Errvalues[name] = "**Enter Your School**"
+            showErrMsg(15,Errvalues[name])
+        }
+        else if(s.length > 50){
+            Errvalues[name] = "**Name Exceeds 50 Characters**"
+            showErrMsg(15,Errvalues[name])                                                
+        }
+        else if(regexp.test(s)){
+            Errvalues[name] = ""
+            showSuccessMsg(15)
+        }
+        else{
+            Errvalues[name] = "**Invalid School**"
+            showErrMsg(15,Errvalues[name])
+        }
+    }
+    if(name=="markTen"){
+      const regx = /^[0-9\.]{2,5}$/
+        if(s ==""){
+            Errvalues[name] = "**Enter Your Mark**"
+            showErrMsg(16,Errvalues[name])
+        }
+        else if(s.length > 5){
+            Errvalues[name] = "**Number Exceeds 5 Characters**"
+            showErrMsg(16,Errvalues[name])                                                
+        }
+        else if(regx.test(s)){
+            Errvalues[name] = ""
+            showSuccessMsg(16)
+        }
+        else{
+            Errvalues[name] = "**Invalid Mark**"
+            showErrMsg(16,Errvalues[name])
+        }
+    }        
   }
-  if(name=="markTen"){
-    const regx = /^[0-9\.]{2,5}$/
-      if(s ==""){
-          Errvalues[name] = "**Enter Your Mark**"
-          showErrMsg(16,Errvalues[name])
-      }
-      else if(s.length > 5){
-          Errvalues[name] = "**Number Exceeds 5 Characters**"
-          showErrMsg(16,Errvalues[name])                                                
-      }
-      else if(regx.test(s)){
-          Errvalues[name] = ""
-          showSuccessMsg(16)
-      }
-      else{
-          Errvalues[name] = "**Invalid Mark**"
-          showErrMsg(16,Errvalues[name])
-      }
-  }        
-}
 
-      </script>
-</body>
+</script>
 
 </html>

@@ -1,6 +1,7 @@
 package com.oams.portal.controller;
 
 
+import com.oams.portal.exceptions.BasicExceptions;
 import com.oams.portal.models.StudentInput;
 
 import com.oams.portal.service.SRegisterService;
@@ -26,8 +27,14 @@ public class StudentController {
 
     @RequestMapping(method = RequestMethod.POST,value = "/student/register")
     public String register(StudentInput student){
-        service.addStudent(student);
-        return "login form";
+        try{
+            service.addStudent(student);
+        }
+        catch(Exception e)
+        {
+            throw new BasicExceptions("Error in register");
+        }
+        return "redirect:login";
     }
 
     
