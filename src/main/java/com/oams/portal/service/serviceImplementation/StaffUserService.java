@@ -1,9 +1,8 @@
 package com.oams.portal.service.serviceImplementation;
 
-import com.oams.portal.dao.StudentRepo;
-import com.oams.portal.models.Student;
+import com.oams.portal.dao.StaffRepo;
+import com.oams.portal.models.StaffModel;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -14,20 +13,20 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class StudentUserService implements UserDetailsService {
+public class StaffUserService implements UserDetailsService {
 
     @Autowired
-    StudentRepo repo;
+    StaffRepo repo;
 
     @Override
     public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
         System.out.println(name);
-        Optional<Student> student = repo.loadByName(name);
-        System.out.print(student);
-        student.orElseThrow(() -> new UsernameNotFoundException("User " + name.toUpperCase() + "Not found"));
-        Student s = student.get();
+        Optional<StaffModel> staff = repo.loadByName(name);
+        System.out.print(staff);
+        staff.orElseThrow(() -> new UsernameNotFoundException("User " + name.toUpperCase() + "Not found"));
+        StaffModel s = staff.get();
         return new org.springframework.security.core.userdetails.User(
-                s.getName(),
+                s.getStaffName(),
                 s.getPassword(),
                 s.getRole().stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList()));
     }

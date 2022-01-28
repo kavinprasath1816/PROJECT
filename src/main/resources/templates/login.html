@@ -21,7 +21,7 @@
         </div>
         <div class="container-md">
             <div class="card-3-wrapper">
-                <form class="form" autocomplete="off" name="f" th:action="@{/login}" method="post">
+                <form class="form" autocomplete="off" name="f" th:action="@{/student}" method="post">
                     <div class="center">
                         <div class="display1">
                             <a>Student Login</a>
@@ -43,14 +43,14 @@
         </div>
         <div class="container-back">
             <div class="card-3d-wrapper">
-                <form class="form" autocomplete="off" action="/staff/login">
+                <form class="form" autocomplete="off" name="f" th:action="@{/staff}" method="post">
                     <div class="center">
                         <div class="display1">
                             <a>Staff Login</a>
                         </div>
                         <div class="form__input">
-                            <input  type="text" name="name" placeholder=" " autocomplete="off" required>
-                            <label for="name">Name</label><br>
+                            <input  type="text" name="username" placeholder=" " autocomplete="off" required>
+                            <label for="username">Name</label><br>
                         </div><br>
                         <div class="form__input">
                             <input type="password" name="password" placeholder=" " autocomplete="off" requires>

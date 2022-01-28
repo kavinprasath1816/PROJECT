@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
 <body>
 <div class="login-box">
     <h2>Staff Register</h2>
-    <form onsubmit="return checking()" action="staff/register" method="post" enctype="multipart/form-data" >
+    <form onsubmit="return checking()" th:action="@{/staff/register}" method="post" enctype="multipart/form-data" >
         <div id="page1">
             <div class="user-box">
                 <input id=name  type="text" name="staffName" required ="" autocomplete="off" oninput="staffvalidate(this.id,this.name)">

@@ -17,7 +17,6 @@ public class StaffModel {
     public StaffModel(StaffInput staffInput) {
         this.staffName = staffInput.getStaffName();
         this.staffEmail = staffInput.getStaffEmail();
-        this.password = staffInput.getPassword();
     }
 
     @Id
@@ -27,7 +26,7 @@ public class StaffModel {
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "ROLE",joinColumns = @JoinColumn(name = "staff_id"))
     private Set<String> role;
-    @Column(name = "staff_name")
+    @Column(name = "NAME")
     private String staffName;
     @Column(name = "staff_email")
     private String staffEmail;

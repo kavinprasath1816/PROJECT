@@ -9,22 +9,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/api")
+@RequestMapping("/staff")
 public class StaffController {
 
     @Autowired
     StaffService staffService;
 
-    @RequestMapping("staff")
+    @RequestMapping("/form")
     public String staff(){
         return "Staff Register";
     }
 
-    @RequestMapping(method = RequestMethod.POST , value = "/staff/register")
+    @RequestMapping(method = RequestMethod.POST , value = "/register")
     public String staffRegister(StaffInput staffInput){
         try {
             staffService.addStaff(staffInput);
-            return "login form";
+            System.out.println("hitting");
+            return "login";
         }
         catch (Exception e)
         {

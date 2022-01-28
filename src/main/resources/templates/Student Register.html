@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +14,7 @@
   <div id="form">
     <div  class="login-box" id="hi">
       <h2>Application Form</h2>
-      <form action="student/register" method="post" enctype="multipart/form-data">
+      <form th:action="@{/student/register}" method="post" enctype="multipart/form-data">
         <div id="page1">
           <div class="user-box">
             <input id=name  type="text" name="name" required ="" autocomplete="off" oninput="validate(this.id,this.name)">

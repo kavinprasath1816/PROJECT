@@ -8,28 +8,24 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class LoginController {
 
-    @Autowired
-    loginService lService;
-
-    @RequestMapping(method = RequestMethod.GET,value = {"/login"})
-    public String login(){
-        return "login";
+    @RequestMapping(value="/student")
+    public ModelAndView student(){
+        return new ModelAndView("login");
     }
 
-    @RequestMapping(method =RequestMethod.POST,value="/student/login")
-    @ResponseBody
-    public String studentLogin(LoginModel lModel){
-        return lService.studentLogin(lModel);
+    @RequestMapping(value="/student/login")
+    public ModelAndView studentLogin(){
+        return new ModelAndView("login");
     }
 
-    @RequestMapping("staff/login")
-    @ResponseBody
-    public String staffLogin(LoginModel model){
-        return lService.staffLogin(model);
+    @RequestMapping(value="/staff")
+    public ModelAndView staffLogin(){
+        return new ModelAndView("login");
     }
     
 }
