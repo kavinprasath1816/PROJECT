@@ -20,7 +20,7 @@ public class LoginController {
 
     @RequestMapping(value="/student/login")
     public ModelAndView studentLogin(){
-        return new ModelAndView("login");
+        return new ModelAndView("heloo");
     }
 
     @RequestMapping(value="/staff")
