@@ -15,9 +15,9 @@ public class LoginController {
     @Autowired
     loginService lService;
 
-    @RequestMapping(value = {"student/login"})
+    @RequestMapping(method = RequestMethod.GET,value = {"/login"})
     public String login(){
-        return "login form";
+        return "login";
     }
 
     @RequestMapping(method =RequestMethod.POST,value="/student/login")

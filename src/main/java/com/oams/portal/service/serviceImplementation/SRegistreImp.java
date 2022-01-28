@@ -1,21 +1,20 @@
 package com.oams.portal.service.serviceImplementation;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import com.oams.portal.dao.StudentRepo;
 import com.oams.portal.exceptions.BasicExceptions;
 import com.oams.portal.models.Student;
 import com.oams.portal.models.StudentInput;
 import com.oams.portal.service.FileStorageService;
 import com.oams.portal.service.SRegisterService;
-
 import org.apache.ibatis.builder.BuilderException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Service
 public class SRegistreImp implements SRegisterService{
@@ -30,7 +29,7 @@ public class SRegistreImp implements SRegisterService{
     public void addStudent(StudentInput student) {
         try{
             Student s = new Student(student);
-            Set<String> role = new HashSet<String>();
+            Set<String> role = new HashSet<>();
             role.add("student");
             s.setRole(role);
             s.setImageFileName(fileStorageService.saveImg(student.getImage()));
@@ -60,5 +59,5 @@ public class SRegistreImp implements SRegisterService{
     }
 
 
-    
+
 }

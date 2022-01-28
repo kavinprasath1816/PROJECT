@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:tiles="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,16 +16,19 @@
             <label class="hy">Student</label>
             <label class="hy2">Staff</label>
         </div>
+        <div th:if="${param.error}" class="alert alert-error">
+            Invalid username and password.
+        </div>
         <div class="container-md">
             <div class="card-3-wrapper">
-                <form class="form" autocomplete="off" action="/student/login" method="post">
+                <form class="form" autocomplete="off" name="f" th:action="@{/login}" method="post">
                     <div class="center">
                         <div class="display1">
                             <a>Student Login</a>
                         </div>
                         <div class="form__input">
-                            <input  type="text" name="name" placeholder=" " autocomplete="off" required>
-                            <label for="name">Name</label><br>
+                            <input  type="text" name="username" placeholder=" " autocomplete="off" required>
+                            <label for="username">Name</label><br>
                         </div><br>
                         <div class="form__input">
                             <input type="password" name="password" placeholder=" " autocomplete="off" required>

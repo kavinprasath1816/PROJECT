@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
+@RequestMapping("/api")
 public class StudentController {
 
     @Autowired
