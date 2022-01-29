@@ -24,8 +24,7 @@ public class StaffController {
     public String staffRegister(StaffInput staffInput){
         try {
             staffService.addStaff(staffInput);
-            System.out.println("hitting");
-            return "login";
+            return "redirect:login";
         }
         catch (Exception e)
         {

@@ -11,6 +11,6 @@ import java.util.Optional;
 @Repository
 public interface StudentRepo extends JpaRepository<Student,Integer>{
 
-    @Query(value = "SELECT * FROM STUDENTS WHERE NAME = ?1",nativeQuery = true)
-    Optional<Student> loadByName(String name);
+    @Query(value = "SELECT * FROM STUDENTS WHERE EMAIL = ?1",nativeQuery = true)
+    Optional<Student> loadByEmail(String name);
 }

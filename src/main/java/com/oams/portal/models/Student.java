@@ -45,6 +45,7 @@ public class Student {
     private String name;
     private String fatherName;
     @Email
+    @Column(name = "EMAIL")
     private String email;
     private String phoneNumber;
     private String address;

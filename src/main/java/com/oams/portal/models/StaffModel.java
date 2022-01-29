@@ -21,17 +21,17 @@ public class StaffModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "staff_id")
+    @Column(name = "STAFF_ID")
     private int staffId;
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "ROLE",joinColumns = @JoinColumn(name = "staff_id"))
     private Set<String> role;
     @Column(name = "NAME")
     private String staffName;
-    @Column(name = "staff_email")
+    @Column(name = "EMAIL")
     private String staffEmail;
-    @Column(name = "image_name")
+    @Column(name = "IMAGE")
     private String ImageName;
-    @Column(name = "password")
+    @Column(name = "PASSWORD")
     private String password;
 }

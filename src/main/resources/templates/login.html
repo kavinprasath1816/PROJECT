@@ -16,19 +16,17 @@
             <label class="hy">Student</label>
             <label class="hy2">Staff</label>
         </div>
-        <div th:if="${param.error}" class="alert alert-error">
-            Invalid username and password.
-        </div>
         <div class="container-md">
             <div class="card-3-wrapper">
                 <form class="form" autocomplete="off" name="f" th:action="@{/student}" method="post">
                     <div class="center">
-                        <div class="display1">
-                            <a>Student Login</a>
+                        <div class="display1" th:switch="${param.error}" >
+                            <a th:case="${true}">Invalid Credentials</a>
+                            <a th:case="${false}">Student Login</a>
                         </div>
                         <div class="form__input">
-                            <input  type="text" name="username" placeholder=" " autocomplete="off" required>
-                            <label for="username">Name</label><br>
+                            <input  type="email" name="username" placeholder=" " autocomplete="off" required>
+                            <label for="username">Email</label><br>
                         </div><br>
                         <div class="form__input">
                             <input type="password" name="password" placeholder=" " autocomplete="off" required>
@@ -49,8 +47,8 @@
                             <a>Staff Login</a>
                         </div>
                         <div class="form__input">
-                            <input  type="text" name="username" placeholder=" " autocomplete="off" required>
-                            <label for="username">Name</label><br>
+                            <input  type="email" name="username" placeholder=" " autocomplete="off" required>
+                            <label for="username">Email</label><br>
                         </div><br>
                         <div class="form__input">
                             <input type="password" name="password" placeholder=" " autocomplete="off" requires>

@@ -31,7 +31,7 @@ public class StaffSecurity extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/staff/**")
                 .authenticated()
-                .and().formLogin().loginPage("/staff").defaultSuccessUrl("/staff/index")
+                .and().formLogin().loginPage("/staff").defaultSuccessUrl("/staff/main")
                 .permitAll();
 
         http.csrf().disable();

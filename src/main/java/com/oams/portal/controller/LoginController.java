@@ -24,8 +24,14 @@ public class LoginController {
     }
 
     @RequestMapping(value="/staff")
-    public ModelAndView staffLogin(){
+    public ModelAndView staff(){
         return new ModelAndView("login");
     }
+
+    @RequestMapping(value="/staff/login")
+    public ModelAndView staffLogin(){
+        return new ModelAndView("main");
+    }
+
     
 }

@@ -7,6 +7,7 @@ import com.oams.portal.models.StaffModel;
 import com.oams.portal.models.Student;
 import com.oams.portal.service.FileStorageService;
 import com.oams.portal.service.StaffService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -24,6 +25,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
+@Slf4j
 public class StaffServiceImp implements StaffService {
 
     @Autowired
@@ -47,6 +49,7 @@ public class StaffServiceImp implements StaffService {
                 throw new BasicExceptions("Error in adding Image");
             }
             repo.save(staff);
+            log.info(staff.getStaffName() +" "+ "staff created successfully");
 
         }
         catch(Exception e){

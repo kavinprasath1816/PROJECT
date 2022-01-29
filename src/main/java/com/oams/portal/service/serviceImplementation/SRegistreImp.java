@@ -6,6 +6,7 @@ import com.oams.portal.models.Student;
 import com.oams.portal.models.StudentInput;
 import com.oams.portal.service.FileStorageService;
 import com.oams.portal.service.SRegisterService;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.builder.BuilderException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCrypt;
@@ -17,6 +18,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Service
+@Slf4j
 public class SRegistreImp implements SRegisterService{
 
     @Autowired
@@ -37,6 +39,7 @@ public class SRegistreImp implements SRegisterService{
             s.setTwelveFileName(fileStorageService.saveFile(student.getMarkSheet()));
             s.setPassword(BCrypt.hashpw(student.getPassword(), BCrypt.gensalt()));
             repo.save(s);
+            log.info(student.getName()+" "+"student created successfully");
         }
         catch(Exception e){
             throw new BuilderException("Error in add student - ");

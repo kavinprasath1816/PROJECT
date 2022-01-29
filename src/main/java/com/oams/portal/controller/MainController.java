@@ -8,13 +8,19 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MainController {
 
-    @RequestMapping("/staff/index")
+    @RequestMapping("/staff/main")
+    @PreAuthorize("hasAuthority('staff')")
     public ModelAndView Index(){
-        return new ModelAndView("Index");
+        return new ModelAndView("main");
     }
 
     @RequestMapping("student/hello")
+    @PreAuthorize("hasAuthority('student')")
     public ModelAndView hello(){
         return new ModelAndView("heloo");
     }
+
+    @RequestMapping("/common")
+    @PreAuthorize("hasAuthority('student')")
+    public ModelAndView common(){ return new ModelAndView("normal");}
 }

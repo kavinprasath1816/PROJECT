@@ -10,6 +10,6 @@ import java.util.Optional;
 @Repository
 public interface StaffRepo extends JpaRepository<StaffModel,Integer> {
 
-    @Query(value = "SELECT * FROM STAFF WHERE NAME = ?1",nativeQuery = true)
-    Optional<StaffModel> loadByName(String name);
+    @Query(value = "SELECT * FROM STAFF WHERE EMAIL = ?1",nativeQuery = true)
+    Optional<StaffModel> loadByEmail(String name);
 }
