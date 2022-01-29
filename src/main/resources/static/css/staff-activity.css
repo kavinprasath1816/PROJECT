@@ -1,0 +1,87 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+#table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100px;
+  margin-top: 130px;
+  margin-left: 80px;
+  position: relative;
+}
+body{
+  background: #121212;
+}
+#table td, #table th {
+  border: 1px solid #ddd;
+  padding: 15px;
+  color: #fff
+}
+#table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  color: #fff;
+}
+.wrap {
+  width: 1520px;
+  margin-right:60px;
+}
+.head{
+  margin-left: 50px;
+  font-family: poppins;
+  font-size: 25px;
+  text-transform: uppercase;
+  color:#fff;
+}
+header {
+  height: 60px;
+  line-height: 70px;
+  background-size: cover;
+  background-position:center;
+  position: relative;
+}
+.area {
+  margin-right: 70px;
+  float: right;
+  list-style: none;
+  top: 0;
+}
+.area li {
+  display: inline-block;
+}
+.area li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 20px;
+  font-family: poppins;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.area li a:hover {
+  background: #fff;
+  color: #333;
+  border-radius: 30px;
+}
+.fa-check{
+  font-size: 30px;
+  margin-left: 10px;
+  color: green;
+}
+.fa-times{
+  font-size: 30px;
+  margin-left: 10px;
+  color: red;
+}
+
+
+
+
+
+
+
+
+
+
