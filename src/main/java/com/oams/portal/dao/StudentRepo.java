@@ -1,16 +1,19 @@
 package com.oams.portal.dao;
 
 import com.oams.portal.models.Student;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface StudentRepo extends JpaRepository<Student,Integer>{
+public interface StudentRepo extends JpaRepository<Student, Integer> {
 
-    @Query(value = "SELECT * FROM STUDENTS WHERE EMAIL = ?1",nativeQuery = true)
+    @Query(value = "SELECT * FROM STUDENTS WHERE EMAIL = ?1", nativeQuery = true)
     Optional<Student> loadByEmail(String name);
+
+    @Query(value = "SELECT * FROM STUDENTS WHERE SELECTED=FALSE", nativeQuery = true)
+    List<Student> getAllStudents();
 }

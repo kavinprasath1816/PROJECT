@@ -15,28 +15,29 @@
     <form onsubmit="return checking()" th:action="@{/staff/register}" method="post" enctype="multipart/form-data" >
         <div id="page1">
             <div class="user-box">
-                <input id=name  type="text" name="staffName" required ="" autocomplete="off" oninput="staffvalidate(this.id,this.name)">
+                <input id=name  type="text" name="staffName" required ="" autocomplete="off"  oninput="staffvalidate(this.id,this.name)">
                 <label>Staff Name</label>
                 <i class="fa fa-check"></i>
                 <i class="fas fa-times"></i><br>
                 <span></span>
             </div>
             <div class="user-box">
-                <input id=email type="text" name="staffEmail" required="" autocomplete="off" oninput="staffvalidate(this.id,this.name)">
+                <input id=email type="text" name="staffEmail" required=""  autocomplete="off" oninput="staffvalidate(this.id,this.name)">
                 <label>E-mail</label>
                 <i class="fa fa-check"></i>
                 <i class="fas fa-times"></i><br>
+                <p th:text="${error}"></p>
                 <span></span>
             </div>
             <div class="user-box">
-                <input class="img" type="file"  accept="image/*" name="staffImage">
+                <input class="img" type="file"  accept="image/*" name="staffImage" >
                 <label>Photo</label>
                 <i class="fa fa-check"></i>
                 <i class="fas fa-times"></i><br>
                 <span></span>
             </div>
             <div class="user-box">
-                <input id="password" type="password" name="password" required="" autocomplete="off" oninput="staffvalidate(this.id,this.name)">
+                <input id="password" type="password" name="password" required="" autocomplete="off" oninput="staffvalidate(this.id,this.name)" >
                 <label>Password</label>
                 <i class="fa fa-check"></i>
                 <i class="fas fa-times"></i><br>

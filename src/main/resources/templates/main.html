@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" href="../css/staff-activity.css">
 </head>
-<body>
 <body>
 <header>
     <div class="wrap">
@@ -29,14 +28,15 @@
         <th>Accept</th>
         <th>Reject</th>
     </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+    <tr th:each = "student : ${student}">
+        <td th:text="${student.name}"></td>
+        <td th:text="${student.gender}"></td>
+        <td th:text="${student.phoneNumber}"></td>
+        <td th:text="${student.markTen}"></td>
+        <td th:text="${student.markTwelve}"></td>
         <td><a href=""><i class="fas fa-check"></i></a></td>
         <td><a href=""><i class="fas fa-times"></i></a></td>
     </tr>
+</table>
 </body>
 </html>

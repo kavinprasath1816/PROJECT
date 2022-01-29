@@ -1,8 +1,9 @@
 package com.oams.portal.service;
 
-import com.oams.portal.models.StaffInput;
+import com.oams.portal.models.StaffModel;
+import org.springframework.web.multipart.MultipartFile;
 
 public interface StaffService {
 
-    void addStaff(StaffInput staffInput);
+    void addStaff(StaffModel staffModel, MultipartFile staffImage);
 }

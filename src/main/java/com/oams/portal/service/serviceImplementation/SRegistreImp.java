@@ -3,7 +3,6 @@ package com.oams.portal.service.serviceImplementation;
 import com.oams.portal.dao.StudentRepo;
 import com.oams.portal.exceptions.BasicExceptions;
 import com.oams.portal.models.Student;
-import com.oams.portal.models.StudentInput;
 import com.oams.portal.service.FileStorageService;
 import com.oams.portal.service.SRegisterService;
 import lombok.extern.slf4j.Slf4j;
@@ -28,17 +27,17 @@ public class SRegistreImp implements SRegisterService{
     FileStorageService fileStorageService;
 
     @Override
-    public void addStudent(StudentInput student) {
+    public void addStudent(Student student,MultipartFile img,MultipartFile file1, MultipartFile file2) {
         try{
-            Student s = new Student(student);
+
             Set<String> role = new HashSet<>();
             role.add("student");
-            s.setRole(role);
-            s.setImageFileName(fileStorageService.saveImg(student.getImage()));
-            s.setTenFileName(fileStorageService.saveFile(student.getMarkSheetTen()));
-            s.setTwelveFileName(fileStorageService.saveFile(student.getMarkSheet()));
-            s.setPassword(BCrypt.hashpw(student.getPassword(), BCrypt.gensalt()));
-            repo.save(s);
+            student.setRole(role);
+            student.setImageFileName(fileStorageService.saveImg(img));
+            student.setTenFileName(fileStorageService.saveFile(file1));
+            student.setTwelveFileName(fileStorageService.saveFile(file2));
+            student.setPassword(BCrypt.hashpw(student.getPassword(), BCrypt.gensalt()));
+            repo.save(student);
             log.info(student.getName()+" "+"student created successfully");
         }
         catch(Exception e){
