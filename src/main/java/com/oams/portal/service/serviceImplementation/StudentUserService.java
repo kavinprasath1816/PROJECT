@@ -22,17 +22,15 @@ public class StudentUserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
-        try {
-            Optional<Student> student = repo.loadByEmail(name);
-            student.orElseThrow(() -> new UsernameNotFoundException("User " + name.toUpperCase() + "Not found"));
-            Student s = student.get();
-            return new org.springframework.security.core.userdetails.User(
-                    s.getName(),
-                    s.getPassword(),
-                    s.getRole().stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList()));
-        }
-        catch(Exception e){
-            throw new BasicExceptions("Error in fetching student "+name);
-        }
+
+        Optional<Student> student = repo.loadByEmail(name);
+        student.orElseThrow(() -> new UsernameNotFoundException("User " + name.toUpperCase() + "Not found"));
+        Student s = student.get();
+        return new org.springframework.security.core.userdetails.User(
+                s.getName(),
+                s.getPassword(),
+                s.getRole().stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList()));
+
+
     }
 }

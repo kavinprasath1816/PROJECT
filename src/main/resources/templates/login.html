@@ -21,8 +21,8 @@
                 <form class="form" autocomplete="off" name="f" th:action="@{/student}" method="post">
                     <div class="center">
                         <div class="display1" th:switch="${param.error}" >
-                            <a th:case="${true}">Invalid Credentials</a>
-                            <a th:case="${false}">Student Login</a>
+                            <p th:case="${true}">Invalid Credentials</p>
+                            <p th:case="*">Student Login</p>
                         </div>
                         <div class="form__input">
                             <input  type="email" name="username" placeholder=" " autocomplete="off" required>
@@ -43,8 +43,9 @@
             <div class="card-3d-wrapper">
                 <form class="form" autocomplete="off" name="f" th:action="@{/staff}" method="post">
                     <div class="center">
-                        <div class="display1">
-                            <a>Staff Login</a>
+                        <div class="display1" th:switch="${param.error}" >
+                            <p th:case="#{param.error == null}">Invalid Credentials</p>
+                            <p th:case="*">Staff Login</p>
                         </div>
                         <div class="form__input">
                             <input  type="email" name="username" placeholder=" " autocomplete="off" required>
