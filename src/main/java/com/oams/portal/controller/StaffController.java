@@ -5,6 +5,7 @@ import com.oams.portal.exceptions.BasicExceptions;
 import com.oams.portal.models.StaffModel;
 import com.oams.portal.models.Student;
 import com.oams.portal.service.StaffService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/staff")
+@Slf4j
 public class StaffController {
 
     @Autowired
@@ -42,7 +44,6 @@ public class StaffController {
             staffService.addStaff(staffModel, staffImage);
             return "redirect:login";
         } catch (BasicExceptions e) {
-            System.out.println("hitting");
             model.addAttribute("error", "Email has already Taken");
             return "Staff Register";
         } catch (Exception e) {
@@ -56,10 +57,16 @@ public class StaffController {
     @RequestMapping("/main")
     @PreAuthorize("hasAuthority('Staff')")
     public ModelAndView Index(Model model) {
-        List<Student> student = repo.getAllStudents();
-        System.out.println(student);
-        model.addAttribute("student", student);
-        return new ModelAndView("main");
+        try {
+            List<Student> student = repo.getAllStudents();
+            model.addAttribute("student", student);
+            return new ModelAndView("main");
+        }
+        catch(Exception e )
+        {
+            log.error("Error in getting list of students");
+            throw new BasicExceptions("Error in getting list of students");
+        }
     }
 
 
