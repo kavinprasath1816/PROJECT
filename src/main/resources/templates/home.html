@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Home</title>
+  <link rel="icon" href="college.jpg">
+  <link rel="stylesheet" href="../css/home.css">
+
+</head>
+<body>
+<div class="con">
+  <header>
+    <div class="wrap">
+      <label class="head">University of india</label>
+      <ul class="area">
+        <li><a href="">Home</a></li>
+        <li><a href="">Student Register</a></li>
+        <li><a href="">Admin</a></li>
+        <li><a href="">Login</a></li>
+      </ul>
+    </div>
+  </header>
+  <div class="slider">
+    <div class="slides">
+      <input type="radio" name="radio-btn" id="radio1">
+      <input type="radio" name="radio-btn" id="radio2">
+      <input type="radio" name="radio-btn" id="radio3">
+      <input type="radio" name="radio-btn" id="radio4">
+
+      <div class="slide first">
+        <img src="slide 1.jpg" alt="" width="200px" height="635px">
+      </div>
+      <div class="slide">
+        <img src="slide2.jpg" alt="" width="200px" height="635px">
+      </div>
+      <div class="slide">
+        <img src="slide3.jpg" alt="" width="200px" height="635px">
+      </div>
+      <div class="slide">
+        <img src="slide4.jpg" alt="" width="200px" height="635px">
+      </div>
+
+      <div class="navigation-auto">
+        <div class="auto-btn1"></div>
+        <div class="auto-btn2"></div>
+        <div class="auto-btn3"></div>
+        <div class="auto-btn4"></div>
+      </div>
+      <div class="navigation-manual">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+        <label for="radio4" class="manual-btn"></label>
+      </div>
+    </div>
+  </div>
+  <div class="display">
+    <div class="container-3">
+      <h2>Eligibility</h2>
+      <h2>Nationality:</h2>
+      <ul>
+        <li>The applicant should be a Resident / Non Resident Indian National.</li>
+        <li>Candidates studied/studying abroad can apply directly through foreign category.</li>
+      </ul>
+      <h2>Age Limit :</h2>
+      <ul>
+        <li>Candidates whose date of birth falls on or after 1st July 2000 are eligible to apply.</li>
+        <li>Date of birth as recorded in the High School / SSC / X Certificate will be considered authentic.</li>
+        <li>Candidates should produce this certificate in original as a proof of their age at the time of counselling / admission, failing which they will be disqualified.</li>
+      </ul>
+    </div>
+    <div class="eligible">
+      <img src="eligible.jpg">
+    </div>
+  </div>
+  <footer>
+    <div class="footer-content">
+      <h3>University Of India</h3>
+      <p>“Education is the most powerful weapon which you can use to change the world”</p>
+      <ul class="socials">
+        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+        <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p>copyright &copy;2022 university of india</p>
+    </div>
+  </footer>
+</div>
+
+<script type="text/javascript">
+        var count = 1;
+        setInterval(function(){
+            document.getElementById('radio' + count).checked = true;
+            count++;
+            if(count > 4){
+                count = 1
+            }
+        },5000);
+    </script>
+</body>
+</html>
