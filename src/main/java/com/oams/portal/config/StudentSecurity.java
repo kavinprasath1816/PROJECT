@@ -42,7 +42,7 @@ public class StudentSecurity extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/student/form","/student/register","/h2-console/**");
+        web.ignoring().antMatchers("/student/form","/student/register","/h2-console/**","/downloadFile/*");
     }
 
 

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css');
+@import url('https://unicons.iconscout.com/release/v2.1.9/css/unicons.css');
 *{
   margin: 0;
   padding: 0;
@@ -74,6 +77,118 @@ header {
   font-size: 30px;
   margin-left: 10px;
   color: red;
+}
+tr{
+	cursor: pointer;
+}
+.box{
+	height: 100%;
+	width: 100%;
+	justify-content:space-around;
+}
+.card{
+	position: relative;
+	border: 2px solid white;
+	cursor: pointer;
+	display:inline-block;
+	transition:all 1s;
+}
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: #f1f1f1f1;
+  top: 3rem;
+  height: 38rem;
+  width: 70rem;
+  margin-left:10rem;
+}
+
+/* Slides */
+.mySlides {
+  position: relative;
+  top: 3rem;
+  display: none;
+  padding: 35px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background: #ddd;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color: cornflowerblue;}
+
+.badge{
+	position: absolute;
+	right: 0;
+}
+.details{
+	position: relative;
+	left: 35rem;
+	top: -25rem;
+	line-height: 50px;
+	word-spacing: 50px;
+	color: green;
+	display: block;
+	font-style: italic;
+}
+.card{
+	position: relative;
+	left: 7rem;
 }
 
 

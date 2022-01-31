@@ -1,6 +1,12 @@
 package com.oams.portal.dao;
 
 import com.oams.portal.models.Student;
+import com.oams.portal.projections.StudentView;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.type.MappedTypes;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -8,12 +14,35 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
-public interface StudentRepo extends JpaRepository<Student, Integer> {
+@Mapper
+@MappedTypes(Student.class)
+public interface StudentRepo {
 
-    @Query(value = "SELECT * FROM STUDENTS WHERE EMAIL = ?1", nativeQuery = true)
+    @Insert("INSERT INTO STUDENTS ( ADDRESS, BOARD_TEN , BOARD_TWELVE , CREATED_AT , DOB , EMAIL , FATHER , " +
+            "GENDER , GROUP_TWELVE , IMAGE_FILE_NAME , MARK_TEN , MARK_TWELVE , NAME " +
+            ", PASSWORD , PHONE_NUMBER , SCHOOL_TEN , SCHOOL_TWELVE , SELECTED , TEN_FILE_NAME , " +
+            "TWELVE_FILE_NAME , UPDATED_AT , REJECTED ) VALUES ( #{address}, #{boardTen} , #{boardTwelve} , #{createdAt} , #{dob} , #{email} ," +
+            " #{fatherName} , #{gender} , #{group} , " +
+            "#{imageFileName} , #{markTen} , #{markTwelve} , #{name}" +
+            " , #{password} , #{phoneNumber} , #{schoolTen} , " +
+            "#{schoolTwelve} , #{selected} , #{tenFileName} , #{twelveFileName} , " +
+            "#{updatedAt},#{rejected} )")
+    void add(Student student);
+
+    @Select("SELECT * FROM STUDENTS WHERE EMAIL = ?1")
     Optional<Student> loadByEmail(String name);
 
-    @Query(value = "SELECT * FROM STUDENTS WHERE SELECTED=FALSE", nativeQuery = true)
-    List<Student> getAllStudents();
+    @Select("SELECT NAME,EMAIL,GROUP_TWELVE,PHONE_NUMBER,GENDER,IMAGE_FILE_NAME,SCHOOL_TWELVE," +
+            "BOARD_TWELVE,DOB,MARK_TWELVE,SCHOOL_TEN,BOARD_TEN," +
+            "MARK_TEN FROM STUDENTS WHERE SELECTED=FALSE AND REJECTED = FALSE")
+    List<StudentView> getAllStudents();
+
+    @Select("SELECT * FROM STUDENTS WHERE ID=#{id}")
+    Optional<StudentView> getStudentById(int id);
+
+    @Update("UPDATE STUDENTS SET SELECTED = TRUE WHERE EMAIL = #{email}")
+    void updateSelected(String email);
+
+    @Update("UPDATE STUDENTS SET REJECTED = TRUE WHERE EMAIL = #{email}")
+    void updateRejected(String email);
 }

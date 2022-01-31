@@ -39,10 +39,8 @@ public class FileStorageImp implements FileStorageService{
 
 
     @Override
-    public Resource loadFile(String fileName) throws MalformedURLException {
-        Path filePath = this.fileStorageLocation.resolve(fileName).normalize();
-        Resource resource = new UrlResource(filePath.toUri());
-        return resource;
+    public String loadFile(String fileName) throws MalformedURLException {
+        return this.fileStorageLocation.resolve(fileName).normalize().toString();
     }
 
     @Override

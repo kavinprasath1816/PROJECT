@@ -39,6 +39,7 @@ public class StaffSecurity extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/staff/form","/staff/register","/h2-console/**");
+        web.ignoring().antMatchers("/staff/form","/staff/register",
+                "/h2-console/**","/downloadFile/*","/uploads/**","/staff/main");
     }
 }

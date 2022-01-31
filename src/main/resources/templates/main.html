@@ -18,25 +18,85 @@
         </ul>
     </div>
 </header>
-<table id="table">
-    <tr>
-        <th>StudentName</th>
-        <th>Gender</th>
-        <th>PhoneNumber</th>
-        <th>10thPercentage</th>
-        <th>12thPercentage</th>
-        <th>Accept</th>
-        <th>Reject</th>
-    </tr>
-    <tr th:each = "student : ${student}">
-        <td th:text="${student.name}"></td>
-        <td th:text="${student.gender}"></td>
-        <td th:text="${student.phoneNumber}"></td>
-        <td th:text="${student.markTen}"></td>
-        <td th:text="${student.markTwelve}"></td>
-        <td><a href=""><i class="fas fa-check"></i></a></td>
-        <td><a href=""><i class="fas fa-times"></i></a></td>
-    </tr>
-</table>
+
+    <div class="slideshow-container">
+
+        <div class="mySlides" th:each = "student : ${student}">
+        <div class="card" style="width:250px" th:each = "student : ${student}">
+            <a th:href="'/staff/reject/'+${student.email}" class="badge btn-danger">Reject</a>
+            <img class="card-img-top" th:src="@{'/uploads/'+${student.imageFileName}}" alt="Card image" style="width:100%">
+            <div class="card-body">
+                <h4 class="card-title" th:text="${student.name}"></h4>
+                <div class="progress">
+                    <div class="progress-bar bg-success" th:if="${student.markTwelve gt 89}" th:style="|width:${student.markTwelve}%;|">12th Marks</div>
+                    <div class="progress-bar bg-primary" th:if="${student.markTwelve lt 90 and student.markTwelve gt 69}" th:style="|width:${student.markTwelve}%;|">12th Marks</div>
+                    <div class="progress-bar bg-info" th:if="${student.markTwelve lt 70 and student.markTwelve gt 49}" th:style="|width:${student.markTwelve}%;|">12th Marks</div>
+                    <div class="progress-bar bg-warning" th:if="${student.markTwelve}<50" th:style="|width:${student.markTwelve}%;|">12th Marks</div>
+                </div><br>
+                <div class="progress">
+                    <div class="progress-bar bg-success" th:if="${student.markTen gt 89}" th:style="|width:${student.markTen}%;|">10th Marks</div>
+                    <div class="progress-bar bg-primary" th:if="${student.markTen lt 90 and student.markTen gt 69}" th:style="|width:${student.markTen}%;|">10th Marks</div>
+                    <div class="progress-bar bg-info" th:if="${student.markTen lt 70 and student.markTen gt 49}" th:style="|width:${student.markTen}%;|">10th Marks</div>
+                    <div class="progress-bar bg-secondary" th:if="${student.markTen}<50" th:style="|width:${student.markTen}%;|">10th Marks</div>
+
+                </div><br>
+                <a th:href="'/staff/accept/'+${student.email}" class="btn btn-primary">Accept</a>
+            </div>
+        </div>
+        <div class="details">
+            <span>School</span>
+            <span th:text="${student.schoolTwelve}"></span>
+        </div>
+        <div class="details">
+            <span>Group</span>
+            <span th:text="${student.groupTwelve}"></span>
+        </div>
+        <div class="details">
+            <span>Email</span>
+            <span th:text="${student.email}"></span>
+        </div>
+        <div class="details">
+            <span>Contact</span>
+            <span th:text="${student.phoneNumber}"></span>
+        </div>
+    </div>
+
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+    </div>
+
+    <script type="text/javascript">
+
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " active";
+        }
+</script>
+
 </body>
 </html>

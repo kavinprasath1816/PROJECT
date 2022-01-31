@@ -37,11 +37,11 @@ public class SRegistreImp implements SRegisterService{
             student.setTenFileName(fileStorageService.saveFile(file1));
             student.setTwelveFileName(fileStorageService.saveFile(file2));
             student.setPassword(BCrypt.hashpw(student.getPassword(), BCrypt.gensalt()));
-            repo.save(student);
+            repo.add(student);
             log.info(student.getName()+" "+"student created successfully");
         }
         catch(Exception e){
-            throw new BuilderException("Error in add student - ");
+            throw new BuilderException("Error in add student - "+e.getMessage());
         }
     }
 

@@ -8,14 +8,14 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.Set;
 
 @Getter
 @Setter
-@ToString
 @Table(name = "STUDENTS")
-@Entity
 @NoArgsConstructor
+@Entity
 public class Student {
 
     @javax.persistence.Id
@@ -46,7 +46,7 @@ public class Student {
     private String schoolTwelve;
     @Column(name = "BOARD_TWELVE")
     private String boardTwelve;
-    @Column(name = "GROUP")
+    @Column(name = "GROUP_TWELVE")
     private String group;
     @Column(name = "MARK_TWELVE")
     private String markTwelve;
@@ -64,11 +64,13 @@ public class Student {
     private String tenFileName;
     @CreationTimestamp
     @Column(name = "CREATED_AT")
-    private Timestamp createdAt;
+    private Timestamp createdAt = Timestamp.from(Instant.now());
     @UpdateTimestamp
     @Column(name = "UPDATED_AT")
-    private Timestamp updatedAt;
+    private Timestamp updatedAt = Timestamp.from(Instant.now());
     @Column(name = "SELECTED")
     private boolean selected=false;
+    @Column(name = "REJECTED")
+    private boolean rejected=false;
 
 }

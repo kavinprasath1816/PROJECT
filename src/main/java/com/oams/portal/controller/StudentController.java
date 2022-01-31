@@ -33,7 +33,7 @@ public class StudentController {
         try {
             service.addStudent(student, image, markSheet, markSheetTen);
         } catch (Exception e) {
-            throw new BasicExceptions("Error in register");
+            throw new BasicExceptions("Error in register"+e.getMessage());
         }
         return "redirect:login";
     }
