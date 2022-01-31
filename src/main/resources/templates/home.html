@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Home</title>
-  <link rel="icon" href="college.jpg">
+  <link rel="icon" th:href="@{/images/college.jpg}">
   <link rel="stylesheet" href="../css/home.css">
 
 </head>
@@ -17,9 +17,9 @@
       <label class="head">University of india</label>
       <ul class="area">
         <li><a href="">Home</a></li>
-        <li><a href="">Student Register</a></li>
+        <li><a th:href="@{/student/form}">Student Register</a></li>
         <li><a href="">Admin</a></li>
-        <li><a href="">Login</a></li>
+        <li><a th:href="@{/student}">Login</a></li>
       </ul>
     </div>
   </header>
@@ -31,16 +31,16 @@
       <input type="radio" name="radio-btn" id="radio4">
 
       <div class="slide first">
-        <img src="slide 1.jpg" alt="" width="200px" height="635px">
+        <img th:src="@{/images/slide 1.jpeg}" alt="" width="200px" height="635px">
       </div>
       <div class="slide">
-        <img src="slide2.jpg" alt="" width="200px" height="635px">
+        <img th:src="@{/images/slide 2.jpeg}" alt="" width="200px" height="635px">
       </div>
       <div class="slide">
-        <img src="slide3.jpg" alt="" width="200px" height="635px">
+        <img th:src="@{/images/slide 3.jpeg}" alt="" width="200px" height="635px">
       </div>
       <div class="slide">
-        <img src="slide4.jpg" alt="" width="200px" height="635px">
+        <img th:src="@{/images/slide 4.jpeg}" alt="" width="200px" height="635px">
       </div>
 
       <div class="navigation-auto">
@@ -73,7 +73,7 @@
       </ul>
     </div>
     <div class="eligible">
-      <img src="eligible.jpg">
+      <img th:src="@{/images/eligible.jpeg}">
     </div>
   </div>
   <footer>
