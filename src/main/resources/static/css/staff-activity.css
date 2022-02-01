@@ -111,7 +111,7 @@ body{
   color: white;
 }
 .nav-link:hover{
-  color: greenyellow;
+  color: #03e9f4;
 }
 .nav-link:active{
   color: sandybrown;

@@ -22,12 +22,8 @@
           <a style="color: #fff;font-size: 25px;" class="navbar-brand" href="#">University Of India</a>
         </div>
         <ul class="nav navbar-nav">
-          <li sec:authorize="isAuthenticated()">
+          <li >
             <a  style="color: #fff;font-size: 20px;" href="#">Home</a>
-          </li>
-          <li sec:authorize="isAnonymous()">
-            <img th:src="@{/images/img_avatar1.png}" alt="Avatar Logo" style="width:40px;border-radius:50%" class="rounded-pill">
-            <span style="position: relative; margin-left:10px; color: white" th:text="${#authentication.name}"></span>
           </li>
           <li class="dropdown"><a style="color: #fff;font-size: 20px;" class="dropdown-toggle" data-toggle="dropdown" href="#">Student<span class="caret"></span></a>
             <ul class="dropdown-menu">

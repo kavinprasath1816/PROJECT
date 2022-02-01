@@ -63,7 +63,7 @@ public class StaffController {
 
     }
 
-    @RequestMapping("/main")
+    @RequestMapping("/acceptance-page")
     @PreAuthorize("hasAuthority('Staff')")
     public ModelAndView Index(Model model) {
         try {
@@ -103,11 +103,11 @@ public class StaffController {
         }
     }
 
-    @RequestMapping("/selected-name")
+    @RequestMapping("/sort-name")
     @PreAuthorize("hasAuthority('Staff')")
     public ModelAndView name(Model model) {
         try {
-            List<StudentView> student = repo.getAllStudents();
+            List<StudentView> student = repo.getOrderByName();
             model.addAttribute("student", student);
             return new ModelAndView("main");
         } catch (Exception e) {
@@ -116,11 +116,11 @@ public class StaffController {
         }
     }
 
-    @RequestMapping("/rejected-name")
+    @RequestMapping("/sort-mark")
     @PreAuthorize("hasAuthority('Staff')")
     public ModelAndView r_name(Model model) {
         try {
-            List<StudentView> student = repo.getRejectedStudents();
+            List<StudentView> student = repo.getOrderByMark();
             model.addAttribute("student", student);
             return new ModelAndView("main");
         } catch (Exception e) {
@@ -143,7 +143,7 @@ public class StaffController {
     }
 
     @RequestMapping("/main-page")
-    @PreAuthorize("hasAuthority('Staff')")
+    @PreAuthorize("hasAuthority('Staff','admin')")
     public ModelAndView staffMainPage() {
         return new ModelAndView("stafflog");
     }
