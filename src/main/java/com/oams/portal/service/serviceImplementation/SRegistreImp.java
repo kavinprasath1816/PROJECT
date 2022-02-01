@@ -1,5 +1,6 @@
 package com.oams.portal.service.serviceImplementation;
 
+import com.oams.portal.dao.StudentJpaRepo;
 import com.oams.portal.dao.StudentRepo;
 import com.oams.portal.exceptions.BasicExceptions;
 import com.oams.portal.models.Student;
@@ -26,6 +27,9 @@ public class SRegistreImp implements SRegisterService{
     @Autowired
     FileStorageService fileStorageService;
 
+    @Autowired
+    StudentJpaRepo studentJpaRepo;
+
     @Override
     public void addStudent(Student student,MultipartFile img,MultipartFile file1, MultipartFile file2) {
         try{
@@ -37,7 +41,7 @@ public class SRegistreImp implements SRegisterService{
             student.setTenFileName(fileStorageService.saveFile(file1));
             student.setTwelveFileName(fileStorageService.saveFile(file2));
             student.setPassword(BCrypt.hashpw(student.getPassword(), BCrypt.gensalt()));
-            repo.add(student);
+            studentJpaRepo.save(student);
             log.info(student.getName()+" "+"student created successfully");
         }
         catch(Exception e){

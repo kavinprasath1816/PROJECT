@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @Order(1)
@@ -35,7 +36,9 @@ public class StudentSecurity extends WebSecurityConfigurerAdapter {
                 .antMatchers("/student/**")
                 .authenticated()
                 .and().formLogin().loginPage("/student").defaultSuccessUrl("/student/hello")
-                .permitAll();
+                .permitAll()
+                .and()
+                .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/student");;
         http.csrf().disable();
 
     }

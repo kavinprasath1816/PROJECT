@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @Order(2)
@@ -29,10 +30,14 @@ public class StaffSecurity extends WebSecurityConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
+                .antMatchers("/resources/**")
+                .permitAll()
                 .antMatchers("/staff/**")
                 .authenticated()
                 .and().formLogin().loginPage("/staff").defaultSuccessUrl("/staff/main")
-                .permitAll();
+                .permitAll()
+                .and()
+                .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/staff");;
 
         http.csrf().disable();
     }
@@ -40,6 +45,6 @@ public class StaffSecurity extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/staff/form","/staff/register",
-                "/h2-console/**","/downloadFile/*","/uploads/**","/staff/main");
+                "/h2-console/**","/downloadFile/*","/uploads/**","/resources/**","/webjars/**");
     }
 }

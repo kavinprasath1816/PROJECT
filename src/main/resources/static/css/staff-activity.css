@@ -1,109 +1,47 @@
+
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css');
 @import url('https://unicons.iconscout.com/release/v2.1.9/css/unicons.css');
-*{
+
+body{
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
-}
-#table {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100px;
-  margin-top: 130px;
-  margin-left: 80px;
-  position: relative;
-}
-body{
-  background: #121212;
-}
-#table td, #table th {
-  border: 1px solid #ddd;
-  padding: 15px;
-  color: #fff
-}
-#table th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  color: #fff;
-}
-.wrap {
-  width: 1520px;
-  margin-right:60px;
-}
-.head{
-  margin-left: 50px;
-  font-family: poppins;
-  font-size: 25px;
-  text-transform: uppercase;
-  color:#fff;
-}
-header {
-  height: 60px;
-  line-height: 70px;
-  background-size: cover;
-  background-position:center;
-  position: relative;
-}
-.area {
-  margin-right: 70px;
-  float: right;
-  list-style: none;
-  top: 0;
-}
-.area li {
-  display: inline-block;
-}
-.area li a {
-  color: #fff;
-  text-decoration: none;
-  padding: 5px 20px;
-  font-family: poppins;
-  font-size: 16px;
-  text-transform: uppercase;
-}
-.area li a:hover {
-  background: #fff;
-  color: #333;
-  border-radius: 30px;
-}
-.fa-check{
-  font-size: 30px;
-  margin-left: 10px;
-  color: green;
-}
-.fa-times{
-  font-size: 30px;
-  margin-left: 10px;
-  color: red;
-}
-tr{
-	cursor: pointer;
+  background-color:#060b23;
+
 }
 .box{
-	height: 100%;
-	width: 100%;
-	justify-content:space-around;
+  height: 100%;
+  width: 100%;
+  justify-content:space-around;
+}
+.card-img-top{
+  position: relative;
+  left: 20px;
+  border-radius: 15px;
+  width: 200px;
+  height: 220px;
 }
 .card{
-	position: relative;
-	border: 2px solid white;
-	cursor: pointer;
-	display:inline-block;
-	transition:all 1s;
+  top: -2rem;
+  width: 250px;
+  left: 5rem;
+  position: relative;
+  border: 2px solid white;
+  cursor: pointer;
+  display:inline-block;
+  transition:all 1s;
 }
-* {box-sizing: border-box}
-body {font-family: Verdana, sans-serif; margin:0}
-
 /* Slideshow container */
 .slideshow-container {
+  overflow: hidden;
   position: relative;
-  background: #f1f1f1f1;
-  top: 3rem;
-  height: 38rem;
+  background:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
+  box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
+  border-radius: 15px;
+  top: 5rem;
+  left: 10rem;
+  height: 35rem;
   width: 70rem;
-  margin-left:10rem;
 }
 
 /* Slides */
@@ -115,18 +53,21 @@ body {font-family: Verdana, sans-serif; margin:0}
 }
 
 /* Next & previous buttons */
-.prev, .next {
+.prev,.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
   width: auto;
   margin-top: -30px;
   padding: 16px;
-  color: #888;
   font-weight: bold;
   font-size: 20px;
   border-radius: 0 3px 3px 0;
   user-select: none;
+}
+.slide a{
+  color: #03e9f4;
+
 }
 
 /* Position the "next button" to the right */
@@ -137,60 +78,47 @@ body {font-family: Verdana, sans-serif; margin:0}
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.slide:hover {
   color: white;
 }
-
-/* The dot/bullet/indicator container */
-.dot-container {
-    text-align: center;
-    padding: 20px;
-    background: #ddd;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-/* Add a background color to the active dot/circle */
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Add an italic font style to all quotes */
-q {font-style: italic;}
-
-/* Add a blue color to the author */
-.author {color: cornflowerblue;}
-
 .badge{
-	position: absolute;
-	right: 0;
+  z-index: 2;
+  position: absolute;
+  right: 0;
+}
+#dis-1,#dis-2,#dis-3,#dis-4,#dis-5,#dis-6{
+  color: #fff;
+  font-size: 18px;
 }
 .details{
-	position: relative;
-	left: 35rem;
-	top: -25rem;
-	line-height: 50px;
-	word-spacing: 50px;
-	color: green;
-	display: block;
-	font-style: italic;
+  font-size: 18px;
+  width: 500px;
+  height: 70px;
+  position: relative;
+  left: 30rem;
+  top: -28rem;
+  display: block;
 }
-.card{
-	position: relative;
-	left: 7rem;
-}
+.details span{
+  color: #03e9f4;
 
+}
+.navbar{
+  height: 90px;
+  background-color:#060b23;
+}
+.nav-link{
+  color: white;
+}
+.nav-link:hover{
+  color: greenyellow;
+}
+.nav-link:active{
+  color: sandybrown;
+}
+.nav-item{
+  margin-left: 50px;
+}
 
 
 

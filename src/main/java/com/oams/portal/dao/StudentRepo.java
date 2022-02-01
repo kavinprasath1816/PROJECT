@@ -29,7 +29,7 @@ public interface StudentRepo {
             "#{updatedAt},#{rejected} )")
     void add(Student student);
 
-    @Select("SELECT * FROM STUDENTS WHERE EMAIL = ?1")
+    @Select("SELECT * FROM STUDENTS WHERE EMAIL = #{name}")
     Optional<Student> loadByEmail(String name);
 
     @Select("SELECT NAME,EMAIL,GROUP_TWELVE,PHONE_NUMBER,GENDER,IMAGE_FILE_NAME,SCHOOL_TWELVE," +
@@ -45,4 +45,27 @@ public interface StudentRepo {
 
     @Update("UPDATE STUDENTS SET REJECTED = TRUE WHERE EMAIL = #{email}")
     void updateRejected(String email);
+
+
+    @Select("SELECT NAME,EMAIL,GROUP_TWELVE,PHONE_NUMBER,GENDER,IMAGE_FILE_NAME,SCHOOL_TWELVE," +
+            "BOARD_TWELVE,DOB,MARK_TWELVE,SCHOOL_TEN,BOARD_TEN," +
+            "MARK_TEN FROM STUDENTS WHERE SELECTED=TRUE ORDER BY NAME")
+    List<StudentView> getSelectedStudents();
+
+    @Select("SELECT NAME,EMAIL,GROUP_TWELVE,PHONE_NUMBER,GENDER,IMAGE_FILE_NAME,SCHOOL_TWELVE," +
+            "BOARD_TWELVE,DOB,MARK_TWELVE,SCHOOL_TEN,BOARD_TEN," +
+            "MARK_TEN FROM STUDENTS WHERE SELECTED=TRUE ORDER BY MARK_TWELVE")
+    List<StudentView> getSelectedStudentsMark();
+
+    @Select("SELECT NAME,EMAIL,GROUP_TWELVE,PHONE_NUMBER,GENDER,IMAGE_FILE_NAME,SCHOOL_TWELVE," +
+            "BOARD_TWELVE,DOB,MARK_TWELVE,SCHOOL_TEN,BOARD_TEN," +
+            "MARK_TEN FROM STUDENTS WHERE REJECTED=TRUE ORDER BY NAME")
+    List<StudentView> getRejectedStudents();
+
+    @Select("SELECT NAME,EMAIL,GROUP_TWELVE,PHONE_NUMBER,GENDER,IMAGE_FILE_NAME,SCHOOL_TWELVE," +
+            "BOARD_TWELVE,DOB,MARK_TWELVE,SCHOOL_TEN,BOARD_TEN," +
+            "MARK_TEN FROM STUDENTS WHERE REJECTED=TRUE ORDER BY MARK_TWELVE")
+    List<StudentView> getRejectedStudentsMark();
+
+
 }

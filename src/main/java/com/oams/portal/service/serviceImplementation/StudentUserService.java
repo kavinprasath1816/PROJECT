@@ -1,5 +1,6 @@
 package com.oams.portal.service.serviceImplementation;
 
+import com.oams.portal.dao.StudentJpaRepo;
 import com.oams.portal.dao.StudentRepo;
 import com.oams.portal.exceptions.BasicExceptions;
 import com.oams.portal.models.Student;
@@ -18,7 +19,7 @@ import java.util.stream.Collectors;
 public class StudentUserService implements UserDetailsService {
 
     @Autowired
-    StudentRepo repo;
+    StudentJpaRepo repo;
 
     @Override
     public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
