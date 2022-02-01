@@ -35,7 +35,7 @@ public class StudentSecurity extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/student/**")
                 .authenticated()
-                .and().formLogin().loginPage("/student").defaultSuccessUrl("/student/hello")
+                .and().formLogin().loginPage("/student").defaultSuccessUrl("/student/main-page")
                 .permitAll()
                 .and()
                 .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/student");;

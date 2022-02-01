@@ -70,23 +70,22 @@ public class StaffController {
             List<StudentView> student = repo.getAllStudents();
             model.addAttribute("student", student);
             return new ModelAndView("main");
-        }
-        catch(Exception e )
-        {
+        } catch (Exception e) {
             log.error("Error in getting list of students");
             throw new BasicExceptions("Error in getting list of students");
         }
     }
+
     @RequestMapping(value = "/accept/{email}")
     @PreAuthorize("hasAuthority('Staff')")
-    public String accept(@PathVariable("email") String email){
+    public String accept(@PathVariable("email") String email) {
         repo.updateSelected(email);
         return "redirect:/staff/main";
     }
 
     @RequestMapping(value = "/reject/{email}")
     @PreAuthorize("hasAuthority('Staff')")
-    public String reject(@PathVariable("email") String email){
+    public String reject(@PathVariable("email") String email) {
         repo.updateRejected(email);
         return "redirect:/staff/main";
     }
@@ -98,9 +97,7 @@ public class StaffController {
             List<StudentView> student = repo.getSelectedStudentsMark();
             model.addAttribute("student", student);
             return new ModelAndView("main");
-        }
-        catch(Exception e )
-        {
+        } catch (Exception e) {
             log.error("Error in getting list of students");
             throw new BasicExceptions("Error in getting list of students");
         }
@@ -113,9 +110,7 @@ public class StaffController {
             List<StudentView> student = repo.getAllStudents();
             model.addAttribute("student", student);
             return new ModelAndView("main");
-        }
-        catch(Exception e )
-        {
+        } catch (Exception e) {
             log.error("Error in getting list of students");
             throw new BasicExceptions("Error in getting list of students");
         }
@@ -128,9 +123,7 @@ public class StaffController {
             List<StudentView> student = repo.getRejectedStudents();
             model.addAttribute("student", student);
             return new ModelAndView("main");
-        }
-        catch(Exception e )
-        {
+        } catch (Exception e) {
             log.error("Error in getting list of students");
             throw new BasicExceptions("Error in getting list of students");
         }
@@ -143,14 +136,17 @@ public class StaffController {
             List<StudentView> student = repo.getRejectedStudentsMark();
             model.addAttribute("student", student);
             return new ModelAndView("main");
-        }
-        catch(Exception e )
-        {
+        } catch (Exception e) {
             log.error("Error in getting list of students");
             throw new BasicExceptions("Error in getting list of students");
         }
     }
 
+    @RequestMapping("/main-page")
+    @PreAuthorize("hasAuthority('Staff')")
+    public ModelAndView staffMainPage() {
+        return new ModelAndView("stafflog");
+    }
 
 
 }

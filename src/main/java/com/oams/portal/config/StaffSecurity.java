@@ -34,7 +34,7 @@ public class StaffSecurity extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .antMatchers("/staff/**")
                 .authenticated()
-                .and().formLogin().loginPage("/staff").defaultSuccessUrl("/staff/main")
+                .and().formLogin().loginPage("/staff").defaultSuccessUrl("/staff/main-page")
                 .permitAll()
                 .and()
                 .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/staff");;

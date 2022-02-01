@@ -5,7 +5,9 @@ import com.oams.portal.exceptions.BasicExceptions;
 import com.oams.portal.models.Student;
 import com.oams.portal.service.SRegisterService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -36,6 +38,12 @@ public class StudentController {
             throw new BasicExceptions("Error in register"+e.getMessage());
         }
         return "redirect:login";
+    }
+
+    @RequestMapping("/main-page")
+    @PreAuthorize("hasAuthority('student')")
+    public ModelAndView studentMainPage(){
+        return new ModelAndView("studentlog");
     }
 
 
