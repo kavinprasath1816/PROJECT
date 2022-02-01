@@ -67,5 +67,8 @@ public interface StudentRepo {
             "MARK_TEN FROM STUDENTS WHERE REJECTED=TRUE ORDER BY MARK_TWELVE")
     List<StudentView> getRejectedStudentsMark();
 
+    @Update("UPDATE STUDENTS SET PHONE_NUMBER = #{number} WHERE NAME = #{name}")
+    void updatePhoneNumber(String number);
+
 
 }

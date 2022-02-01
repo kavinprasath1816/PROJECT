@@ -41,30 +41,8 @@ public class StaffController {
     SRegisterService service;
 
 
-    @RequestMapping("/form")
-    public String staff() {
-        return "Staff Register";
-    }
-
-    @RequestMapping(method = RequestMethod.POST, value = "/register")
-    public String staffRegister(Model model, @Valid StaffModel staffModel, @RequestBody MultipartFile staffImage, BindingResult result) {
-
-        try {
-            staffService.addStaff(staffModel, staffImage);
-            return "redirect:login";
-        } catch (BasicExceptions e) {
-            model.addAttribute("error", "Email has already Taken");
-            return "Staff Register";
-        } catch (Exception e) {
-            System.out.println("hitting");
-            model.addAttribute("error", "Email has already Taken");
-            return "Staff Register";
-        }
-
-    }
-
     @RequestMapping("/acceptance-page")
-    @PreAuthorize("hasAuthority('Staff')")
+    @PreAuthorize("hasAnyAuthority('Staff','admin')")
     public ModelAndView Index(Model model) {
         try {
             List<StudentView> student = repo.getAllStudents();
@@ -77,21 +55,21 @@ public class StaffController {
     }
 
     @RequestMapping(value = "/accept/{email}")
-    @PreAuthorize("hasAuthority('Staff')")
+    @PreAuthorize("hasAnyAuthority('Staff','admin')")
     public String accept(@PathVariable("email") String email) {
         repo.updateSelected(email);
         return "redirect:/staff/main";
     }
 
     @RequestMapping(value = "/reject/{email}")
-    @PreAuthorize("hasAuthority('Staff')")
+    @PreAuthorize("hasAnyAuthority('Staff','admin')")
     public String reject(@PathVariable("email") String email) {
         repo.updateRejected(email);
         return "redirect:/staff/main";
     }
 
     @RequestMapping("/selected-mark")
-    @PreAuthorize("hasAuthority('Staff')")
+    @PreAuthorize("hasAnyAuthority('Staff','admin')")
     public ModelAndView mark(Model model) {
         try {
             List<StudentView> student = repo.getSelectedStudentsMark();
@@ -104,7 +82,7 @@ public class StaffController {
     }
 
     @RequestMapping("/sort-name")
-    @PreAuthorize("hasAuthority('Staff')")
+    @PreAuthorize("hasAnyAuthority('Staff','admin')")
     public ModelAndView name(Model model) {
         try {
             List<StudentView> student = repo.getOrderByName();
@@ -117,7 +95,7 @@ public class StaffController {
     }
 
     @RequestMapping("/sort-mark")
-    @PreAuthorize("hasAuthority('Staff')")
+    @PreAuthorize("hasAnyAuthority('Staff','admin')")
     public ModelAndView r_name(Model model) {
         try {
             List<StudentView> student = repo.getOrderByMark();
@@ -130,7 +108,7 @@ public class StaffController {
     }
 
     @RequestMapping("/rejected-mark")
-    @PreAuthorize("hasAuthority('Staff')")
+    @PreAuthorize("hasAnyAuthority('Staff','admin')")
     public ModelAndView hi(Model model) {
         try {
             List<StudentView> student = repo.getRejectedStudentsMark();
@@ -143,7 +121,7 @@ public class StaffController {
     }
 
     @RequestMapping("/main-page")
-    @PreAuthorize("hasAuthority('Staff','admin')")
+    @PreAuthorize("hasAnyAuthority('Staff','admin')")
     public ModelAndView staffMainPage() {
         return new ModelAndView("stafflog");
     }

@@ -3,51 +3,53 @@ package com.oams.portal.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
-@Order(2)
-public class StaffSecurity extends WebSecurityConfigurerAdapter {
-
-    @Autowired
-    UserDetailsService staffUserService;
+@Order(3)
+public class AdminSecurity extends WebSecurityConfigurerAdapter {
 
     @Autowired
     PasswordEncoder passwordEncoder;
 
     @Override
-    public void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(staffUserService).passwordEncoder(passwordEncoder);
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        String password = passwordEncoder.encode("password");
+        auth.inMemoryAuthentication()
+                .withUser("kavin")
+                .password(password)
+                .roles("admin").authorities("admin");
     }
 
-    @Override
-    public void configure(HttpSecurity http) throws Exception {
-        http
-                .antMatcher("/staff/**")
-                .authorizeRequests()
-                .antMatchers("/resources/**")
-                .permitAll()
-                .antMatchers("/staff/**")
-                .authenticated()
-                .and().formLogin().loginPage("/staff").defaultSuccessUrl("/staff/main-page")
-                .permitAll()
-                .and()
-                .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/staff");;
 
-        http.csrf().disable();
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+                .authorizeRequests()
+                .antMatchers("/admin/**")
+                .authenticated()
+                .and()
+                .formLogin()
+                .defaultSuccessUrl("/admin/main-page")
+                .and()
+                .logout()
+                .logoutSuccessUrl("/home");
+
     }
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/h2-console/**",
+        web.ignoring().antMatchers("/student/form"
+                ,"/student/register",
+                "/h2-console/**",
                 "/downloadFile/*",
-                "/uploads/**",
+                "/h2-console/**"
+                ,"/uploads/**",
                 "/resources/**",
                 "/webjars/**");
     }

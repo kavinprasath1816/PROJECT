@@ -8,11 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.security.Principal;
 
 
 @Controller
@@ -44,6 +47,11 @@ public class StudentController {
     @PreAuthorize("hasAuthority('student')")
     public ModelAndView studentMainPage(){
         return new ModelAndView("studentlog");
+    }
+
+    @RequestMapping(method = RequestMethod.POST,value = "/update/{name}") //1st
+    public void updatePhone(@RequestBody String number, @PathVariable("name") String name){
+        System.out.println(number);
     }
 
 

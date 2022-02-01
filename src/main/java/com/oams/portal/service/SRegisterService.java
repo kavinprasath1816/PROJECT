@@ -9,6 +9,8 @@ public interface SRegisterService {
 
     public String getFileLocation(MultipartFile file);
 
+    public void updatePhone(String number); //2nd
+
     
     
 }
