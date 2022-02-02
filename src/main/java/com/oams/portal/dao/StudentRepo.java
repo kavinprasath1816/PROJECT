@@ -70,5 +70,8 @@ public interface StudentRepo {
     @Update("UPDATE STUDENTS SET PHONE_NUMBER = #{number} WHERE NAME = #{name}")
     void updatePhoneNumber(String number);
 
+    @Select("SELECT COUNT(*) FROM STUDENTS")
+    int getCount();
+
 
 }

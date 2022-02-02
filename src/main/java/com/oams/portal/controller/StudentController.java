@@ -49,9 +49,10 @@ public class StudentController {
         return new ModelAndView("studentlog");
     }
 
-    @RequestMapping(method = RequestMethod.POST,value = "/update/{name}") //1st
-    public void updatePhone(@RequestBody String number, @PathVariable("name") String name){
-        System.out.println(number);
+    @RequestMapping("/update-page")
+    @PreAuthorize("hasAuthority('student')")
+    public ModelAndView updatePage(){
+        return new ModelAndView("studentupdate");
     }
 
 

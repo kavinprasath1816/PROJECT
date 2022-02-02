@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,28 +21,18 @@
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/home}">HOME</a>
             </li>
-    
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">SORT</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">SORT BY MARK</a></li>
-                    <li><a class="dropdown-item" href="#">SORT BY NAME</a></li>
-                </ul>
+
+            <li class="nav-item" sec:authorize="hasRole('admin')">
+                <a class="nav-link" th:href="@{/home}">ADMIN PAGE</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">SHOW</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/staff/selected-mark">SHOW SELECTED BY MARK</a></li>
-                    <li><a class="dropdown-item" href="/staff/rejected-mark">SHOW REJECTED BY MARK</a></li>
-                </ul>
-            </li>
+
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/logout}">LOGOUT</a>
             </li>
         </ul>
     </nav>
     <div class="container">
-        <a href="">
+        <a th:href="@{/staff/update-page}">
             <div class=" container-1">
                 <i id="one" class="fas fa-user-cog"></i><br>
                 <label>Profile </label><br>

@@ -15,26 +15,14 @@
     <nav class="navbar navbar-expand-sm justify-content-center">
         <a class="navbar-brand" href="#">
             <img th:src="@{/images/img_avatar1.png}" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
-            <span style="position: relative; margin-left:10px; color: white,font-size:inherit,text-transform:uppercase;" th:text="${#authentication.name}"></span>
+            <span style="position: relative; margin-left:10px; color: white;font-size:inherit;text-transform:uppercase;" th:text="${#authentication.name}"></span>
         </a>
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/home}">HOME</a>
             </li>
-    
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">SORT</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">SORT BY MARK</a></li>
-                    <li><a class="dropdown-item" href="#">SORT BY NAME</a></li>
-                </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">SHOW</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/staff/selected-mark">SHOW SELECTED BY MARK</a></li>
-                    <li><a class="dropdown-item" href="/staff/rejected-mark">SHOW REJECTED BY MARK</a></li>
-                </ul>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/staff/main-page}">STAFF DASHBOARD</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/logout}">LOGOUT</a>
@@ -44,23 +32,41 @@
     <div class="container">
         <div class=" container-1">
             <i id="one" class="fas fa-user-cog"></i><br>
-            <label>Profile </label><br>
-            <span>Update</span>
+            <label>Add</label><br>
+            <span>Staff</span>
         </div>
         
         <div class="container-2">
             <i id="two" class="fas fa-user"></i><br>
-            <label style="margin-left: 90px;">Admin</label>
-            <span style="margin-left: 90px;">Activity</span>
+            <label style="margin-left: 90px;">Student</label>
+            <span style="margin-left: 90px;" class="counter" th:data-target="${student}"></span>
         </div>
         <a th:href="@{/admin/staff-form}">
             <div class="container-3">
                 <i id="three" class="fas fa-user-plus"></i>
-                <label style="margin-left: 90px;">Add</label>
-                <span style="margin-left: 90px;">Staff</span>
+                <label style="margin-left: 90px;">Staff</label>
+                <span style="margin-left: 90px;" class="counter" th:data-target="${staff}"></span>
             </div>
         </a>
       </div>
     
 </body>
+<script type="text/javascript">
+    const counters = document.querySelectorAll('.counter')
+ counters.forEach(counter => {
+   counter.innerText = '0'
+   const updateCounter = () => {
+     const target = +counter.getAttribute('data-target')
+     const c = +counter.innerText
+     const increment = target / 200
+     if(c < target) {
+       counter.innerText = `${Math.ceil(c + increment)}`
+       setTimeout(updateCounter, 1)
+     } else {
+       counter.innerText = target
+     }
+   }
+   updateCounter()
+ })
+</script>
 </html>

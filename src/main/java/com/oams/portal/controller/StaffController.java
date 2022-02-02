@@ -126,5 +126,11 @@ public class StaffController {
         return new ModelAndView("stafflog");
     }
 
+    @RequestMapping("/update-page")
+    @PreAuthorize("hasAuthority('Staff')")
+    public ModelAndView updatePage(){
+        return new ModelAndView("staffupdate");
+    }
+
 
 }

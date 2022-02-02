@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="icon" href="college.jpg">
-    <link rel="stylesheet" href="staffupdate.css">
+    <link rel="stylesheet" href="../css/staffupdate.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-sm justify-content-center">
@@ -21,20 +21,8 @@
         <li class="nav-item">
             <a class="nav-link" th:href="@{/home}">HOME</a>
         </li>
-
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">SORT</a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">SORT BY MARK</a></li>
-                <li><a class="dropdown-item" href="#">SORT BY NAME</a></li>
-            </ul>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">SHOW</a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/staff/selected-mark">SHOW SELECTED BY MARK</a></li>
-                <li><a class="dropdown-item" href="/staff/rejected-mark">SHOW REJECTED BY MARK</a></li>
-            </ul>
+        <li class="nav-item" >
+            <a class="nav-link" th:href="@{/staff/main-page}">BACK</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" th:href="@{/logout}">LOGOUT</a>

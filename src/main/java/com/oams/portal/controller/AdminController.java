@@ -1,5 +1,7 @@
 package com.oams.portal.controller;
 
+import com.oams.portal.dao.StaffRepo;
+import com.oams.portal.dao.StudentRepo;
 import com.oams.portal.exceptions.BasicExceptions;
 import com.oams.portal.models.StaffModel;
 import com.oams.portal.service.StaffService;
@@ -23,8 +25,16 @@ public class AdminController {
     @Autowired
     StaffService staffService;
 
-    @RequestMapping("/main-page")
-    public ModelAndView adminMainPage(){
+    @Autowired
+    StudentRepo repo;
+
+    @Autowired
+    StaffRepo staffRepo;
+
+    @RequestMapping(value = {"/main-page","/admin-dashboard"})
+    public ModelAndView adminMainPage(Model model){
+        model.addAttribute("student",repo.getCount());
+        model.addAttribute("staff",staffRepo.getCount());
         return new ModelAndView("adminlog");
     }
 
@@ -38,7 +48,7 @@ public class AdminController {
 
         try {
             staffService.addStaff(staffModel, staffImage);
-            return "redirect:login";
+            return "redirect:admin-dashboard";
         } catch (BasicExceptions e) {
             model.addAttribute("error", "Email has already Taken");
             return "Staff Register";

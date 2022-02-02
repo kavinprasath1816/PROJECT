@@ -64,8 +64,5 @@ public class SRegistreImp implements SRegisterService{
         }
     }
 
-    @Override
-    public void updatePhone(String number) { //3dr
-        repo.updatePhoneNumber(number);
-    }
+
 }
