@@ -62,6 +62,7 @@ public class StudentController {
     }
 
     @RequestMapping(method = RequestMethod.POST,value= "/update-phone")
+    @PreAuthorize("hasAuthority('student')")
     public String updatePhone(Phone phone, Principal p){
         try {
             service.updatePhone(phone.getNumber(), p.getName());
@@ -75,6 +76,7 @@ public class StudentController {
     }
 
     @RequestMapping(method = RequestMethod.POST,value= "/update-address")
+    @PreAuthorize("hasAuthority('student')")
     public String updateAddress(Address address, Principal p){
         try {
             service.updateAddress(address.getAddress(), p.getName());
@@ -88,6 +90,7 @@ public class StudentController {
     }
 
     @RequestMapping(method = RequestMethod.POST,value= "/update-password")
+    @PreAuthorize("hasAuthority('student')")
     public String updatePassword(Password password, Principal p){
         try {
             service.updatePassword(password.getPassword(), p.getName());
