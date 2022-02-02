@@ -9,7 +9,11 @@ public interface SRegisterService {
 
     public String getFileLocation(MultipartFile file);
 
+    public void updatePhone(String phone,String name);
 
+    public void updateAddress(String address,String name);
+
+    public void updatePassword(String password,String name);
 
     
     

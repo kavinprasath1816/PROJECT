@@ -2,8 +2,13 @@ package com.oams.portal.controller;
 
 
 import com.oams.portal.exceptions.BasicExceptions;
+import com.oams.portal.models.Address;
+import com.oams.portal.models.Password;
+import com.oams.portal.models.Phone;
 import com.oams.portal.models.Student;
+import com.oams.portal.projections.StudentView;
 import com.oams.portal.service.SRegisterService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -20,6 +25,7 @@ import java.security.Principal;
 
 @Controller
 @RequestMapping("/student")
+@Slf4j
 public class StudentController {
 
     @Autowired
@@ -53,6 +59,45 @@ public class StudentController {
     @PreAuthorize("hasAuthority('student')")
     public ModelAndView updatePage(){
         return new ModelAndView("studentupdate");
+    }
+
+    @RequestMapping(method = RequestMethod.POST,value= "/update-phone")
+    public String updatePhone(Phone phone, Principal p){
+        try {
+            service.updatePhone(phone.getNumber(), p.getName());
+            log.info("Phone Number Updated for "+p.getName());
+            return "redirect:update-page";
+        }
+        catch (Exception e)
+        {
+            throw new BasicExceptions("Error in update phone Number");
+        }
+    }
+
+    @RequestMapping(method = RequestMethod.POST,value= "/update-address")
+    public String updateAddress(Address address, Principal p){
+        try {
+            service.updateAddress(address.getAddress(), p.getName());
+            log.info("Address Updated for "+p.getName());
+            return "redirect:update-page";
+        }
+        catch (Exception e)
+        {
+            throw new BasicExceptions("Error in update Address");
+        }
+    }
+
+    @RequestMapping(method = RequestMethod.POST,value= "/update-password")
+    public String updatePassword(Password password, Principal p){
+        try {
+            service.updatePassword(password.getPassword(), p.getName());
+            log.info("Password Updated for "+p.getName());
+            return "redirect:update-page";
+        }
+        catch (Exception e)
+        {
+            throw new BasicExceptions("Error in Password");
+        }
     }
 
 

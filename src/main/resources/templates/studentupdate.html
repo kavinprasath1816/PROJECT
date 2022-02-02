@@ -32,11 +32,11 @@
 <div class="container">
     <div class=" container-1">
         <i id="one" class="fas fa-phone-alt"></i><br>
-        <form>
+        <form  th:action="@{update-phone}" method="post">
             <div class="user-box">
-                <input id=phone type="text" name="updatephoneNumber" required="" autocomplete="off">
+                <input id=phone type="text" name="number" required="" autocomplete="off">
                 <label>Phone Number</label><br>
-                <button type="button">UPDATE</button>
+                <button type="submit alert alert-success">UPDATE</button>
             </div>
         </form>
     </div>
@@ -45,11 +45,11 @@
     <a>
         <div class="container-2">
             <i id="two" class="fas fa-home"></i>
-            <form>
+            <form method="post" th:action="@{update-address}">
                 <div class="user-box">
-                    <input id=phone type="text" name="updatephoneNumber" required="" autocomplete="off">
+                    <input id=address type="text" name="address" required="" autocomplete="off">
                     <label>Address</label><br>
-                    <button type="button">UPDATE</button>
+                    <button type="submit">UPDATE</button>
                 </div>
             </form>
         </div>
@@ -57,11 +57,11 @@
     <a>
         <div class="container-3">
             <i id="three" class="fas fa-lock"></i>
-            <form>
+            <form method="post" th:action="@{update-password}">
                 <div class="user-box">
-                    <input id=phone type="text" name="updatephoneNumber" required="" autocomplete="off">
+                    <input id=password type="text" name="password" required="" autocomplete="off">
                     <label>Password</label><br>
-                    <button type="button">UPDATE</button>
+                    <button type="submit">UPDATE</button>
                 </div>
             </form>
 

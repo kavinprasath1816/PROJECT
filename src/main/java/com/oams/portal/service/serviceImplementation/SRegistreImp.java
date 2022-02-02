@@ -14,6 +14,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -64,5 +66,19 @@ public class SRegistreImp implements SRegisterService{
         }
     }
 
+    @Override
+    public void updatePhone(String phone, String name) {
+        repo.updatePhoneNumber(phone,name, Timestamp.from(Instant.now()));
+    }
 
+    @Override
+    public void updateAddress(String address, String name) {
+        System.out.print(address);
+        repo.updateAddress(address,name,Timestamp.from(Instant.now()));
+    }
+
+    @Override
+    public void updatePassword(String password, String name) {
+        repo.updatePassword(BCrypt.hashpw(password, BCrypt.gensalt()),name,Timestamp.from(Instant.now()));
+    }
 }

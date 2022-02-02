@@ -11,6 +11,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;
 
@@ -67,11 +68,18 @@ public interface StudentRepo {
             "MARK_TEN FROM STUDENTS WHERE REJECTED=TRUE ORDER BY MARK_TWELVE")
     List<StudentView> getRejectedStudentsMark();
 
-    @Update("UPDATE STUDENTS SET PHONE_NUMBER = #{number} WHERE NAME = #{name}")
-    void updatePhoneNumber(String number);
+    @Update("UPDATE STUDENTS SET PHONE_NUMBER = #{number}, UPDATED_AT = #{time} WHERE NAME = #{name}")
+    void updatePhoneNumber(String number, String name, Timestamp time);
 
     @Select("SELECT COUNT(*) FROM STUDENTS")
     int getCount();
+
+    @Update("UPDATE STUDENTS SET ADDRESS = #{address}, UPDATED_AT = #{time} WHERE NAME = #{name}")
+    void updateAddress(String address,String name, Timestamp time);
+
+    @Update("UPDATE STUDENTS SET PASSWORD = #{password}, UPDATED_AT = #{time} WHERE NAME = #{name}")
+    void updatePassword(String password,String name, Timestamp time);
+
 
 
 }
