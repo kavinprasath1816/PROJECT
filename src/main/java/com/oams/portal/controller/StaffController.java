@@ -58,14 +58,14 @@ public class StaffController {
     @PreAuthorize("hasAnyAuthority('Staff','admin')")
     public String accept(@PathVariable("email") String email) {
         repo.updateSelected(email);
-        return "redirect:/staff/main";
+        return "redirect:/staff/acceptance-page";
     }
 
     @RequestMapping(value = "/reject/{email}")
     @PreAuthorize("hasAnyAuthority('Staff','admin')")
     public String reject(@PathVariable("email") String email) {
         repo.updateRejected(email);
-        return "redirect:/staff/main";
+        return "redirect:/staff/acceptance-page";
     }
 
     @RequestMapping("/selected-mark")

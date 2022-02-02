@@ -36,13 +36,13 @@
             </div>
         </a>
 
-        <a href="">
-            <div class="container-2">
-                <i id="two" class="fas fa-user"></i><br>
-                <label style="margin-left: 90px;">Student</label>
-                <span style="margin-left: 90px;">Activity</span>
-            </div>
-        </a>
+
+        <div class="container-2" data-bs-toggle="popover" title="Form Detail" data-bs-placement="top" th:data-bs-content="${message}">
+            <i id="two" class="fas fa-user"></i><br>
+            <label style="margin-left: 90px;">Student</label>
+            <span style="margin-left: 90px;">Activity</span>
+        </div>
+
         <a href="">
             <div class="container-3">
                 <i  id="three" class="fas fa-laptop-code"></i>
@@ -53,4 +53,10 @@
     </div>
     
 </body>
+<script type="text/javascript">
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+      return new bootstrap.Popover(popoverTriggerEl)
+    })
+</script>
 </html>

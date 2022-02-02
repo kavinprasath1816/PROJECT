@@ -1,6 +1,7 @@
 package com.oams.portal.controller;
 
 
+import com.oams.portal.dao.StudentRepo;
 import com.oams.portal.exceptions.BasicExceptions;
 import com.oams.portal.models.Address;
 import com.oams.portal.models.Password;
@@ -31,6 +32,9 @@ public class StudentController {
     @Autowired
     SRegisterService service;
 
+    @Autowired
+    StudentRepo repo;
+
 
     @RequestMapping(value = "/form")
     public ModelAndView studentRegister() {
@@ -51,7 +55,13 @@ public class StudentController {
 
     @RequestMapping("/main-page")
     @PreAuthorize("hasAuthority('student')")
-    public ModelAndView studentMainPage(){
+    public ModelAndView studentMainPage(Model model,Principal p){
+        String message = "YOUR FORM IS STILL PENDING";
+        if (repo.Selected(p.getName()))
+            message = "YOUR FORM IS SELECTED";
+        if (repo.Rejected(p.getName()))
+            message = "YOUR FORM IS REJECTED";
+        model.addAttribute("message",message);
         return new ModelAndView("studentlog");
     }
 

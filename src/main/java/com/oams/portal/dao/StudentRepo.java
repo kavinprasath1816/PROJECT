@@ -80,6 +80,12 @@ public interface StudentRepo {
     @Update("UPDATE STUDENTS SET PASSWORD = #{password}, UPDATED_AT = #{time} WHERE NAME = #{name}")
     void updatePassword(String password,String name, Timestamp time);
 
+    @Select("SELECT SELECTED FROM STUDENTS WHERE NAME = #{name}")
+    boolean Selected(String name);
+
+    @Select("SELECT REJECTED FROM STUDENTS WHERE NAME = #{name}")
+    boolean Rejected(String name);
+
 
 
 }
