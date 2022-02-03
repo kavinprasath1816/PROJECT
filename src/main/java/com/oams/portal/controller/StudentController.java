@@ -8,6 +8,7 @@ import com.oams.portal.models.Password;
 import com.oams.portal.models.Phone;
 import com.oams.portal.models.Student;
 import com.oams.portal.service.SRegisterService;
+import com.oams.portal.service.serviceImplementation.EmailServiceImp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -16,6 +17,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -32,6 +34,9 @@ public class StudentController {
 
     @Autowired
     StudentRepo repo;
+
+    @Autowired
+    EmailServiceImp serviceImp;
 
 
     @RequestMapping(value = "/form")
@@ -110,6 +115,8 @@ public class StudentController {
             throw new BasicExceptions("Error in Password");
         }
     }
+
+
 
 
 }

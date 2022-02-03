@@ -38,10 +38,10 @@ public interface StudentRepo {
     @Select("SELECT * FROM STUDENTS WHERE ID=#{id}")
     Optional<StudentView> getStudentById(int id);
 
-    @Update("UPDATE STUDENTS SET SELECTED = TRUE WHERE EMAIL = #{email}")
+    @Update("UPDATE STUDENTS SET SELECTED = TRUE, REJECTED = FALSE WHERE EMAIL = #{email}")
     void updateSelected(String email);
 
-    @Update("UPDATE STUDENTS SET REJECTED = TRUE WHERE EMAIL = #{email}")
+    @Update("UPDATE STUDENTS SET REJECTED = TRUE, SELECTED = FALSE WHERE EMAIL = #{email}")
     void updateRejected(String email);
 
 

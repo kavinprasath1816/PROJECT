@@ -1,9 +1,11 @@
 package com.oams.portal.controller;
 
+import com.oams.portal.constants.Constants;
 import com.oams.portal.dao.StudentRepo;
 import com.oams.portal.exceptions.BasicExceptions;
 import com.oams.portal.models.Password;
 import com.oams.portal.projections.StudentView;
+import com.oams.portal.service.EmailService;
 import com.oams.portal.service.StaffService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,8 @@ import org.springframework.web.servlet.ModelAndView;
 import java.security.Principal;
 import java.util.List;
 
+import static com.oams.portal.constants.Constants.SUCCESS_EMAIL;
+
 @Controller
 @RequestMapping("/staff")
 @Slf4j
@@ -28,6 +32,9 @@ public class StaffController {
 
     @Autowired
     StaffService service;
+
+    @Autowired
+    EmailService emailService;
 
 
     @RequestMapping("/acceptance-page")
@@ -46,6 +53,7 @@ public class StaffController {
     @RequestMapping(value = "/accept/{email}")
     @PreAuthorize("hasAnyAuthority('Staff','admin')")
     public String accept(@PathVariable("email") String email) {
+        emailService.sendMail("kavinprasath67175@gmail.com","Regarding..",SUCCESS_EMAIL);
         repo.updateSelected(email);
         return "redirect:/staff/acceptance-page";
     }
@@ -54,6 +62,7 @@ public class StaffController {
     @PreAuthorize("hasAnyAuthority('Staff','admin')")
     public String reject(@PathVariable("email") String email) {
         repo.updateRejected(email);
+        emailService.sendMail("kavinprasath67175@gmail.com","Regarding..","You are Rejected");
         return "redirect:/staff/acceptance-page";
     }
 

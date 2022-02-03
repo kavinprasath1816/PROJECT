@@ -4,6 +4,7 @@ import com.oams.portal.dao.StudentJpaRepo;
 import com.oams.portal.dao.StudentRepo;
 import com.oams.portal.exceptions.BasicExceptions;
 import com.oams.portal.models.Student;
+import com.oams.portal.service.EmailService;
 import com.oams.portal.service.FileStorageService;
 import com.oams.portal.service.SRegisterService;
 import lombok.extern.slf4j.Slf4j;
@@ -32,6 +33,9 @@ public class SRegistreImp implements SRegisterService{
     @Autowired
     StudentJpaRepo studentJpaRepo;
 
+    @Autowired
+    EmailService service;
+
     @Override
     public void addStudent(Student student,MultipartFile img,MultipartFile file1, MultipartFile file2) {
         try{
@@ -44,7 +48,9 @@ public class SRegistreImp implements SRegisterService{
             student.setTwelveFileName(fileStorageService.saveFile(file2));
             student.setPassword(BCrypt.hashpw(student.getPassword(), BCrypt.gensalt()));
             studentJpaRepo.save(student);
+            service.sendMail("kavinprasath67175@gmail.com","Regarding Registration","You have Successfully Registered");
             log.info(student.getName()+" "+"student created successfully");
+
         }
         catch(Exception e){
             throw new BuilderException("Error in add student - "+e.getMessage());
