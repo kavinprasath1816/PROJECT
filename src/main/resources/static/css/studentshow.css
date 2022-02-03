@@ -17,23 +17,27 @@ body{
 .nav-item{
   margin-left: 50px;
 }
-#table td, #table th {
-    border: 1px solid #ddd;
-    padding: 8px;
-    color: #fff
+label{
+  color: #fff;
+  margin-top: 90px;
+  font-size: 32px;
+  margin-left: 38rem;
 }
-#table th {
-padding-top: 12px;
-padding-bottom: 12px;
-text-align: left;
-color: #03e9f4;
-}
+.table{
+  border: 1px solid #ddd;
+  color: #fff;
+  width: 1100px;
+  margin-top: 10px;
+  margin-left: 200px;
+  position: relative;
 
-#table {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 800px;
-    margin-top: 130px;
-    margin-left: 80px;
-    position: relative;
+}
+tr:hover{
+  background-color: #fff;
+}
+#head{
+  color: #03e9f4
+}
+#head:hover{
+  background: none;
 }

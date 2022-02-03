@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acitvity</title>
+    <title>Admin | Activity</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
@@ -32,27 +32,28 @@
     <div class="container">
         <a th:href="@{/admin/staff-form}">
             <div class=" container-1">
-                <i id="one" class="fas fa-user-cog"></i><br>
+                <i id="one" class="fas fa-user-plus"></i><br>
                 <label>Add</label><br>
                 <span>Staff</span>
             </div>
         </a>
         <a th:href="@{/staff/student-database}">
             <div class="container-2">
-                <i id="two" class="fas fa-user"></i><br>
-                <label style="margin-left: 90px;">Student</label>
-                <span style="margin-left: 90px;" class="counter" th:data-target="${student}"></span>
+                <i id="two" class="fas fa-database"></i><br>
+                <label style="margin-left: 90px;">Student</label><br>
+                <span style="margin-left: 130px;color: #03e9f4" class="counter" th:data-target="${student}"></span>
+
             </div>
         </a>
         <a th:href="@{/admin/staff-database}">
             <div class="container-3">
-                <i id="three" class="fas fa-user-plus"></i>
-                <label style="margin-left: 90px;">Staff</label><br>
-                <span style="margin-left: 90px;" class="counter" th:data-target="${staff}"></span>
+                <i id="three" class="fas fa-database"></i>
+                <label style="margin-left: 98px;">Staff</label><br>
+                <span style="margin-left: 110px;color: #03e9f4" class="counter" th:data-target="${staff}"></span>
             </div>
         </a>
       </div>
-    
+
 </body>
 <script type="text/javascript">
     const counters = document.querySelectorAll('.counter')

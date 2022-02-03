@@ -9,7 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <title>Home</title>
-  <link th:rel="icon" th:href="@{/images/college.jpg}">
+  <link rel="icon" href="@{/images/college.jpg}">
   <link rel="stylesheet" href="../css/home.css">
 
 </head>
@@ -19,11 +19,11 @@
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a style="color: #fff;font-size: 25px;" class="navbar-brand" href="#">University Of India</a>
+          <a style="color: #fff;font-size: 25px;" class="navbar-brand" th:href="@{/home}">University</a>
         </div>
         <ul class="nav navbar-nav">
           <li >
-            <a  style="color: #fff;font-size: 20px;" href="#">Home</a>
+            <a  style="color: #fff;font-size: 20px;" th:href="@{/home}">Home</a>
           </li>
           <li >
             <a  style="color: #fff;font-size: 20px;" th:href="@{/student/form}">Register</a>
@@ -126,5 +126,6 @@
             }
         },5000);
     </script>
+
 </body>
 </html>

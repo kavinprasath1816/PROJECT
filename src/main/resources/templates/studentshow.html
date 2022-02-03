@@ -32,16 +32,21 @@
         </li>
     </ul>
 </nav>
-<table id="table" class="table table-borderless">
-    <tr>
-        <th >StudentName</th>
+<table class="table table-hover">
+    <label>Student Database</label>
+    <thead>
+    <tr id="head">
+        <th >Name</th>
         <th >Email</th>
         <th >Gender</th>
-        <th>PhoneNumber</th>
+        <th>Phone</th>
         <th>10th</th>
         <th>12th</th>
         <th>Created At</th>
+        <th>Delete</th>
     </tr>
+    </thead>
+    <tbody>
     <tr th:each = "student : ${student}" >
         <td th:text="${student.name}"></td>
         <td th:text="${student.email}"></td>
@@ -50,7 +55,9 @@
         <td th:text="${student.markTen}"></td>
         <td th:text="${student.markTwelve}"></td>
         <td th:text="${student.createdAt}"></td>
+        <td><i class="fas fa-trash"></i></td>
     </tr>
+    </tbody>
 </table>
 
 
