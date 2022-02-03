@@ -26,7 +26,7 @@ public class StaffUserService implements UserDetailsService {
         staff.orElseThrow(() -> new UsernameNotFoundException("User " + name.toUpperCase() + "Not found"));
         StaffModel s = staff.get();
         return new org.springframework.security.core.userdetails.User(
-                s.getStaffName(),
+                s.getStaffEmail(),
                 s.getPassword(),
                 s.getRole().stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList()));
 

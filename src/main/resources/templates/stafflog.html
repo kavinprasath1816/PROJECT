@@ -15,7 +15,7 @@
     <nav class="navbar navbar-expand-sm justify-content-center">
         <a class="navbar-brand" href="#">
             <img th:src="@{/images/img_avatar1.png}" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
-            <span style="position: relative; margin-left:10px; color: white;font-size: inherit" th:text="${#authentication.name}"></span>
+            <span style="position: relative; margin-left:10px; color: white;font-size: inherit" th:text="${#strings.arraySplit(#authentication.name,'@')[0]}"></span>
         </a>
         <ul class="navbar-nav">
             <li class="nav-item">

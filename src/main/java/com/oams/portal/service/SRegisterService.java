@@ -15,6 +15,8 @@ public interface SRegisterService {
 
     public void updatePassword(String password,String name);
 
+    void delete(String email);
+
     
     
 }

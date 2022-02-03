@@ -41,3 +41,6 @@ tr:hover{
 #head:hover{
   background: none;
 }
+a{
+    text-decoration:none;
+}

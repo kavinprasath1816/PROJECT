@@ -5,12 +5,14 @@ import com.oams.portal.dao.StudentRepo;
 import com.oams.portal.exceptions.BasicExceptions;
 import com.oams.portal.models.StaffModel;
 import com.oams.portal.projections.StudentView;
+import com.oams.portal.service.SRegisterService;
 import com.oams.portal.service.StaffService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -32,6 +34,9 @@ public class AdminController {
 
     @Autowired
     StaffRepo staffRepo;
+
+    @Autowired
+    SRegisterService service;
 
     @RequestMapping(value = {"/main-page","/admin-dashboard"})
     public ModelAndView adminMainPage(Model model){
@@ -68,5 +73,11 @@ public class AdminController {
         List<StaffModel> staff = staffRepo.getStaff();
         model.addAttribute("staff",staff);
         return new ModelAndView("staffshow");
+    }
+
+    @RequestMapping(method = RequestMethod.GET,value = "/delete-user/{email}")
+    public String delete(@PathVariable("email") String email){
+        service.delete(email);
+        return "redirect:/staff/student-database";
     }
 }

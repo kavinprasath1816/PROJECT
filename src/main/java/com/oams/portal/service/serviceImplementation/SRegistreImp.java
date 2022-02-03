@@ -87,4 +87,9 @@ public class SRegistreImp implements SRegisterService{
     public void updatePassword(String password, String name) {
         repo.updatePassword(BCrypt.hashpw(password, BCrypt.gensalt()),name,Timestamp.from(Instant.now()));
     }
+
+    @Override
+    public void delete(String email) {
+        repo.delete(email);
+    }
 }

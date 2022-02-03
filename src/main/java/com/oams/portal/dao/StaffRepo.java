@@ -20,7 +20,7 @@ public interface StaffRepo extends JpaRepository<StaffModel,Integer> {
     int getCount();
 
     @Modifying
-    @Query(value = "UPDATE STAFF SET PASSWORD = ?1  WHERE NAME = ?2",nativeQuery = true)
+    @Query(value = "UPDATE STAFF SET PASSWORD = ?1  WHERE EMAIL = ?2",nativeQuery = true)
     void updatePassword(String password,String name);
 
     @Query(value = "SELECT * FROM STAFF",nativeQuery = true)
