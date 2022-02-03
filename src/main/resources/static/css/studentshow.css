@@ -1,0 +1,39 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color:#060b23;
+}
+.navbar{
+  height: 90px;
+  background-color:#060b23;
+}
+.nav-link{
+  color: white;
+}
+.nav-link:hover{
+  color: #03e9f4
+}
+
+.nav-item{
+  margin-left: 50px;
+}
+#table td, #table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    color: #fff
+}
+#table th {
+padding-top: 12px;
+padding-bottom: 12px;
+text-align: left;
+color: #03e9f4;
+}
+
+#table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 800px;
+    margin-top: 130px;
+    margin-left: 80px;
+    position: relative;
+}
