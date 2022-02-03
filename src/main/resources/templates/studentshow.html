@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security" >
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,12 +21,18 @@
         <li class="nav-item">
             <a class="nav-link" th:href="@{/home}">HOME</a>
         </li>
+        <li class="nav-item" sec:authorize="hasAuthority('admin')">
+            <a class="nav-link" th:href="@{/admin/main-page}">ADMIN DASHBOARD</a>
+        </li>
+        <li class="nav-item" sec:authorize="hasAuthority('Staff')">
+            <a class="nav-link" th:href="@{/staff/main-page}">STAFF DASHBOARD</a>
+        </li>
         <li class="nav-item">
             <a class="nav-link" th:href="@{/logout}">LOGOUT</a>
         </li>
     </ul>
 </nav>
-<table id="table">
+<table id="table" class="table table-borderless">
     <tr>
         <th >StudentName</th>
         <th >Email</th>
@@ -36,15 +42,16 @@
         <th>12th</th>
         <th>Created At</th>
     </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+    <tr th:each = "student : ${student}" >
+        <td th:text="${student.name}"></td>
+        <td th:text="${student.email}"></td>
+        <td th:text="${student.gender}"></td>
+        <td th:text="${student.phoneNumber}"></td>
+        <td th:text="${student.markTen}"></td>
+        <td th:text="${student.markTwelve}"></td>
+        <td th:text="${student.createdAt}"></td>
     </tr>
+</table>
 
 
 

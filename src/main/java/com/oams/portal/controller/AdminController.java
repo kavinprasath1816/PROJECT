@@ -4,8 +4,10 @@ import com.oams.portal.dao.StaffRepo;
 import com.oams.portal.dao.StudentRepo;
 import com.oams.portal.exceptions.BasicExceptions;
 import com.oams.portal.models.StaffModel;
+import com.oams.portal.projections.StudentView;
 import com.oams.portal.service.StaffService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("/admin")
@@ -57,5 +60,13 @@ public class AdminController {
             return "Staff Register";
         }
 
+    }
+
+    @RequestMapping("/staff-database")
+    @PreAuthorize("hasAnyAuthority('admin')")
+    public ModelAndView staffDatabase(Model model){
+        List<StaffModel> staff = staffRepo.getStaff();
+        model.addAttribute("staff",staff);
+        return new ModelAndView("staffshow");
     }
 }

@@ -25,18 +25,19 @@
           <li >
             <a  style="color: #fff;font-size: 20px;" href="#">Home</a>
           </li>
-          <li class="dropdown"><a style="color: #fff;font-size: 20px;" class="dropdown-toggle" data-toggle="dropdown" href="#">Student<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a style="color: #111;font-size: 18px;" th:href="@{/student/form}">Student Register</a></li>
-              <li><a style="color: #111;font-size: 18px;" href="#">Student Activity</a></li>
-            </ul>
+          <li >
+            <a  style="color: #fff;font-size: 20px;" th:href="@{/student/form}">Register</a>
           </li>
-          <li class="dropdown"><a style="color: #fff;font-size: 20px;" class="dropdown-toggle" data-toggle="dropdown" href="#">Staff<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a style="color: #111;font-size: 18px;" href="#">Staff Register</a></li>
-              <li><a style="color: #111;font-size: 18px;" href="#">Staff Activity</a></li>
-            </ul>
+          <li sec:authorize="hasAuthority('admin')">
+            <a  style="color: #fff;font-size: 20px;" th:href="@{/admin/main-page}">Dashboard</a>
           </li>
+          <li sec:authorize="hasAuthority('Staff')">
+            <a  style="color: #fff;font-size: 20px;" th:href="@{/staff/main-page}">Dashboard</a>
+          </li>
+          <li sec:authorize="hasAuthority('student')">
+            <a  style="color: #fff;font-size: 20px;" th:href="@{/student/main-page}">Dashboard</a>
+          </li>
+
           <li sec:authorize="isAuthenticated()"><a  style="color: #fff;font-size: 20px;"  th:href="@{/logout}">Logout</a></li>
           <li sec:authorize="isAnonymous()"><a  style="color: #fff;font-size: 20px;"  th:href="@{/student}">Login</a></li>
 

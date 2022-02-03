@@ -23,8 +23,9 @@
             </li>
 
             <li class="nav-item" sec:authorize="hasAuthority('admin')">
-                <a class="nav-link" th:href="@{/home}">ADMIN DASHBOARD</a>
+                <a class="nav-link" th:href="@{/admin/main-page}">ADMIN DASHBOARD</a>
             </li>
+
 
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/logout}">LOGOUT</a>
@@ -47,11 +48,13 @@
                 <span style="margin-left: 90px;">Activity</span>
             </div>
         </a>
+        <a th:href="@{/staff/student-database}">
         <div class="container-3">
             <i id="three" class="fas fa-users"></i><br>
             <label style="margin-left: 80px;">Students</label>
             <span style="margin-left: 80px;">Database</span>
           </div>
+        </a>
       </div>
     
 </body>

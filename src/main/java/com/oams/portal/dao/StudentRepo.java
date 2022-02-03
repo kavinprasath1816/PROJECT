@@ -83,5 +83,10 @@ public interface StudentRepo {
     @Select("SELECT REJECTED FROM STUDENTS WHERE NAME = #{name}")
     boolean Rejected(String name);
 
+    @Select("SELECT NAME,EMAIL,GROUP_TWELVE,PHONE_NUMBER,GENDER,IMAGE_FILE_NAME,SCHOOL_TWELVE," +
+            "BOARD_TWELVE,DOB,MARK_TWELVE,SCHOOL_TEN,BOARD_TEN," +
+            "MARK_TEN,CREATED_AT FROM STUDENTS ORDER BY NAME")
+    List<StudentView> getStudents();
+
 
 }

@@ -9,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -45,6 +46,12 @@ public class StaffServiceImp implements StaffService {
             throw new BasicExceptions("Error in adding Staff");
         }
 
+    }
+
+    @Transactional
+    @Override
+    public void updatePassword(String password,String name){
+        repo.updatePassword(BCrypt.hashpw(password, BCrypt.gensalt()),name);
     }
 
 

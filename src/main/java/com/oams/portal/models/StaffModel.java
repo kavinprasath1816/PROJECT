@@ -4,8 +4,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.Set;
 
 
@@ -32,4 +35,10 @@ public class StaffModel {
     private String ImageName;
     @Column(name = "PASSWORD")
     private String password;
+    @Column(name = "CREATED_AT")
+    @CreationTimestamp
+    private Timestamp createdAt;
+    @Column(name = "UPDATED_AT")
+    @UpdateTimestamp
+    private Timestamp updatedAt;
 }

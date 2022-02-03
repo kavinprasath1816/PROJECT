@@ -32,7 +32,7 @@
 <div class="container">
     <div class=" container-1">
         <i id="one" class="fas fa-phone-alt"></i><br>
-        <form>
+        <form >
             <div class="user-box">
                 <input id=phone type="text" name="updatephoneNumber" required="" autocomplete="off">
                 <label>Phone Number</label><br>
@@ -57,11 +57,11 @@
     <a>
         <div class="container-3">
             <i id="three" class="fas fa-lock"></i>
-            <form>
+            <form th:action="@{update-password}" method="post">
                 <div class="user-box">
-                    <input id=phone type="text" name="updatephoneNumber" required="" autocomplete="off">
+                    <input id=password type="text" name="password" required="" autocomplete="off">
                     <label>Password</label><br>
-                    <button type="button">UPDATE</button>
+                    <button type="submit">UPDATE</button>
                 </div>
             </form>
 

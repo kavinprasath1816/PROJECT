@@ -6,4 +6,6 @@ import org.springframework.web.multipart.MultipartFile;
 public interface StaffService {
 
     void addStaff(StaffModel staffModel, MultipartFile staffImage);
+
+    void updatePassword(String password,String name);
 }

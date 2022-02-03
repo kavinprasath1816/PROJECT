@@ -2,7 +2,9 @@ package com.oams.portal.controller;
 
 import com.oams.portal.dao.StudentRepo;
 import com.oams.portal.exceptions.BasicExceptions;
+import com.oams.portal.models.Password;
 import com.oams.portal.projections.StudentView;
+import com.oams.portal.service.StaffService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -10,8 +12,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.security.Principal;
 import java.util.List;
 
 @Controller
@@ -21,6 +25,9 @@ public class StaffController {
 
     @Autowired
     StudentRepo repo;
+
+    @Autowired
+    StaffService service;
 
 
     @RequestMapping("/acceptance-page")
@@ -113,6 +120,21 @@ public class StaffController {
     public ModelAndView updatePage(){
         return new ModelAndView("staffupdate");
     }
+
+    @RequestMapping(method = RequestMethod.POST,value = "/update-password")
+    public String updatePassword(Password password, Principal p){
+        service.updatePassword(password.getPassword(),p.getName());
+        return "redirect:update-page";
+    }
+
+    @RequestMapping("/student-database")
+    @PreAuthorize("hasAnyAuthority('Staff','admin')")
+    public ModelAndView studentDatabase(Model model){
+        List<StudentView> student = repo.getStudents();
+        model.addAttribute("student",student);
+        return new ModelAndView("studentshow");
+    }
+
 
 
 }

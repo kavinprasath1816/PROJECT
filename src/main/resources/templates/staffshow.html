@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" >
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,6 +21,9 @@
         <li class="nav-item">
             <a class="nav-link" th:href="@{/home}">HOME</a>
         </li>
+        <li class="nav-item" sec:authorize="hasAuthority('admin')">
+            <a class="nav-link" th:href="@{/admin/main-page}">ADMIN DASHBOARD</a>
+        </li>
         <li class="nav-item">
             <a class="nav-link" th:href="@{/logout}">LOGOUT</a>
         </li>
@@ -32,10 +35,10 @@
         <th>Email</th>
         <th>Created At</th>
     </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
+    <tr th:each = "staff : ${staff}">
+        <td th:text="${staff.staffName}"></td>
+        <td th:text="${staff.staffEmail}"></td>
+        <td th:text="${staff.createdAt}"></td>
     </tr>
 
 

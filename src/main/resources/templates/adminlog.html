@@ -37,16 +37,17 @@
                 <span>Staff</span>
             </div>
         </a>
-        
-        <div class="container-2">
-            <i id="two" class="fas fa-user"></i><br>
-            <label style="margin-left: 90px;">Student</label>
-            <span style="margin-left: 90px;" class="counter" th:data-target="${student}"></span>
-        </div>
-        <a>
+        <a th:href="@{/staff/student-database}">
+            <div class="container-2">
+                <i id="two" class="fas fa-user"></i><br>
+                <label style="margin-left: 90px;">Student</label>
+                <span style="margin-left: 90px;" class="counter" th:data-target="${student}"></span>
+            </div>
+        </a>
+        <a th:href="@{/admin/staff-database}">
             <div class="container-3">
                 <i id="three" class="fas fa-user-plus"></i>
-                <label style="margin-left: 90px;">Staff</label>
+                <label style="margin-left: 90px;">Staff</label><br>
                 <span style="margin-left: 90px;" class="counter" th:data-target="${staff}"></span>
             </div>
         </a>
