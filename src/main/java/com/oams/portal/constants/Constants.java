@@ -1,7 +1,5 @@
 package com.oams.portal.constants;
 
-import org.springframework.stereotype.Component;
-
 public class Constants {
 
     public static final String SUCCESS_EMAIL = "Hi Sir\n"+
