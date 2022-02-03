@@ -1,11 +1,8 @@
 package com.oams.portal.service.serviceImplementation;
 
 import com.oams.portal.dao.StudentJpaRepo;
-import com.oams.portal.dao.StudentRepo;
-import com.oams.portal.exceptions.BasicExceptions;
 import com.oams.portal.models.Student;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

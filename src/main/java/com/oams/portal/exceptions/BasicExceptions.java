@@ -1,11 +1,11 @@
 package com.oams.portal.exceptions;
 
-import java.io.Serial;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+
+import java.io.Serial;
 
 @Data
 @EqualsAndHashCode(callSuper = true)

@@ -7,9 +7,6 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.apache.ibatis.type.MappedTypes;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -75,17 +72,16 @@ public interface StudentRepo {
     int getCount();
 
     @Update("UPDATE STUDENTS SET ADDRESS = #{address}, UPDATED_AT = #{time} WHERE NAME = #{name}")
-    void updateAddress(String address,String name, Timestamp time);
+    void updateAddress(String address, String name, Timestamp time);
 
     @Update("UPDATE STUDENTS SET PASSWORD = #{password}, UPDATED_AT = #{time} WHERE NAME = #{name}")
-    void updatePassword(String password,String name, Timestamp time);
+    void updatePassword(String password, String name, Timestamp time);
 
     @Select("SELECT SELECTED FROM STUDENTS WHERE NAME = #{name}")
     boolean Selected(String name);
 
     @Select("SELECT REJECTED FROM STUDENTS WHERE NAME = #{name}")
     boolean Rejected(String name);
-
 
 
 }
