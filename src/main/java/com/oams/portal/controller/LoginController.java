@@ -12,20 +12,11 @@ public class LoginController {
         return new ModelAndView("login");
     }
 
-    @RequestMapping(value = "/student/login")
-    public ModelAndView studentLogin() {
-        return new ModelAndView("login");
-    }
-
     @RequestMapping(value = "/staff")
     public ModelAndView staff() {
         return new ModelAndView("login");
     }
 
-    @RequestMapping(value = "/staff/login")
-    public ModelAndView staffLogin() {
-        return new ModelAndView("login");
-    }
 
 
 }

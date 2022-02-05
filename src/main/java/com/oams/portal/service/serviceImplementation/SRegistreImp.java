@@ -90,6 +90,6 @@ public class SRegistreImp implements SRegisterService{
 
     @Override
     public void delete(String email) {
-        repo.delete(email);
+        studentJpaRepo.deleteById(repo.getId(email));
     }
 }

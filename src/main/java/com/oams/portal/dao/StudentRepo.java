@@ -85,8 +85,8 @@ public interface StudentRepo {
             "MARK_TEN,CREATED_AT FROM STUDENTS ORDER BY NAME")
     List<StudentView> getStudents();
 
-    @Delete("DELETE FROM STUDENTS WHERE EMAIL = #{email}")
-    void delete(String email);
+    @Select("SELECT ID FROM STUDENTS WHERE EMAIL = #{name}")
+    Integer getId(String email);
 
 
 

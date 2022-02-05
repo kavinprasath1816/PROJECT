@@ -47,7 +47,7 @@ public class StudentController {
         } catch (Exception e) {
             throw new BasicExceptions("Error in register"+e.getMessage());
         }
-        return "redirect:login";
+        return "redirect:/student";
     }
 
     @RequestMapping("/main-page")
