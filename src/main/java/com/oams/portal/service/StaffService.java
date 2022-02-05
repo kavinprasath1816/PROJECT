@@ -8,4 +8,6 @@ public interface StaffService {
     void addStaff(StaffModel staffModel, MultipartFile staffImage);
 
     void updatePassword(String password,String name);
+
+    void delete(String email);
 }

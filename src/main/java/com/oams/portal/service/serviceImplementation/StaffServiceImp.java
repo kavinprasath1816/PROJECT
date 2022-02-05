@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -52,6 +53,18 @@ public class StaffServiceImp implements StaffService {
     @Override
     public void updatePassword(String password,String name){
         repo.updatePassword(BCrypt.hashpw(password, BCrypt.gensalt()),name);
+    }
+
+    @Override
+    public void delete(String email){
+        try {
+            StaffModel staff = repo.staff(email);
+            repo.deleteById(staff.getStaffId());
+            log.info("Staff deleted successfully!");
+        }
+        catch(Exception e){
+            log.error("Staff cannot be deleted");
+        }
     }
 
 

@@ -80,4 +80,10 @@ public class AdminController {
         service.delete(email);
         return "redirect:/staff/student-database";
     }
+
+    @RequestMapping(method = RequestMethod.GET,value="/delete-staff/{email}")
+    public String staffDelete(@PathVariable("email") String email){
+        staffService.delete(email);
+        return "redirect:/admin/staff-database";
+    }
 }

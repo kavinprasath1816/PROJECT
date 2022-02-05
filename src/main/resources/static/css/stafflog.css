@@ -97,6 +97,9 @@ span{
 .nav-link:hover{
   color: #03e9f4
 }
+.nav-link:active{
+  color: #03e9f4
+}
 
 .nav-item{
   margin-left: 50px;
