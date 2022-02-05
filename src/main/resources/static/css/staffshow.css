@@ -1,7 +1,13 @@
-    body{
+        body{
     padding: 0;
     margin: 0;
     background-color:#060b23;
+}
+i{
+    color: red;
+    cursor:pointer;
+    margin-left:15px
+
 }
 .navbar{
   height: 90px;
@@ -21,19 +27,21 @@ label{
   color: #fff;
   margin-top: 90px;
   font-size: 32px;
-  margin-left: 38rem;
+  margin-left: 41rem;
 }
 .table{
   border: 1px solid #ddd;
   color: #fff;
   width: 600px;
   margin-top: 10px;
-  margin-left: 400px;
+  margin-left: 470px;
   position: relative;
 
 }
 tr:hover{
   background-color: #fff;
+
+
 }
 #head{
   color: #03e9f4
