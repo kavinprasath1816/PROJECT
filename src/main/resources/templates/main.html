@@ -50,9 +50,9 @@
             <div class="card-body">
                 <h4 class="card-title" th:text="${student.name}"></h4>
                 <div class="progress">
-                    <div class="progress-bar bg-success" th:if="${student.markTwelve gt 89}" th:style="|width:${student.markTwelve}%;|"></div>
-                    <div class="progress-bar bg-primary" th:if="${student.markTwelve lt 90 and student.markTwelve gt 69}" th:style="|width:${student.markTwelve}%;|"></div>
-                    <div class="progress-bar bg-info" th:if="${student.markTwelve lt 70 and student.markTwelve gt 49}" th:style="|width:${student.markTwelve}%;|"></div>
+                    <div class="progress-bar bg-success" th:if="${student.markTwelve gt 89}" th:style="|width:${student.markTwelve}%;|">12th Marks</div>
+                    <div class="progress-bar bg-primary" th:if="${student.markTwelve lt 90 and student.markTwelve gt 69}" th:style="|width:${student.markTwelve}%;|">12th Marks</div>
+                    <div class="progress-bar bg-info" th:if="${student.markTwelve lt 70 and student.markTwelve gt 49}" th:style="|width:${student.markTwelve}%;|">12th Marks</div>
                     <div class="progress-bar bg-warning" th:if="${student.markTwelve}<50" th:style="|width:${student.markTwelve}%;|">12th Marks</div>
                 </div><br>
                 <div class="progress">
