@@ -153,3 +153,15 @@ button:hover {
   border-radius: 5px;
   box-shadow: 0 0 5px #03e9f4,0 0 25px #03e9f4,0 0 50px #03e9f4,0 0 100px #03e9f4;
 }
+.nav-item a::after{
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #03e9f4;;
+  display: block;
+  margin: auto;
+  transition: .5s;
+}
+.nav-item a:hover::after{
+   width: 100%;
+}

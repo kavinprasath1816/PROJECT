@@ -50,3 +50,15 @@ tr:hover{
 a{
     text-decoration:none;
 }
+.nav-item a::after{
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #03e9f4;;
+  display: block;
+  margin: auto;
+  transition: .5s;
+}
+.nav-item a:hover::after{
+   width: 100%;
+}
