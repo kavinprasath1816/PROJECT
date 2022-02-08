@@ -26,9 +26,6 @@ public interface StaffRepo extends JpaRepository<StaffModel,Integer> {
     @Query(value = "SELECT * FROM STAFF",nativeQuery = true)
     List<StaffModel> getStaff();
 
-
     @Query(value = "SELECT * FROM STAFF WHERE EMAIL = ?1",nativeQuery = true)
     StaffModel staff(String email);
-
-
 }

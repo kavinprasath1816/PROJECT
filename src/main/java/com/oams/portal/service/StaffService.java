@@ -9,5 +9,5 @@ public interface StaffService {
 
     void updatePassword(String password,String name);
 
-    void delete(String email);
+    void delete(String email );
 }

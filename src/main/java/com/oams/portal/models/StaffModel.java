@@ -25,7 +25,7 @@ public class StaffModel {
     @Column(name = "STAFF_ID")
     private int staffId;
     @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "ROLE", joinColumns = @JoinColumn(name = "staff_id"))
+    @CollectionTable(name = "ROLE", joinColumns = @JoinColumn(name = "STAFF_ID"))
     private Set<String> role;
     @Column(name = "NAME")
     private String staffName;

@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 body{
   margin: 0;
   padding: 0;
   display: flex;
+  font-family: 'Poppins', sans-serif;
 }
 .slider{
   width: 1518px;
-  height: 745px;
+  height: 800px;
   overflow: hidden;
 }
 .slides{
@@ -16,15 +18,14 @@ body{
 }
 .slides input{
   display: none;
-
 }
 .slide{
   width: 20%;
   transition: .2s;
 }
 .slide img{
-  width: 1518px;
-  height:745px ;
+  width:100%;
+  height:800px;
 }
 .navigation-manual{
   margin-left: 360px;
@@ -90,34 +91,61 @@ body{
 #radio4:checked ~ .navigation-auto .auto-btn4{
   background: #03e9f4;
 }
-
-.navbar-header{
-  position: absolute;
-  top: 20px;
-  left: 50px;
-  text-transform: uppercase;
-}
-.navbar{
-  background-color:#060b23;
-  height: 90px;
-}
-header {
+.header {
+  cursor:context-menu;
+  z-index: 2;
   width: 100%;
-  height: 90px;
+  height: 80px;
+  background-color:#060b23;
   background-size: cover;
   background-position:center;
   position: fixed;
 }
-.navbar-nav{
-  width: 420px;
-  margin-top:24px;
-  font-family: poppins;
-  font-size: 20px;
-  color:#fff;
-  float: right;
+.title{
+  color: #fff;
+  padding-left: 36px;
+  font-size: 26px;
+  text-transform: uppercase;
+  text-decoration:none;
 }
-
-
+nav{
+  margin-top: 3px;
+  width: 100%;
+  height: 8px;
+  display: flex;
+  padding-left: 0px;
+  padding-top: 35px;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-links{
+  flex: 1;
+  text-align: right;
+  padding-right: 30px;
+}
+.nav-links ul li{
+  list-style: none;
+  display: inline-block;
+  padding: 0px 12px;
+  position: relative;
+}
+.nav-links ul li a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 17px;
+}
+.nav-links ul li::after{
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #03e9f4;;
+  display: block;
+  margin: auto;
+  transition: .5s;
+}
+.nav-links ul li:hover::after{
+   width: 100%;
+}
 .display{
   display: flex;
 }
@@ -128,81 +156,81 @@ header {
   width: 1000px;
 }
 .eligible img{
-  height: 359px;
+  height: 310px;
   padding-top: 130px;
   width: 361px;
 }
 footer{
-    position: absolute;
-    top: 1400px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #111;
-    height: auto;
-    width: 1518px;
-    font-family: "Open Sans";
-    padding-top: 40px;
-    color: #fff;
+  position: absolute;
+  top: 1400px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #111;
+  height: auto;
+  width: 1518px;
+  font-family: "Open Sans";
+  padding-top: 40px;
+  color: #fff;
 }
 .footer-content{
-  background-color: #111;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
+background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
 .footer-content h3{
-    font-size: 1.8rem;
-    font-weight: 400;
-    text-transform: capitalize;
-    line-height: 3rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 3rem;
 }
 .footer-content p{
-    max-width: 500px;
-    margin: 10px auto;
-    line-height: 28px;
-    font-size: 14px;
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 14px;
 }
 .socials{
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem 0 3rem 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
 }
 .socials li{
-    margin: 0 15px;
+  margin: 0 15px;
 }
 .socials a{
-    text-decoration: none;
-    color: #fff;
+  text-decoration: none;
+  color: #fff;
 }
 .socials a i{
-    font-size: 1.1rem;
-    transition: color .4s ease;
+  font-size: 1.1rem;
+  transition: color .4s ease;
 
 }
 .socials a:hover i{
-    color: aqua;
+  color: aqua;
 }
 
 .footer-bottom{
-    background: #000;
-    width: 1518px;
-    padding: 20px 0;
-    text-align: center;
+  background: #000;
+  width: 1518px;
+  padding: 20px 0;
+  text-align: center;
 }
 .footer-bottom p{
-    font-size: 14px;
-    word-spacing: 2px;
-    text-transform: capitalize;
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
 }
 .dropdown-toggle{
-  background: none;
-  border: none;
-  font-family: poppins;
-  font-size: 20px;
+background: none;
+border: none;
+font-family: poppins;
+font-size: 20px;
 }
 
