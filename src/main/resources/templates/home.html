@@ -5,9 +5,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <title>Home</title>
   <link rel="icon" th:href="@{/images/college.jpeg}">
   <link rel="stylesheet" href="../css/home.css">
@@ -15,36 +12,26 @@
 </head>
 <body>
 <div class="con">
-  <header>
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a style="color: #fff;font-size: 25px;" class="navbar-brand" th:href="@{/home}">University</a>
-        </div>
-        <ul class="nav navbar-nav">
-          <li >
-            <a  style="color: #fff;font-size: 20px;" th:href="@{/home}">Home</a>
-          </li>
-          <li >
-            <a  style="color: #fff;font-size: 20px;" th:href="@{/student/form}">Register</a>
-          </li>
-          <li sec:authorize="hasAuthority('admin')">
-            <a  style="color: #fff;font-size: 20px;" th:href="@{/admin/main-page}">Dashboard</a>
-          </li>
-          <li sec:authorize="hasAuthority('Staff')">
-            <a  style="color: #fff;font-size: 20px;" th:href="@{/staff/main-page}">Dashboard</a>
-          </li>
-          <li sec:authorize="hasAuthority('student')">
-            <a  style="color: #fff;font-size: 20px;" th:href="@{/student/main-page}">Dashboard</a>
-          </li>
+  <section class="header">
+    <nav>
+      <a  class="title" th:href="@{/home}">University</a>
+      <div class="nav-links">
+        <ul>
+          <li><a th:href="@{/home}">Home</a></li>
+          <li><a th:href="@{/student/form}">Register</a></li>
 
-          <li sec:authorize="isAuthenticated()"><a  style="color: #fff;font-size: 20px;"  th:href="@{/logout}">Logout</a></li>
-          <li sec:authorize="isAnonymous()"><a  style="color: #fff;font-size: 20px;"  th:href="@{/student}">Login</a></li>
+          <li sec:authorize="hasAuthority('admin')"><a  th:href="@{/admin/main-page}">Dashboard</a></li>
+          <li sec:authorize="hasAuthority('Staff')"><a  th:href="@{/staff/main-page}">Dashboard</a></li>
+          <li sec:authorize="hasAuthority('student')"><a   th:href="@{/student/main-page}">Dashboard</a></li>
 
+
+
+          <li sec:authorize="isAuthenticated()"><a  th:href="@{/logout}">Logout</a></li>
+          <li sec:authorize="isAnonymous()"><a  th:href="@{/student}">Login</a></li>
         </ul>
       </div>
     </nav>
-  </header>
+  </section>
   <div class="slider">
     <div class="slides">
       <input type="radio" name="radio-btn" id="radio1">
@@ -53,13 +40,13 @@
       <input type="radio" name="radio-btn" id="radio4">
 
       <div class="slide first">
-        <img th:src="@{/images/slide 1.jpeg}" alt="" width="200px" height="635px">
+        <img th:src="@{/images/slide 1.jpeg}"  alt="" width="200px" height="635px">
       </div>
       <div class="slide">
-        <img th:src="@{/images/slide 2.jpeg}" alt="" width="200px" height="635px">
+        <img th:src="@{/images/slide 2.jpeg}"  alt="" width="200px" height="635px">
       </div>
       <div class="slide">
-        <img th:src="@{/images/slide 3.jpeg}" alt="" width="200px" height="635px">
+        <img th:src="@{/images/slide 3.jpeg}"  alt="" width="200px" height="635px">
       </div>
       <div class="slide">
         <img th:src="@{/images/slide 4.jpeg}" alt="" width="200px" height="635px">
@@ -114,7 +101,11 @@
       <p>copyright &copy;2022 university of india</p>
     </div>
   </footer>
+
+
 </div>
+
+
 
 <script type="text/javascript">
 document.addEventListener('contextmenu',(e)=>{
