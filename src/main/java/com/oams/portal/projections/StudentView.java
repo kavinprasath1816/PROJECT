@@ -13,16 +13,16 @@ import java.util.Date;
 public class StudentView {
     public String name;
     public String email;
-    public String groupTwelve;
-    public String phoneNumber;
+    public String group_twelve;
+    public String phone_number;
     public String gender;
-    public String imageFileName;
-    public String schoolTwelve;
-    public String boardTwelve;
+    public String image_file_name;
+    public String school_twelve;
+    public String board_twelve;
     public  Date dob;
-    public int markTwelve;
-    public String schoolTen;
-    public String boardTen;
-    public int markTen;
-    public Timestamp createdAt;
+    public int mark_twelve;
+    public String school_ten;
+    public String board_ten;
+    public int mark_ten;
+    public Timestamp created_at;
 }

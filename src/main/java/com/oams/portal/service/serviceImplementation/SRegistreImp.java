@@ -48,7 +48,7 @@ public class SRegistreImp implements SRegisterService{
             student.setTwelveFileName(fileStorageService.saveFile(file2));
             student.setPassword(BCrypt.hashpw(student.getPassword(), BCrypt.gensalt()));
             studentJpaRepo.save(student);
-            service.sendMail("kavinprasath67175@gmail.com","Regarding Registration","You have Successfully Registered");
+            service.sendMail(student.getEmail(),"Regarding Registration","You have Successfully Registered");
             log.info(student.getName()+" "+"student created successfully");
 
         }

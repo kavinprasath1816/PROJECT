@@ -1,6 +1,5 @@
 package com.oams.portal.controller;
 
-import com.oams.portal.constants.Constants;
 import com.oams.portal.dao.StudentRepo;
 import com.oams.portal.exceptions.BasicExceptions;
 import com.oams.portal.models.Password;
@@ -53,17 +52,27 @@ public class StaffController {
     @RequestMapping(value = "/accept/{email}")
     @PreAuthorize("hasAnyAuthority('Staff','admin')")
     public String accept(@PathVariable("email") String email) {
-        emailService.sendMail("kavinprasath67175@gmail.com","Regarding..",SUCCESS_EMAIL);
-        repo.updateSelected(email);
-        return "redirect:/staff/acceptance-page";
+        try {
+            emailService.sendMail(email, "Regarding..", SUCCESS_EMAIL);
+            repo.updateSelected(email);
+            return "redirect:/staff/acceptance-page";
+        } catch (Exception e) {
+            log.error("accept failed");
+            return "redirect:/staff/acceptance-page";
+        }
     }
 
     @RequestMapping(value = "/reject/{email}")
     @PreAuthorize("hasAnyAuthority('Staff','admin')")
     public String reject(@PathVariable("email") String email) {
-        repo.updateRejected(email);
-        emailService.sendMail("kavinprasath67175@gmail.com","Regarding..","You are Rejected");
-        return "redirect:/staff/acceptance-page";
+        try {
+            repo.updateRejected(email);
+            emailService.sendMail(email, "Regarding..", "You are Rejected");
+            return "redirect:/staff/acceptance-page";
+        } catch (Exception e) {
+            log.error("reject failed");
+            return "redirect:/staff/acceptance-page";
+        }
     }
 
     @RequestMapping("/selected-mark")
@@ -126,24 +135,33 @@ public class StaffController {
 
     @RequestMapping("/update-page")
     @PreAuthorize("hasAuthority('Staff')")
-    public ModelAndView updatePage(){
+    public ModelAndView updatePage() {
         return new ModelAndView("staffupdate");
     }
 
-    @RequestMapping(method = RequestMethod.POST,value = "/update-password")
-    public String updatePassword(Password password, Principal p){
-        service.updatePassword(password.getPassword(),p.getName());
-        return "redirect:update-page";
+    @RequestMapping(method = RequestMethod.POST, value = "/update-password")
+    public String updatePassword(Password password, Principal p) {
+        try {
+            service.updatePassword(password.getPassword(), p.getName());
+            return "redirect:update-page";
+        } catch (Exception e) {
+            log.error("error while updating password");
+            return "redirect:update-page";
+        }
     }
 
     @RequestMapping("/student-database")
     @PreAuthorize("hasAnyAuthority('Staff','admin')")
-    public ModelAndView studentDatabase(Model model){
-        List<StudentView> student = repo.getStudents();
-        model.addAttribute("student",student);
-        return new ModelAndView("studentshow");
+    public ModelAndView studentDatabase(Model model) {
+        try {
+            List<StudentView> student = repo.getStudents();
+            model.addAttribute("student", student);
+            return new ModelAndView("studentshow");
+        } catch (Exception e) {
+            log.error("error while  showing student database");
+            return new ModelAndView("studentshow");
+        }
     }
-
 
 
 }

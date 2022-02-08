@@ -29,6 +29,5 @@ public class StudentUserService implements UserDetailsService {
                 s.getPassword(),
                 s.getRole().stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList()));
 
-
     }
 }

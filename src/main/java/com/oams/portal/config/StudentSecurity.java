@@ -40,7 +40,6 @@ public class StudentSecurity extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/student");;
         http.csrf().disable();
-
     }
 
     @Override

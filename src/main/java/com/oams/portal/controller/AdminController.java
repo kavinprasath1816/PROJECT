@@ -4,9 +4,9 @@ import com.oams.portal.dao.StaffRepo;
 import com.oams.portal.dao.StudentRepo;
 import com.oams.portal.exceptions.BasicExceptions;
 import com.oams.portal.models.StaffModel;
-import com.oams.portal.projections.StudentView;
 import com.oams.portal.service.SRegisterService;
 import com.oams.portal.service.StaffService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -22,6 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.validation.Valid;
 import java.util.List;
 
+@Slf4j
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
@@ -38,11 +39,16 @@ public class AdminController {
     @Autowired
     SRegisterService service;
 
-    @RequestMapping(value = {"/main-page","/admin-dashboard"})
-    public ModelAndView adminMainPage(Model model){
-        model.addAttribute("student",repo.getCount());
-        model.addAttribute("staff",staffRepo.getCount());
-        return new ModelAndView("adminlog");
+    @RequestMapping(value = {"/main-page", "/admin-dashboard"})
+    public ModelAndView adminMainPage(Model model) {
+        try {
+            model.addAttribute("student", repo.getCount());
+            model.addAttribute("staff", staffRepo.getCount());
+            return new ModelAndView("adminlog");
+        } catch (Exception e) {
+            throw new BasicExceptions("Error in admin page");
+        }
+
     }
 
     @RequestMapping("/staff-form")
@@ -69,22 +75,37 @@ public class AdminController {
 
     @RequestMapping("/staff-database")
     @PreAuthorize("hasAnyAuthority('admin')")
-    public ModelAndView staffDatabase(Model model){
-        List<StaffModel> staff = staffRepo.getStaff();
-        model.addAttribute("staff",staff);
-        return new ModelAndView("staffshow");
+    public ModelAndView staffDatabase(Model model) {
+        try {
+            List<StaffModel> staff = staffRepo.getStaff();
+            model.addAttribute("staff", staff);
+            return new ModelAndView("staffshow");
+        } catch (Exception e) {
+            log.error("Error in showing staff database");
+            return new ModelAndView("staffshow");
+        }
     }
 
-    @RequestMapping(method = RequestMethod.GET,value = "/delete-user/{email}")
-    public String delete(@PathVariable("email") String email){
-        service.delete(email);
-        return "redirect:/staff/student-database";
+    @RequestMapping(method = RequestMethod.GET, value = "/delete-user/{email}")
+    public String delete(@PathVariable("email") String email) {
+        try {
+            service.delete(email);
+            return "redirect:/staff/student-database";
+        } catch (Exception e) {
+            log.error("Error while student delete");
+            return "redirect:/staff/student-database";
+        }
     }
 
-    @RequestMapping(method = RequestMethod.GET,value="/delete-staff/{email}")
-    public String staffDelete(@PathVariable("email") String email){
-        staffService.delete(email);
-        return "redirect:/admin/staff-database";
+    @RequestMapping(method = RequestMethod.GET, value = "/delete-staff/{email}")
+    public String staffDelete(@PathVariable("email") String email) {
+        try {
+            staffService.delete(email);
+            return "redirect:/admin/staff-database";
+        } catch (Exception e) {
+            log.error("Error while staff delete");
+            return "redirect:/admin/staff-database";
+        }
     }
 
 }

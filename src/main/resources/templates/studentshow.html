@@ -13,7 +13,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-sm justify-content-center">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" th:href="@{/staff/student-database}">
         <img th:src="@{/images/img_avatar1.png}" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
         <span style="position: relative; margin-left:10px; color: white;font-size:inherit;" th:text="${#strings.arraySplit(#authentication.name,'@')[0]}"></span>
     </a>
@@ -51,10 +51,10 @@
         <td th:text="${student.name}"></td>
         <td th:text="${student.email}"></td>
         <td th:text="${student.gender}"></td>
-        <td th:text="${student.phoneNumber}"></td>
-        <td th:text="${student.markTen}"></td>
-        <td th:text="${student.markTwelve}"></td>
-        <td th:text="${student.createdAt}"></td>
+        <td th:text="${student.phone_number}"></td>
+        <td th:text="${student.mark_ten}"></td>
+        <td th:text="${student.mark_twelve}"></td>
+        <td th:text="${student.created_at}"></td>
         <td sec:authorize="hasAuthority('admin')">
             <a th:href="'/admin/delete-user/'+${student.email}">
                 <i class="fas fa-trash"></i>

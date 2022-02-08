@@ -13,7 +13,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-sm justify-content-center">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" th:href="@{/admin/main-page}">
             <img th:src="@{/images/img_avatar1.png}" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
             <span style="position: relative; margin-left:10px; color: white;font-size:inherit;" th:text="${#authentication.name}"></span>
         </a>

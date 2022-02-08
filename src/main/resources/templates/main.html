@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity">
 <head>
-    <title>Staff Activity</title>
+    <title>Staff | Activity</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -46,20 +46,20 @@
     <div class="mySlides" th:each = "student : ${student}">
         <div class="card" th:each = "student : ${student}">
             <a th:href="'/staff/reject/'+${student.email}" class="badge btn-danger">Reject</a>
-            <img class="card-img-top" th:src="@{'/uploads/'+${student.imageFileName}}" alt="Card image" >
+            <img class="card-img-top" th:src="@{'/uploads/'+${student.image_file_name}}" alt="Card image" >
             <div class="card-body">
                 <h4 class="card-title" th:text="${student.name}"></h4>
                 <div class="progress">
-                    <div class="progress-bar bg-success" th:if="${student.markTwelve gt 89}" th:style="|width:${student.markTwelve}%;|">12th Marks</div>
-                    <div class="progress-bar bg-primary" th:if="${student.markTwelve lt 90 and student.markTwelve gt 69}" th:style="|width:${student.markTwelve}%;|">12th Marks</div>
-                    <div class="progress-bar bg-info" th:if="${student.markTwelve lt 70 and student.markTwelve gt 49}" th:style="|width:${student.markTwelve}%;|">12th Marks</div>
-                    <div class="progress-bar bg-warning" th:if="${student.markTwelve}<50" th:style="|width:${student.markTwelve}%;|">12th Marks</div>
+                    <div class="progress-bar bg-success" th:if="${student.mark_twelve gt 89}" th:style="|width:${student.mark_twelve}%;|">12th Marks</div>
+                    <div class="progress-bar bg-primary" th:if="${student.mark_twelve lt 90 and student.mark_twelve gt 69}" th:style="|width:${student.mark_twelve}%;|">12th Marks</div>
+                    <div class="progress-bar bg-info" th:if="${student.mark_twelve lt 70 and student.mark_twelve gt 49}" th:style="|width:${student.mark_twelve}%;|">12th Marks</div>
+                    <div class="progress-bar bg-warning" th:if="${student.mark_twelve}<50" th:style="|width:${student.mark_twelve}%;|">12th Marks</div>
                 </div><br>
                 <div class="progress">
-                    <div class="progress-bar bg-success" th:if="${student.markTen gt 89}" th:style="|width:${student.markTen}%;|">10th Marks</div>
-                    <div class="progress-bar bg-primary" th:if="${student.markTen lt 90 and student.markTen gt 69}" th:style="|width:${student.markTen}%;|">10th Marks</div>
-                    <div class="progress-bar bg-info" th:if="${student.markTen lt 70 and student.markTen gt 49}" th:style="|width:${student.markTen}%;|">10th Marks</div>
-                    <div class="progress-bar bg-secondary" th:if="${student.markTen}<50" th:style="|width:${student.markTen}%;|">10th Marks</div>
+                    <div class="progress-bar bg-success" th:if="${student.mark_ten gt 89}" th:style="|width:${student.mark_ten}%;|">10th Marks</div>
+                    <div class="progress-bar bg-primary" th:if="${student.mark_ten lt 90 and student.mark_ten gt 69}" th:style="|width:${student.mark_ten}%;|">10th Marks</div>
+                    <div class="progress-bar bg-info" th:if="${student.mark_ten lt 70 and student.mark_ten gt 49}" th:style="|width:${student.mark_ten}%;|">10th Marks</div>
+                    <div class="progress-bar bg-secondary" th:if="${student.mark_ten}<50" th:style="|width:${student.mark_ten}%;|">10th Marks</div>
                 </div><br>
                 <a th:href="'/staff/accept/'+${student.email}" class="btn btn-primary">Accept</a>
             </div>
@@ -70,7 +70,7 @@
         </div>
         <div class="details">
             <span>Contact:</span>
-            <span id="dis-2" th:text="${student.phoneNumber}"></span>
+            <span id="dis-2" th:text="${student.phone_number}"></span>
         </div>
         <div class="details">
             <span>Gender:</span>
@@ -78,15 +78,15 @@
         </div>
         <div class="details">
             <span>10th Percentage:</span>
-            <span id="dis-4" th:text="${student.markTen}"></span>
+            <span id="dis-4" th:text="${student.mark_ten}"></span>
         </div>
         <div class="details">
             <span>12th Group:</span>
-            <span  id="dis-5" th:text="${student.groupTwelve}"></span>
+            <span  id="dis-5" th:text="${student.group_twelve}"></span>
         </div>
         <div class="details">
             <span>12th Percentage:</span>
-            <span id="dis-6" th:text="${student.markTwelve}"></span>
+            <span id="dis-6" th:text="${student.mark_twelve}"></span>
         </div>
     </div>
     <div class="slide">

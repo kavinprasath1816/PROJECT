@@ -27,7 +27,7 @@ public class EmailServiceImp implements EmailService{
             MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true);
 
             mimeMessageHelper.setSubject(subject);
-            mimeMessageHelper.setFrom(new InternetAddress("skavin1804@gmail.com", "UniversityOfIndia.com"));
+            mimeMessageHelper.setFrom(new InternetAddress("skavin1804@gmail.com", "University.com"));
             mimeMessageHelper.setTo(toEmail);
             mimeMessageHelper.setText(body);
 
